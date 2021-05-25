@@ -1,14 +1,16 @@
 #pragma once
 
+#include <vector>
+
 typedef unsigned int uint;
 
 class Model {
     public:
     // constructor
-    Model(uint layers, uint neuronsPerLayer, float learningRate = 0.05);
+    Model(std::vector<uint> layers, uint neuronsPerLayer, float learningRate = 0.05);
 
     // attributes
     uint layers;
-    uint neuronsPerLayer;
     uint learningRate;
+    std::vector<uint> weights;
 };
