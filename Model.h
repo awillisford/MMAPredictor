@@ -7,10 +7,10 @@ typedef unsigned int uint;
 class Model {
     public:
     // constructor
-    Model(std::vector<uint> layers, uint neuronsPerLayer, float learningRate = 0.05);
+    Model(uint numlayers, uint neuronsPerLayer, float learningRate = 0.05);
 
     // attributes
-    uint layers;
+    std::vector<std::vector<uint>*> layers; // vector matrix
     uint learningRate;
-    std::vector<uint> weights;
+    std::vector<int> weights;
 };
