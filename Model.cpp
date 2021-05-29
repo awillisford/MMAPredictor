@@ -5,9 +5,15 @@ Model::Model(std::vector<float> input, uint numLayers, uint neuronsPerLayer, flo
     // assign class attribute to constructor parameter
     this->learningRate = learningRate;
 
-    // create layers
+    // create vector for first layer's weights
     weights.push_back(new std::vector<std::vector<float>*>);
-    for (uint x = 0; x < numLayers; ++x) {
+    // create a weight vector that holds type float for each node in input
+    for(int it = 0; it < input.size() * 2; ++it) { // 2 inputs
+        weights[0]->push_back(new std::vector<float>);
+    }
+
+    // create layers
+    for(uint x = 0; x < numLayers; ++x) {
         layers.push_back(new std::vector<uint>);
         // create neurons
         for (uint z = 0; z < neuronsPerLayer; ++z) {
