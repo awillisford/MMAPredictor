@@ -1,11 +1,12 @@
 #include "Model.h"
 #include <iostream>
 
-Model::Model(uint numLayers, uint neuronsPerLayer, float learningRate) {
+Model::Model(std::vector<float> input, uint numLayers, uint neuronsPerLayer, float learningRate) {
     // assign class attribute to constructor parameter
     this->learningRate = learningRate;
 
     // create layers
+    weights.push_back(new std::vector<std::vector<float>*>);
     for (uint x = 0; x < numLayers; ++x) {
         layers.push_back(new std::vector<uint>);
         // create neurons
