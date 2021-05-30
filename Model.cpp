@@ -25,17 +25,8 @@ Model::Model(std::vector<float> input, uint numLayers, uint neuronsPerLayer, flo
 
     for (uint x = 0; x < numLayers + 1; ++x) {
         for (uint z = 0; z < neuronsPerLayer; ++z) {
-
-            // FIGURE OUT WHY THIS WORKS
-            for(int y = 0; y < neuronsPerLayer; ++y) {
-                float temp = 1.0;
-                weights[x][z][y]->push_back(temp);
-            }
-
-            // BUT THIS DOESNT?!?!?
             float temp = 1.0;
-            weights[x][z].push_back(temp);
-
+            (*weights[x])[z]->push_back(temp);
         }
     }
 }
