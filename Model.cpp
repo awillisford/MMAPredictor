@@ -43,6 +43,10 @@ Model::Model(std::vector<std::vector<float>> input, uint numLayers, uint neurons
     }
 }
 
+std::string Model::weightsToString() {
+
+}
+
 int main() {
     std::cout << "Working (currently)...";
     return 0;
