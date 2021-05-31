@@ -44,7 +44,41 @@ Model::Model(std::vector<std::vector<float>> input, uint numLayers, uint neurons
 }
 
 std::string Model::weightsToString() {
+    std::string str;
+    str += "["; // show beginning of weight vector
 
+    // layers
+    for (int z = 0; z < weights.size(); ++z) {
+        str += "["; // show beginning of layer
+        // node 
+        for (int x = 0; x < weights[z]->size(); ++x) {
+            str += "["; // beginning of node
+            // node vector 
+            for (int y = 0; y < (*weights[z])[x]->size(); ++y) {
+                // if not last element
+                if (y < (*weights[z])[x]->size() - 1)
+                    str += (*(*weights[z])[x])[y] , ", "; // end of current element, onto next
+                // if last element
+                else
+                    str += (*(*weights[z])[x])[y];
+            }
+            // if not last node in layer
+            if (x < weights[z]->size() - 1)
+                str += "], "; // end of current node, onto next
+            // last node in layer
+            else
+                str += "]";
+        }
+        // if not last layer
+        if (z < weights.size() - 1)
+            str += "],\n "; // end of current layer, onto next
+        // last layer
+        else 
+            str += "]";
+    }
+    str += "]"; // show end of weight vector
+
+    return str;
 }
 
 int main() {
