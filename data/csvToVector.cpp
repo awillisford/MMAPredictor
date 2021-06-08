@@ -1,9 +1,9 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include "../include/extract_data.h"
+#include "../include/csvToVector.h"
 
-bool Data::contains_number(const std::string& str) {
+bool csvToVector::contains_number(const std::string& str) {
     /* string::npos is returned by method find when the digit/digits
      * were not found; therefore, if any of the digits are found, 
      * it will return that digit and be != to string::npos, which returns true */
@@ -12,7 +12,7 @@ bool Data::contains_number(const std::string& str) {
     return (str.find_first_of("0123456789") != std::string::npos);
 }
 
-float Data::contains_text(const std::string& str) {
+float csvToVector::contains_text(const std::string& str) {
     // assign float values to each of the different text
     if (str == "Orthodox") {
         return 1.0;
@@ -42,7 +42,7 @@ float Data::contains_text(const std::string& str) {
     }
 }
 
-float Data::check_cell_type(std::string& cell) {
+float csvToVector::check_cell_type(std::string& cell) {
     // if cell contains a number return type float of string
     if (contains_number(cell)) {
         std::cout << "cell contains number" << " ";
@@ -54,7 +54,7 @@ float Data::check_cell_type(std::string& cell) {
     }
 }
 
-std::vector<std::vector<float>> Data::extract_data() {
+std::vector<std::vector<float>> csvToVector::extract_data() {
     std::ifstream fin("data_filtered.csv"); // input stream
     std::string line; // declare string to hold each line
 
@@ -76,5 +76,5 @@ std::vector<std::vector<float>> Data::extract_data() {
 }
 
 int main() {
-    Data::extract_data();
+    csvToVector::extract_data();
 }
