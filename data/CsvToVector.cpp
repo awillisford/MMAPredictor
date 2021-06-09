@@ -3,7 +3,7 @@
 #include <iostream>
 #include "../include/csvToVector.h"
 
-bool csvToVector::contains_number(const std::string& str) {
+bool CsvToVector::contains_number(const std::string& str) {
     /* string::npos is returned by method find when the digit/digits
      * were not found; therefore, if any of the digits are found, 
      * it will return that digit and be != to string::npos, which returns true */
@@ -12,22 +12,76 @@ bool csvToVector::contains_number(const std::string& str) {
     return (str.find_first_of("0123456789") != std::string::npos);
 }
 
-float csvToVector::contains_text(const std::string& str) {
-    // assign float values to each of the different text
-    if (str == "Orthodox") {
-        return 1.0;
+float CsvToVector::contains_text(const std::string& str) {
+    // fighter color winner
+    if (str == "Blue") {
+        return 0;
+    }
+    else if (str == "Red") {
+        return 1;
+    }
+    else if (str == "Draw") {
+        return 2;
+    }
+    // fighter stance
+    else if (str == "Orthodox") {
+        return 0;
     }
     else if (str == "Southpaw") {
-        return 2.0;
+        return 1;
     }
     else if (str == "Switch") {
-        return 3.0;
+        return 2;
     }
+    else if (str == "Open Stance") {
+        return 3;
+    }
+    // title fight
     else if (str == "FALSE") {
-        return 0.0;
+        return 0;
     }
     else if (str == "TRUE") {
-        return 1.0;
+        return 1;
+    }
+    // weight divisions
+    else if (str == "Flyweight") {
+        return 0;
+    }
+    else if (str == "Bantamweight") {
+        return 1;
+    }
+    else if (str == "Featherweight") {
+        return 2;
+    }
+    else if (str == "Lightweight") {
+        return 3;
+    }
+    else if (str == "Welterweight") {
+        return 4;
+    }
+    else if (str == "Middleweight") {
+        return 5;
+    }
+    else if (str == "LightHeavyweight") {
+        return 6;
+    }
+    else if (str == "Heavyweight") {
+        return 7;
+    }
+    else if (str == "CatchWeight") {
+        return 8;
+    }
+    else if (str == "WomenStrawweight") {
+        return 9;
+    }
+    else if (str == "WomenFlyweight") {
+        return 10;
+    }
+    else if (str == "WomenBantamweight") {
+        return 11;
+    }
+    else if (str == "WomenFeatherweight") {
+        return 12;
     }
 
     // throw exception if text is not any of the above
@@ -36,25 +90,27 @@ float csvToVector::contains_text(const std::string& str) {
             throw 1;
         }
         catch(int e) {
-            std::cout << "An exception occured in function \"contains_text\", exception no. "
+            std::cout << "An exception occured in function \"contains_text()\", exception no. "
                       << e << std::endl;
         }
+        return -1;
     }
 }
 
-float csvToVector::check_cell_type(std::string& cell) {
+float CsvToVector::check_cell_type(std::string& cell) {
     // if cell contains a number return type float of string
     if (contains_number(cell)) {
-        std::cout << "cell contains number" << " ";
+        std::cout << "cell value: no. " << std::stof(cell) << std::endl;
         return std::stof(cell);
     }
     // return float value assigned to cell given by contains_text()
     else {
+        std::cout << "cell value: text '" << cell << "'" << std::endl;
         return contains_text(cell);
     }
 }
 
-std::vector<std::vector<float>> csvToVector::extract_data() {
+std::vector<std::vector<float>> CsvToVector::extract_data() {
     std::ifstream fin("data_filtered.csv"); // input stream
     std::string line; // declare string to hold each line
 
@@ -76,5 +132,5 @@ std::vector<std::vector<float>> csvToVector::extract_data() {
 }
 
 int main() {
-    csvToVector::extract_data();
+    CsvToVector::extract_data();
 }
