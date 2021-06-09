@@ -1,7 +1,12 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <cmath>
 #include "../include/csvToVector.h"
+
+// declare class members
+std::vector<std::vector<float>> CsvToVector::features;
+std::vector<std::vector<float>> CsvToVector::labels;
 
 bool CsvToVector::contains_number(const std::string& str) {
     /* string::npos is returned by method find when the digit/digits
@@ -15,13 +20,10 @@ bool CsvToVector::contains_number(const std::string& str) {
 float CsvToVector::contains_text(const std::string& str) {
     // fighter color winner
     if (str == "Blue") {
-        return 0;
+        return -1;
     }
     else if (str == "Red") {
-        return 1;
-    }
-    else if (str == "Draw") {
-        return 2;
+        return -2;
     }
     // fighter stance
     else if (str == "Orthodox") {
@@ -87,50 +89,78 @@ float CsvToVector::contains_text(const std::string& str) {
     // throw exception if text is not any of the above
     else {
         try {
-            throw 1;
+            throw 999;
         }
         catch(int e) {
             std::cout << "An exception occured in function \"contains_text()\", exception no. "
                       << e << std::endl;
         }
-        return -1;
+        return 999;
     }
 }
 
-float CsvToVector::check_cell_type(std::string& cell) {
+float CsvToVector::check_cell_type(const std::string& cell) {
     // if cell contains a number return type float of string
     if (contains_number(cell)) {
-        std::cout << "cell value: no. " << std::stof(cell) << std::endl;
+        std::cout << "cell value: " << std::stof(cell) << ": ";
         return std::stof(cell);
     }
     // return float value assigned to cell given by contains_text()
     else {
-        std::cout << "cell value: text '" << cell << "'" << std::endl;
+        std::cout << "cell value: '" << cell << "': ";
         return contains_text(cell);
     }
 }
 
-std::vector<std::vector<float>> CsvToVector::extract_data() {
-    std::ifstream fin("data_filtered.csv"); // input stream
-    std::string line; // declare string to hold each line
+bool CsvToVector::compare_floats(float& a, float b, float epsilon) {
+    std::cout << "fabs(" << a << " - " << b << ") = " << fabs(a - b) << ", " << "ret: " << (fabs(a - b) < epsilon) << " - ";
+    return fabs(a - b) < epsilon;
+}
 
-    std::vector<std::vector<float>> tokens;
+void CsvToVector::extract_data(const std::string& csvFile) {
+    std::ifstream fin(csvFile); // input stream
+    std::string line; // declare string to hold each line
+    bool header = true;
 
     // loop through csv line by line
     while(std::getline(fin, line)) {
-        std::vector<float> temp_vector; // create vector to push back in tokens
+        // if header then continue to next interation
+        if (header) {
+            header = false;
+            continue;
+        }
+        std::vector<float> temp_vector; // create vector to push back in features
         std::stringstream ss(line);
         std::string cell; // holds data in cell
 
         // iterate through cells in line
-        while(std::getline(ss, cell, ',')) { 
-            temp_vector.push_back(check_cell_type(cell));
+        while(std::getline(ss, cell, ',')) {
+            float cell_checked = check_cell_type(cell);
+            std::cout << "cell_checked: " << cell_checked << ", ";
+
+            if (compare_floats(cell_checked, -1)) {
+                std::vector<float> blue = {1, 0};
+                labels.push_back(blue);
+                std::cout << "Labels push_back: blue - {1, 0} " << std::endl;
+                continue;
+            }
+            else if (compare_floats(cell_checked, -2)) {
+                std::vector<float> red = {0, 1};
+                labels.push_back(red);
+                std::cout << "Labels push_back: red - {0, 1} " << std::endl;
+                continue;
+            }
+            else {
+                temp_vector.push_back(cell_checked);
+                std::cout << "temp_vector push_back: " << cell_checked << std::endl;
+
+            }
         }
-        tokens.push_back(temp_vector); // push vector containing row into main vector
+        features.push_back(temp_vector); // push vector containing row into features
+        std::cout << "Features: push_back(temp_vector)" << std::endl;
     }
-    return tokens;
 }
 
 int main() {
-    CsvToVector::extract_data();
+    CsvToVector::extract_data("data_filtered.csv");
 }
