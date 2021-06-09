@@ -28,7 +28,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 37,1,0,172.72,6,7,177.8,Orthodox,54,0,145,0,0,7,5,0,0,12,32,0,5,182.88,5,0,187.96,Orthodox,13,0,145,0,2,2,1,0,0,5,FALSE,Featherweight,Red
 28,0,1,190.5,1,0,203.2,Orthodox,2,0,205,0,0,0,1,0,0,1,31,0,6,193.04,6,2,195.58,Southpaw,17,2,205,0,1,1,3,1,0,6,FALSE,LightHeavyweight,Blue
 31,0,3,167.64,3,3,162.56,Orthodox,23,0,145,0,2,3,0,0,0,5,30,2,0,167.64,5,2,172.72,Orthodox,21,0,135,0,0,5,0,0,0,5,FALSE,Bantamweight,Red
-33,2,0,190.5,2,2,193.04,Orthodox,10,0,205,0,0,1,1,0,0,2,27,1,0,185.42,2,5,190.5,Southpaw,16,0,205,0,0,1,3,0,0,4,FALSE,LightHeavyweight,Draw
 30,2,0,175.26,0,2,182.88,Switch,5,0,145,0,0,0,0,0,0,0,26,0,1,170.18,1,1,175.26,Orthodox,5,0,145,0,0,1,0,0,0,1,FALSE,Featherweight,Blue
 31,0,1,185.42,5,4,195.58,Southpaw,35,0,185,0,2,6,1,0,0,9,30,0,2,185.42,3,3,193.04,Orthodox,30,0,185,0,2,3,3,1,0,9,FALSE,Middleweight,Red
 27,0,1,167.64,1,1,175.26,Orthodox,4,0,125,0,0,1,0,0,0,1,32,0,2,172.72,2,2,170.18,Orthodox,11,0,115,0,0,2,1,0,0,3,FALSE,WomenFlyweight,Blue
@@ -79,10 +78,8 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 29,0,3,180.34,3,1,182.88,Orthodox,11,1,135,0,0,1,2,1,0,4,43,0,2,167.64,2,6,172.72,Orthodox,30,0,135,0,0,1,2,2,0,5,FALSE,WomenBantamweight,Blue
 28,0,3,167.64,3,1,167.64,Orthodox,10,0,125,0,1,1,0,1,0,3,27,1,0,165.1,0,1,172.72,Southpaw,3,0,125,0,0,0,0,0,0,0,FALSE,Flyweight,Blue
 34,0,1,167.64,3,1,167.64,Southpaw,15,0,145,0,0,2,0,2,0,4,29,1,0,170.18,6,2,180.34,Orthodox,22,0,145,0,2,2,1,1,0,6,FALSE,Featherweight,Red
-32,1,0,180.34,4,3,182.88,Orthodox,34,0,170,0,1,6,1,1,0,9,29,1,0,187.96,8,2,187.96,Southpaw,38,0,170,0,1,6,2,1,0,10,FALSE,Welterweight,Draw
 33,3,0,170.18,2,5,175.26,Southpaw,24,0,115,0,1,2,0,0,0,3,36,0,1,160.02,3,9,162.56,Orthodox,45,0,115,0,0,5,1,0,1,7,FALSE,WomenStrawweight,Red
 29,0,4,195.58,4,1,200.66,Orthodox,10,0,205,0,1,1,1,1,0,4,34,0,4,190.5,4,3,195.58,Orthodox,12,0,205,0,0,0,1,5,0,6,FALSE,LightHeavyweight,Blue
-30,4,0,182.88,3,6,187.96,Orthodox,24,0,185,0,1,1,2,1,0,5,33,0,2,185.42,2,5,190.5,Southpaw,28,0,185,0,1,1,3,0,0,5,FALSE,Middleweight,Draw
 35,1,0,172.72,2,3,175.26,Orthodox,15,1,135,0,1,1,1,0,0,3,26,1,0,172.72,2,2,177.8,Southpaw,18,0,135,0,0,2,2,0,0,4,FALSE,Bantamweight,Blue
 33,1,0,170.18,0,1,177.8,Orthodox,1,0,135,0,0,0,0,0,0,0,36,0,1,167.64,4,6,170.18,Orthodox,42,0,135,0,1,4,0,6,0,11,FALSE,Bantamweight,Red
 28,1,0,165.1,3,3,170.18,Southpaw,20,0,125,0,0,4,0,0,0,4,33,2,0,170.18,2,7,170.18,Orthodox,30,0,125,0,1,1,1,2,0,5,FALSE,WomenFlyweight,Blue
@@ -100,7 +97,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 26,0,2,180.34,3,4,185.42,Orthodox,34,0,170,0,1,4,0,4,1,10,28,0,3,177.8,3,0,182.88,Orthodox,8,0,170,0,0,2,0,1,0,3,FALSE,Welterweight,Red
 33,1,0,162.56,2,1,165.1,Southpaw,6,0,115,0,0,1,0,1,0,2,29,0,2,160.02,2,1,160.02,Orthodox,10,0,115,0,1,1,0,1,0,3,FALSE,WomenStrawweight,Blue
 30,1,0,170.18,0,1,177.8,Southpaw,2,0,140,0,0,0,0,0,0,0,27,1,0,175.26,2,1,175.26,Switch,6,0,135,0,0,1,1,0,0,2,FALSE,Bantamweight,Blue
-29,0,1,167.64,1,1,167.64,Orthodox,5,0,135,0,0,0,0,2,0,2,26,0,3,170.18,3,2,172.72,Orthodox,15,0,125,0,0,1,0,3,0,4,FALSE,WomenFlyweight,Draw
 30,0,4,193.04,4,0,205.74,Orthodox,9,0,245,0,0,1,1,2,0,4,32,0,4,193.04,4,1,198.12,Orthodox,12,0,242,0,0,0,5,0,0,5,FALSE,Heavyweight,Blue
 28,1,0,190.5,5,1,190.5,Orthodox,12,0,205,0,0,1,4,0,0,5,28,1,0,190.5,5,5,195.58,Orthodox,23,0,205,0,0,1,3,4,0,8,FALSE,LightHeavyweight,Blue
 31,0,5,162.56,5,3,172.72,Orthodox,26,0,135,0,1,5,1,0,0,7,34,1,0,167.64,4,6,165.1,Orthodox,31,0,135,0,0,2,3,3,0,8,FALSE,Bantamweight,Red
@@ -181,7 +177,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 32,0,3,177.8,3,0,177.8,Orthodox,8,0,145,0,0,1,1,1,0,3,34,0,1,167.64,2,1,167.64,Southpaw,12,0,145,0,0,1,0,2,0,3,FALSE,Featherweight,Red
 35,0,2,170.18,2,4,175.26,Orthodox,15,0,145,0,0,0,1,3,0,4,37,1,0,172.72,6,7,177.8,Orthodox,52,0,145,0,0,7,4,0,0,11,FALSE,Featherweight,Red
 30,0,3,193.04,3,0,205.74,Orthodox,7,0,245,0,0,1,0,2,0,3,36,0,9,193.04,9,7,195.58,Orthodox,56,5,238,0,0,5,10,0,0,15,FALSE,Heavyweight,Blue
-27,0,3,170.18,3,3,177.8,Orthodox,24,0,125,0,1,2,1,2,0,6,32,0,4,165.1,5,1,172.72,Orthodox,20,2,125,0,1,1,4,3,0,9,TRUE,Flyweight,Draw
 34,1,0,177.8,0,1,185.42,Southpaw,3,0,145,0,0,0,0,0,0,0,21,0,1,185.42,1,1,187.96,Southpaw,4,0,145,0,0,0,1,0,0,1,FALSE,Featherweight,Red
 27,1,0,172.72,2,1,180.34,Switch,7,0,155,0,0,2,0,0,0,2,31,0,3,180.34,3,3,182.88,Orthodox,19,0,155,0,2,1,0,3,0,6,FALSE,Lightweight,Blue
 27,0,1,182.88,3,3,187.96,Southpaw,20,0,185,0,0,3,0,2,0,5,32,0,1,185.42,4,3,195.58,Orthodox,21,0,185,0,0,2,3,3,0,8,FALSE,Middleweight,Blue
@@ -238,7 +233,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 27,0,3,187.96,3,3,190.5,Southpaw,12,0,264,0,0,1,2,0,0,3,32,1,0,210.82,4,10,213.36,Orthodox,45,0,265,1,0,1,5,6,0,13,FALSE,Heavyweight,Blue
 36,1,0,180.34,3,4,195.58,Switch,20,0,185,0,0,1,5,0,0,6,29,0,2,182.88,9,3,185.42,Orthodox,42,3,185,0,1,6,5,0,0,12,FALSE,Middleweight,Red
 29,0,2,170.18,2,1,172.72,Southpaw,13,0,140,0,0,3,0,1,0,4,27,0,3,167.64,3,1,175.26,Orthodox,13,0,140,0,0,1,0,3,0,4,FALSE,CatchWeight,Blue
-34,1,0,187.96,4,9,190.5,Southpaw,41,0,205,0,2,2,5,1,0,10,26,0,2,193.04,2,0,198.12,Orthodox,4,0,205,0,0,0,1,1,0,2,FALSE,LightHeavyweight,Draw
 36,2,0,190.5,2,5,187.96,Southpaw,20,0,155,0,0,1,1,1,0,3,26,1,0,190.5,2,1,195.58,Orthodox,6,0,155,0,0,0,1,1,0,2,FALSE,Lightweight,Red
 29,1,0,154.94,4,6,157.48,Orthodox,39,3,115,0,1,5,3,2,0,11,31,0,1,175.26,3,3,172.72,Orthodox,30,1,125,0,1,6,0,0,0,7,FALSE,WomenFlyweight,Blue
 26,0,1,190.5,1,0,198.12,Switch,1,0,205,0,0,0,1,0,0,1,24,0,2,187.96,2,1,187.96,Orthodox,6,0,205,0,0,0,1,2,0,3,FALSE,LightHeavyweight,Red
@@ -258,7 +252,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 33,1,0,175.26,0,1,177.8,Switch,3,0,135,0,0,0,0,0,0,0,30,1,0,167.64,0,1,172.72,Orthodox,3,0,135,0,0,0,0,0,0,0,FALSE,Bantamweight,Blue
 25,1,0,182.88,0,1,190.5,Orthodox,3,0,245,0,0,0,0,0,0,0,33,0,1,182.88,1,1,187.96,Orthodox,4,0,250,0,0,0,1,0,0,1,FALSE,Heavyweight,Blue
 35,0,3,180.34,3,8,190.5,Orthodox,45,1,170,0,1,5,0,2,0,8,36,1,0,187.96,5,9,190.5,Orthodox,45,3,170,0,1,1,4,0,1,7,FALSE,Welterweight,Red
-26,1,0,177.8,0,1,185.42,Orthodox,2,0,145,0,0,0,0,0,0,0,24,1,0,175.26,1,2,175.26,Switch,8,0,145,0,0,0,1,0,0,1,FALSE,Featherweight,Draw
 31,0,4,167.64,4,1,175.26,Orthodox,13,1,135,0,0,3,2,0,0,5,36,0,1,175.26,5,2,180.34,Orthodox,21,2,135,0,1,2,3,0,0,6,FALSE,WomenBantamweight,Red
 32,2,0,175.26,3,3,172.72,Orthodox,22,0,135,0,1,2,1,1,0,5,38,0,3,172.72,3,5,175.26,Southpaw,38,5,135,0,1,3,2,0,0,6,FALSE,WomenBantamweight,Red
 35,1,0,160.02,0,1,165.1,Southpaw,3,0,115,0,0,0,0,0,0,0,24,0,1,154.94,1,1,154.94,Orthodox,6,0,115,0,1,0,0,0,0,1,FALSE,WomenStrawweight,Red
@@ -275,7 +268,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 35,1,0,162.56,1,8,160.02,Orthodox,38,0,115,0,2,3,0,1,0,6,27,0,2,162.56,2,1,160.02,Orthodox,8,0,115,0,1,0,0,2,0,3,FALSE,WomenStrawweight,Red
 29,4,0,182.88,3,5,187.96,Orthodox,21,0,185,0,1,1,2,1,0,5,27,1,0,190.5,3,2,205.74,Orthodox,18,0,185,0,1,1,2,1,0,5,FALSE,Middleweight,Red
 32,3,0,180.34,0,3,180.34,Switch,6,0,145,0,0,0,0,0,0,0,29,0,4,172.72,4,3,177.8,Orthodox,20,0,145,1,1,1,2,1,0,6,FALSE,Featherweight,Blue
-30,0,1,182.88,2,5,193.04,Orthodox,18,0,170,0,0,0,4,2,0,6,37,0,4,185.42,8,12,185.42,Orthodox,75,1,170,0,0,7,10,6,0,23,FALSE,Welterweight,Draw
 29,0,4,195.58,4,0,200.66,Orthodox,9,0,205,0,1,1,1,1,0,4,28,0,3,198.12,3,2,208.28,Orthodox,7,0,205,0,0,0,3,0,0,3,FALSE,LightHeavyweight,Red
 32,0,2,185.42,2,5,195.58,Southpaw,22,0,185,0,0,0,1,5,0,6,26,0,2,187.96,2,0,190.5,Orthodox,3,0,170,0,0,0,1,1,0,2,FALSE,Middleweight,Red
 38,0,1,175.26,3,5,187.96,Orthodox,42,6,170,1,1,1,5,1,0,9,32,0,3,180.34,7,2,182.88,Orthodox,38,2,170,0,0,6,2,2,0,10,FALSE,Welterweight,Red
@@ -333,7 +325,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 26,1,0,172.72,2,2,177.8,Southpaw,12,0,135,0,0,1,1,0,0,2,39,0,3,167.64,3,4,167.64,Orthodox,25,0,135,0,2,3,0,0,0,5,FALSE,Bantamweight,Blue
 33,1,0,167.64,2,2,165.1,Orthodox,12,0,115,0,0,2,0,0,0,2,32,0,1,154.94,3,4,160.02,Orthodox,32,2,115,1,1,4,0,1,0,7,FALSE,WomenStrawweight,Red
 27,0,1,182.88,4,3,187.96,Southpaw,24,1,185,0,1,3,2,0,0,6,29,0,2,182.88,9,3,185.42,Orthodox,37,3,185,0,1,5,5,0,0,11,FALSE,Middleweight,Red
-34,3,0,177.8,0,3,177.8,Southpaw,9,0,170,0,0,0,0,0,0,0,35,0,1,180.34,1,3,187.96,Orthodox,15,0,170,0,1,1,0,0,0,2,FALSE,Welterweight,Draw
 33,0,1,195.58,6,6,200.66,Orthodox,42,3,205,0,0,3,5,2,0,10,42,1,0,193.04,6,6,195.58,Orthodox,43,3,231,0,0,4,4,3,0,11,FALSE,Heavyweight,Red
 44,0,2,187.96,2,6,190.5,Southpaw,25,0,205,0,1,1,4,0,0,6,38,1,0,185.42,3,10,193.04,Orthodox,51,3,205,0,1,1,8,0,0,10,FALSE,LightHeavyweight,Red
 33,0,1,170.18,1,0,182.88,Orthodox,2,0,145,0,0,0,1,0,0,1,26,0,2,170.18,2,0,182.88,Orthodox,6,0,145,0,0,2,0,0,0,2,FALSE,Featherweight,Red
@@ -381,7 +372,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 35,0,1,182.88,1,2,187.96,Orthodox,10,0,170,0,0,0,3,0,0,3,31,1,0,180.34,4,3,182.88,Orthodox,28,0,170,0,1,4,1,1,0,7,FALSE,Welterweight,Red
 33,0,4,177.8,4,6,180.34,Orthodox,29,0,155,0,1,2,1,1,0,5,38,0,1,170.18,4,13,177.8,Orthodox,71,0,155,0,3,6,2,4,0,15,FALSE,Lightweight,Blue
 29,0,3,180.34,3,1,190.5,Orthodox,19,0,145,0,1,2,2,1,0,6,35,0,2,167.64,2,2,177.8,Orthodox,19,0,145,0,1,2,3,0,0,6,FALSE,Featherweight,Red
-30,0,2,182.88,2,3,193.04,Southpaw,9,0,185,0,0,1,1,0,0,2,30,3,0,185.42,0,3,187.96,Orthodox,9,0,185,0,0,0,0,0,0,0,FALSE,Middleweight,Draw
 25,0,2,165.1,2,2,160.02,Orthodox,9,0,125,0,0,0,1,3,0,4,33,2,0,170.18,2,6,170.18,Orthodox,27,0,125,0,1,1,1,2,0,5,FALSE,WomenFlyweight,Blue
 36,2,0,165.1,2,4,170.18,Orthodox,24,0,125,0,2,0,2,0,0,4,37,2,0,170.18,1,4,175.26,Orthodox,22,1,125,0,1,1,1,0,0,3,FALSE,WomenFlyweight,Blue
 26,0,1,182.88,2,3,187.96,Southpaw,19,0,185,0,0,3,0,1,0,4,29,0,1,185.42,2,2,187.96,Southpaw,12,0,185,0,1,1,0,2,0,4,FALSE,Middleweight,Blue
@@ -406,7 +396,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 28,0,1,182.88,1,0,185.42,Southpaw,1,0,155,0,0,0,0,0,0,1,26,0,2,187.96,2,1,185.42,Orthodox,10,0,155,0,0,2,0,1,0,3,FALSE,Lightweight,Red
 27,0,1,172.72,1,0,180.34,Switch,1,0,145,0,0,0,1,0,0,1,31,0,1,177.8,1,0,177.8,Orthodox,2,0,145,0,0,0,0,1,0,1,FALSE,CatchWeight,Red
 33,0,3,177.8,5,3,180.34,Orthodox,31,0,170,0,0,4,3,4,0,11,38,0,1,175.26,3,4,187.96,Orthodox,37,6,170,1,1,1,5,1,0,9,FALSE,Welterweight,Blue
-27,1,0,182.88,1,2,187.96,Orthodox,9,0,205,0,0,1,0,0,0,1,29,0,1,193.04,1,0,200.66,Southpaw,3,0,205,0,0,1,0,0,0,1,FALSE,LightHeavyweight,Draw
 29,0,3,190.5,3,0,195.58,Orthodox,7,0,265,0,1,0,2,0,0,3,33,1,0,180.34,2,2,185.42,Southpaw,14,0,250,0,0,2,0,0,0,2,FALSE,Heavyweight,Blue
 29,0,2,170.18,2,1,172.72,Southpaw,9,0,140,0,0,2,0,0,0,2,28,0,1,175.26,4,6,172.72,Orthodox,30,0,135,0,0,2,3,2,0,7,FALSE,Bantamweight,Blue
 29,1,0,170.18,1,2,177.8,Orthodox,9,0,145,0,0,1,0,0,0,1,29,1,0,175.26,2,1,170.18,Orthodox,8,0,145,0,1,1,0,0,0,2,FALSE,Featherweight,Red
@@ -447,7 +436,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 33,0,3,177.8,4,3,180.34,Orthodox,30,0,170,0,0,4,2,4,0,10,42,0,5,185.42,7,9,182.88,Southpaw,85,2,170,1,1,8,1,11,0,22,FALSE,Welterweight,Blue
 35,0,2,172.72,2,1,177.8,Orthodox,9,0,170,0,0,2,0,0,0,2,33,1,0,180.34,7,2,185.42,Orthodox,22,0,170,0,1,2,3,1,0,7,FALSE,Welterweight,Red
 28,1,0,190.5,5,5,195.58,Orthodox,20,0,205,0,0,0,3,4,0,7,27,0,3,198.12,3,1,208.28,Orthodox,4,0,205,0,0,0,3,0,0,3,FALSE,LightHeavyweight,Blue
-30,0,1,170.18,4,3,177.8,Orthodox,27,1,145,0,1,5,0,0,0,6,35,0,1,167.64,4,5,170.18,Orthodox,39,0,135,0,1,4,0,6,0,11,FALSE,Bantamweight,Draw
 28,0,1,170.18,2,3,170.18,Orthodox,19,0,125,0,1,2,0,1,0,4,28,0,1,167.64,1,0,167.64,Orthodox,1,0,135,0,0,0,0,1,0,1,FALSE,WomenFlyweight,Blue
 28,0,1,175.26,1,0,187.96,Orthodox,2,0,135,0,0,0,0,1,0,1,24,3,0,162.56,1,3,162.56,Southpaw,9,0,125,0,0,0,0,1,0,1,FALSE,WomenBantamweight,Blue
 31,0,1,182.88,4,3,180.34,Orthodox,29,0,170,0,1,2,6,0,0,9,32,0,1,190.5,7,6,203.2,Orthodox,52,0,170,0,1,7,5,1,0,14,FALSE,Welterweight,Red
@@ -495,7 +483,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 30,0,6,193.04,6,0,195.58,Southpaw,10,0,205,0,1,1,3,1,0,6,32,0,3,193.04,13,2,213.36,Orthodox,68,14,205,0,1,8,5,5,0,19,TRUE,LightHeavyweight,Red
 30,0,3,167.64,3,1,175.26,Orthodox,12,0,125,0,0,3,0,0,0,3,36,2,0,165.1,1,4,170.18,Orthodox,21,0,125,0,1,0,2,0,0,3,FALSE,WomenFlyweight,Red
 26,1,0,175.26,1,1,175.26,Switch,4,0,135,0,0,1,0,0,0,1,25,0,1,170.18,1,0,167.64,Orthodox,3,0,135,0,1,0,0,0,0,1,FALSE,Bantamweight,Blue
-30,1,0,165.1,0,1,170.18,Orthodox,3,0,135,0,0,0,0,0,0,0,30,1,0,182.88,0,1,185.42,Southpaw,3,0,135,0,0,0,0,0,0,0,FALSE,Bantamweight,Draw
 25,1,0,172.72,2,1,177.8,Southpaw,9,0,135,0,0,1,1,0,0,2,32,0,1,172.72,1,2,190.5,Southpaw,12,0,135,0,1,1,0,0,0,2,FALSE,Bantamweight,Red
 35,0,1,160.02,1,7,162.56,Orthodox,32,0,115,0,0,4,0,0,1,5,27,1,0,154.94,2,1,157.48,Orthodox,8,0,115,0,1,1,0,0,0,2,FALSE,WomenStrawweight,Blue
 32,0,2,185.42,3,4,190.5,Southpaw,27,1,170,0,0,3,0,6,0,9,35,2,0,172.72,5,10,177.8,Southpaw,83,4,155,0,0,10,4,4,0,18,FALSE,Welterweight,Blue
@@ -540,15 +527,12 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 33,0,2,162.56,2,0,172.72,Orthodox,6,0,125,0,0,1,1,0,0,2,33,2,0,167.64,3,7,167.64,Orthodox,31,1,125,0,2,1,0,0,1,4,FALSE,WomenFlyweight,Red
 38,1,0,193.04,4,6,198.12,Orthodox,29,0,265,0,0,1,3,2,0,6,31,1,0,210.82,4,9,213.36,Orthodox,43,0,265,1,0,1,5,6,0,13,FALSE,Heavyweight,Blue
 35,0,2,187.96,4,9,190.5,Orthodox,42,0,170,0,1,3,5,1,0,10,36,1,0,175.26,7,11,177.8,Orthodox,64,1,170,0,1,5,7,1,1,15,FALSE,Welterweight,Blue
-22,0,4,172.72,4,0,170.18,Orthodox,7,0,145,0,0,1,2,1,0,4,30,0,3,167.64,3,1,162.56,Orthodox,14,0,145,0,2,2,0,0,0,4,FALSE,Bantamweight,Draw
-32,0,3,162.56,3,1,162.56,Orthodox,14,0,125,0,0,2,0,3,0,5,32,1,0,167.64,2,1,165.1,Orthodox,9,0,115,0,0,2,0,0,0,2,FALSE,WomenStrawweight,Draw
 31,0,3,193.04,3,0,198.12,Orthodox,4,0,242,0,0,0,3,0,0,3,39,0,1,193.04,4,6,203.2,Orthodox,30,1,265,1,0,2,7,0,0,10,FALSE,Heavyweight,Blue
 30,1,0,167.64,2,1,172.72,Orthodox,7,1,135,0,0,2,0,0,0,2,24,0,3,167.64,3,1,167.64,Orthodox,7,0,135,0,0,1,2,0,0,3,FALSE,WomenBantamweight,Red
 25,1,0,170.18,1,1,172.72,Orthodox,6,0,145,0,0,0,0,1,0,1,25,0,2,177.8,2,0,177.8,Southpaw,6,0,145,1,0,1,0,0,0,2,FALSE,Featherweight,Red
 27,0,3,167.64,3,1,175.26,Orthodox,10,0,135,0,0,2,1,0,0,3,32,0,2,172.72,2,3,180.34,Orthodox,18,0,135,0,0,1,4,1,0,6,FALSE,Bantamweight,Red
 38,1,0,190.5,2,6,190.5,Orthodox,29,0,185,0,1,4,0,0,0,5,29,0,1,187.96,1,0,190.5,Orthodox,3,0,185,0,0,1,0,0,0,1,FALSE,Middleweight,Red
 30,0,1,175.26,1,0,177.8,Orthodox,3,0,145,0,0,1,0,0,0,1,24,0,3,175.26,3,1,182.88,Orthodox,13,0,145,0,1,2,1,0,0,4,FALSE,Featherweight,Red
-31,0,1,190.5,1,4,193.04,Orthodox,15,0,205,0,0,0,0,4,0,4,37,1,0,185.42,3,9,193.04,Orthodox,48,3,205,0,1,1,8,0,0,10,FALSE,LightHeavyweight,Draw
 31,0,2,175.26,2,2,172.72,Orthodox,12,0,145,0,0,2,1,0,0,3,30,0,2,177.8,5,9,187.96,Orthodox,44,0,155,0,0,1,1,13,0,15,FALSE,Lightweight,Red
 33,0,4,177.8,4,5,180.34,Orthodox,26,0,155,0,1,2,1,1,0,5,41,0,1,175.26,7,6,177.8,Southpaw,47,0,155,0,1,6,3,2,1,13,FALSE,Lightweight,Red
 33,0,1,187.96,5,3,185.42,Orthodox,23,0,170,0,0,3,2,2,0,7,37,1,0,182.88,4,5,182.88,Orthodox,34,1,170,0,2,2,1,3,0,8,FALSE,Welterweight,Blue
@@ -621,7 +605,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 37,1,0,170.18,1,3,165.1,Orthodox,16,0,135,0,0,3,0,0,0,3,28,0,3,180.34,3,0,182.88,Orthodox,5,1,135,0,0,0,2,1,0,3,FALSE,WomenBantamweight,Blue
 27,1,0,175.26,1,5,180.34,Orthodox,16,0,155,0,0,0,1,1,0,2,26,0,3,177.8,3,3,185.42,Orthodox,18,0,155,0,0,2,2,0,0,4,FALSE,Lightweight,Red
 23,0,1,177.8,1,1,187.96,Orthodox,6,0,170,0,0,1,0,0,0,1,35,0,1,180.34,3,3,185.42,Orthodox,17,0,170,0,0,0,3,1,0,4,FALSE,Welterweight,Blue
-33,1,0,175.26,3,15,180.34,Orthodox,79,0,145,0,1,6,7,0,1,15,26,0,6,180.34,6,1,180.34,Orthodox,25,1,145,0,2,2,3,0,0,7,FALSE,Featherweight,Draw
 28,2,0,180.34,0,2,180.34,Switch,5,0,155,0,0,0,0,0,0,0,34,0,3,180.34,3,3,180.34,Orthodox,12,0,155,0,1,0,3,0,0,4,FALSE,Featherweight,Blue
 26,0,1,165.1,1,2,167.64,Orthodox,13,0,125,0,1,2,0,0,0,3,31,0,1,154.94,2,4,160.02,Orthodox,26,2,115,0,0,4,0,1,0,5,FALSE,WomenStrawweight,Red
 29,1,0,177.8,1,3,177.8,Orthodox,12,0,145,0,1,0,0,0,0,1,25,0,1,172.72,1,2,180.34,Southpaw,6,1,145,0,0,0,1,0,0,1,FALSE,Featherweight,Blue
@@ -631,7 +614,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 32,1,0,185.42,0,1,193.04,Switch,1,0,155,0,0,0,0,0,0,0,23,1,0,180.34,1,1,182.88,Southpaw,5,1,155,0,0,0,0,1,0,1,FALSE,Lightweight,Red
 30,0,1,180.34,2,2,177.8,Orthodox,11,0,155,0,0,0,3,0,0,3,36,0,4,185.42,8,9,185.42,Orthodox,70,1,170,0,0,7,10,6,0,23,FALSE,Lightweight,Blue
 23,0,2,187.96,2,0,187.96,Orthodox,4,0,205,0,0,0,1,1,0,2,32,0,4,190.5,4,3,195.58,Orthodox,11,0,205,0,0,0,1,4,0,5,FALSE,LightHeavyweight,Red
-31,1,0,187.96,0,1,195.58,Orthodox,3,0,250,0,0,0,0,0,0,0,33,0,1,190.5,2,2,198.12,Orthodox,7,0,260,0,0,0,3,0,0,3,FALSE,Heavyweight,Draw
 28,0,2,190.5,2,0,195.58,Orthodox,6,0,265,0,1,0,1,0,0,2,33,1,0,190.5,3,4,198.12,Orthodox,24,0,249,0,0,2,2,0,0,4,FALSE,Heavyweight,Blue
 29,0,1,187.96,5,4,200.66,Orthodox,26,1,185,0,0,2,0,5,0,7,35,2,0,182.88,3,7,200.66,Orthodox,29,1,185,0,0,1,4,0,2,7,FALSE,Middleweight,Red
 27,1,0,190.5,5,4,195.58,Orthodox,17,0,205,0,0,0,3,4,0,7,39,0,5,187.96,5,5,193.04,Orthodox,38,1,205,0,0,2,4,5,1,12,FALSE,LightHeavyweight,Red
@@ -914,7 +896,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 29,0,2,190.5,3,4,200.66,Orthodox,31,1,205,0,0,6,2,0,0,8,35,1,0,177.8,3,3,185.42,Orthodox,17,0,230,0,0,2,3,2,0,7,FALSE,LightHeavyweight,Blue
 31,0,2,185.42,3,4,190.5,Southpaw,22,1,170,0,0,2,0,5,0,7,34,1,0,187.96,5,8,190.5,Orthodox,43,3,170,0,1,1,4,0,1,7,FALSE,Welterweight,Blue
 33,0,2,177.8,2,0,177.8,Southpaw,6,1,145,0,0,2,0,0,0,2,40,0,3,175.26,3,13,177.8,Orthodox,73,11,155,0,0,1,6,4,1,12,FALSE,Lightweight,Blue
-35,3,0,195.58,2,6,195.58,Southpaw,17,0,250,0,0,0,4,0,0,4,39,0,1,190.5,7,11,195.58,Orthodox,56,5,240,0,1,4,9,2,0,16,FALSE,Heavyweight,Draw
 30,0,1,172.72,1,0,190.5,Southpaw,3,0,135,0,1,0,0,0,0,1,25,0,1,167.64,1,0,175.26,Orthodox,2,0,140,0,0,0,0,1,0,1,FALSE,Bantamweight,Red
 34,0,1,180.34,3,2,185.42,Orthodox,14,0,170,0,0,0,3,1,0,4,31,0,2,187.96,2,0,193.04,Orthodox,5,0,170,0,0,1,1,0,0,2,FALSE,Welterweight,Red
 28,1,0,182.88,0,1,182.88,Orthodox,3,0,145,0,0,0,0,0,0,0,36,0,2,167.64,2,3,172.72,Southpaw,16,1,145,0,0,1,2,0,0,3,FALSE,WomenFeatherweight,Blue
@@ -980,7 +961,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 28,0,1,182.88,1,2,185.42,Orthodox,8,0,185,0,0,1,1,0,0,2,28,0,1,185.42,1,1,187.96,Southpaw,2,0,185,0,0,0,0,1,0,1,FALSE,Middleweight,Red
 28,1,0,172.72,1,1,182.88,Orthodox,6,0,145,0,0,1,0,0,0,1,29,0,2,170.18,2,0,177.8,Southpaw,6,0,145,0,0,1,0,1,0,2,FALSE,Featherweight,Blue
 33,0,2,190.5,6,3,200.66,Orthodox,34,0,260,0,1,1,10,0,0,12,39,0,4,180.34,4,2,182.88,Orthodox,34,7,235,0,1,3,3,3,0,10,TRUE,Heavyweight,Red
-26,1,0,175.26,1,4,180.34,Orthodox,12,0,155,0,0,0,1,0,0,1,28,1,0,175.26,0,1,180.34,Orthodox,1,0,155,0,0,0,0,0,0,0,FALSE,Lightweight,Draw
 36,2,0,170.18,1,2,175.26,Orthodox,10,1,125,0,0,0,1,0,0,1,33,0,1,162.56,1,0,170.18,Orthodox,3,0,135,0,0,1,0,0,0,1,FALSE,WomenFlyweight,Red
 38,0,5,185.42,5,3,182.88,Orthodox,20,0,185,0,0,1,3,4,0,8,34,0,9,187.96,9,3,198.12,Orthodox,32,5,185,0,0,3,4,3,0,10,FALSE,Middleweight,Blue
 35,0,3,187.96,3,7,195.58,Orthodox,32,0,170,0,1,2,3,3,0,9,33,0,1,182.88,1,1,187.96,Orthodox,5,0,170,0,0,0,1,0,0,1,FALSE,Welterweight,Red
@@ -1281,7 +1261,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 24,0,3,177.8,3,1,185.42,Orthodox,9,0,155,0,0,1,2,0,0,3,27,0,1,182.88,1,3,190.5,Switch,15,0,155,0,0,0,3,1,0,4,FALSE,Lightweight,Red
 28,1,0,182.88,2,1,177.8,Southpaw,9,0,145,0,1,1,0,0,0,2,29,0,6,177.8,6,2,185.42,Orthodox,18,0,145,0,1,2,3,1,0,7,FALSE,Featherweight,Red
 24,0,2,167.64,2,0,167.64,Orthodox,6,0,125,0,1,0,0,1,0,2,26,0,1,175.26,4,4,172.72,Orthodox,23,0,135,0,0,2,2,1,0,5,FALSE,Flyweight,Blue
-30,0,1,182.88,2,3,185.42,Orthodox,18,0,185,0,1,2,2,0,0,5,24,0,1,182.88,1,1,187.96,Southpaw,7,0,185,0,0,1,0,1,0,2,FALSE,Middleweight,Draw
 32,0,2,167.64,2,1,177.8,Orthodox,12,0,145,0,1,2,0,0,0,3,35,0,4,172.72,4,3,180.34,Orthodox,27,1,145,0,0,3,3,3,0,9,FALSE,Featherweight,Blue
 34,0,1,187.96,1,4,198.12,Orthodox,18,0,205,0,0,1,1,1,0,3,33,1,0,180.34,2,2,195.58,Switch,11,0,185,0,0,1,2,0,0,3,FALSE,LightHeavyweight,Blue
 26,0,2,177.8,2,1,180.34,Orthodox,10,0,170,0,0,0,4,0,0,4,31,1,0,182.88,5,2,185.42,Orthodox,18,0,170,0,0,3,4,0,0,7,FALSE,Welterweight,Red
@@ -1371,8 +1350,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 25,1,0,175.26,5,2,195.58,Orthodox,23,0,170,0,1,3,1,4,0,9,33,0,3,180.34,9,1,193.04,Orthodox,28,1,155,0,1,3,2,5,1,12,TRUE,Lightweight,Red
 24,1,0,162.56,3,2,160.02,Orthodox,19,0,135,0,0,3,0,2,0,5,31,0,2,160.02,12,2,167.64,Orthodox,59,12,125,0,1,7,2,4,0,14,TRUE,Flyweight,Red
 31,0,3,172.72,3,2,175.26,Orthodox,11,0,125,0,1,1,0,1,0,3,27,2,0,172.72,0,2,177.8,Orthodox,2,0,125,0,0,0,0,0,0,0,FALSE,Flyweight,Red
-35,0,4,177.8,4,6,177.8,Southpaw,43,0,155,0,3,5,1,1,1,11,28,0,1,177.8,5,3,182.88,Southpaw,23,0,155,0,1,3,1,3,0,8,FALSE,Lightweight,Draw
-31,0,4,177.8,4,3,180.34,Orthodox,17,0,155,0,1,1,1,1,0,4,25,1,0,175.26,1,2,180.34,Orthodox,6,0,155,0,0,0,1,0,0,1,FALSE,Lightweight,Draw
 29,0,2,185.42,5,4,187.96,Orthodox,37,0,185,0,2,7,1,0,0,10,36,1,0,185.42,5,6,198.12,Orthodox,48,1,185,0,1,4,2,5,0,12,FALSE,Middleweight,Blue
 29,0,1,165.1,1,0,165.1,Orthodox,3,0,125,0,0,1,0,0,0,1,33,0,2,167.64,2,5,167.64,Orthodox,31,1,125,0,1,1,1,3,0,6,FALSE,Flyweight,Red
 27,1,0,172.72,0,1,175.26,Orthodox,2,0,145,0,0,0,0,0,0,0,26,1,0,170.18,2,3,175.26,Southpaw,12,0,135,0,0,0,2,0,0,2,FALSE,Featherweight,Red
@@ -1421,7 +1398,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 28,0,3,180.34,3,0,182.88,Orthodox,8,0,155,0,2,0,0,1,0,3,26,1,0,172.72,3,1,175.26,Switch,10,0,145,0,0,0,2,1,0,3,FALSE,Featherweight,Red
 25,1,0,177.8,4,1,180.34,Orthodox,14,0,145,0,1,1,1,1,0,4,35,0,4,172.72,4,3,180.34,Orthodox,26,1,145,0,0,3,2,3,0,8,FALSE,Featherweight,Red
 39,0,5,185.42,7,6,182.88,Southpaw,65,1,170,0,1,8,1,9,0,19,35,0,1,175.26,3,3,187.96,Orthodox,25,3,170,1,1,0,5,0,0,7,TRUE,Welterweight,Red
-30,0,3,193.04,13,1,213.36,Orthodox,52,10,205,0,0,7,4,5,0,16,38,0,4,180.34,4,1,182.88,Orthodox,28,4,235,0,1,3,1,3,0,8,TRUE,LightHeavyweight,Draw
 27,0,1,157.48,1,0,160.02,Orthodox,2,0,115,0,0,0,0,1,0,1,26,2,0,162.56,1,4,165.1,Orthodox,12,0,115,0,0,0,0,1,0,1,FALSE,WomenStrawweight,Blue
 30,0,7,167.64,7,3,177.8,Orthodox,37,6,145,0,0,4,2,3,0,9,27,0,4,170.18,4,2,180.34,Orthodox,20,0,135,0,0,2,1,2,0,5,FALSE,CatchWeight,Red
 28,2,0,172.72,2,5,177.8,Southpaw,16,0,155,0,0,1,1,1,0,3,37,0,2,177.8,2,11,182.88,Orthodox,43,0,170,0,1,3,1,1,0,6,FALSE,Lightweight,Blue
@@ -1510,7 +1486,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 25,1,0,154.94,3,3,157.48,Orthodox,21,0,115,0,1,3,1,2,0,7,29,0,7,167.64,7,0,165.1,Orthodox,26,5,115,0,1,4,2,0,0,7,TRUE,WomenStrawweight,Red
 24,1,0,177.8,3,1,180.34,Orthodox,11,0,145,0,1,1,0,1,0,3,32,1,0,180.34,4,2,182.88,Orthodox,17,0,145,0,0,1,1,4,0,6,FALSE,Featherweight,Blue
 35,1,0,185.42,2,2,198.12,Orthodox,11,0,185,0,0,2,0,0,0,2,27,0,1,185.42,5,1,195.58,Southpaw,18,0,185,0,1,4,1,0,0,6,FALSE,Middleweight,Blue
-28,0,4,175.26,4,4,182.88,Southpaw,34,0,155,1,0,4,5,3,0,13,33,1,0,175.26,3,2,175.26,Orthodox,12,2,155,0,2,0,1,0,0,3,FALSE,Lightweight,Draw
 33,0,9,193.04,9,3,195.58,Orthodox,41,4,238,0,0,4,8,0,0,12,34,0,3,193.04,4,2,203.2,Orthodox,28,2,240,0,0,3,7,0,0,10,TRUE,Heavyweight,Red
 32,0,3,180.34,3,0,180.34,Orthodox,7,0,155,0,1,0,2,0,0,3,30,0,5,190.5,5,1,193.04,Orthodox,15,0,155,0,0,3,0,3,0,6,FALSE,Lightweight,Red
 30,2,0,170.18,2,3,170.18,Orthodox,11,0,125,0,0,0,1,1,0,2,35,1,0,160.02,0,1,160.02,Orthodox,3,0,115,0,0,0,0,0,0,0,FALSE,WomenStrawweight,Blue
@@ -1560,11 +1535,9 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 28,0,3,177.8,3,0,182.88,Southpaw,5,0,145,0,0,1,1,1,0,3,23,0,2,172.72,2,0,177.8,Southpaw,6,0,145,0,0,1,0,1,0,2,FALSE,Featherweight,Red
 32,0,1,190.5,1,2,195.58,Southpaw,10,0,265,0,0,1,1,0,0,2,34,0,1,182.88,3,3,187.96,Southpaw,18,0,247,2,0,0,2,0,0,4,FALSE,Heavyweight,Blue
 28,1,0,190.5,1,3,190.5,Southpaw,11,0,185,0,0,0,2,0,0,2,27,1,0,185.42,1,3,193.04,Orthodox,12,1,170,0,0,0,0,2,0,2,FALSE,Middleweight,Red
-25,0,5,175.26,5,2,180.34,Southpaw,27,1,185,0,2,2,2,2,0,8,39,0,3,182.88,3,9,187.96,Southpaw,34,5,185,0,0,0,11,2,1,14,FALSE,Middleweight,Draw
 33,0,2,187.96,4,5,190.5,Orthodox,29,0,170,0,1,2,4,1,0,8,29,1,0,180.34,3,3,193.04,Orthodox,18,0,170,0,0,2,2,1,0,5,FALSE,Welterweight,Red
 23,1,0,162.56,3,2,160.02,Orthodox,16,0,135,0,0,2,0,2,0,4,31,1,0,165.1,3,3,170.18,Orthodox,19,0,125,0,0,4,0,1,0,5,FALSE,Flyweight,Blue
 27,0,1,177.8,5,2,182.88,Southpaw,21,0,155,0,1,3,1,3,0,8,31,0,4,180.34,4,4,190.5,Orthodox,38,0,145,1,1,5,5,0,0,12,FALSE,Lightweight,Red
-39,0,2,167.64,2,2,172.72,Orthodox,13,0,135,0,0,1,1,1,0,3,33,0,3,165.1,3,2,162.56,Orthodox,15,1,135,0,2,1,1,0,0,4,FALSE,WomenBantamweight,Draw
 31,1,0,190.5,2,4,193.04,Orthodox,22,0,230,0,1,0,4,0,0,5,35,1,0,185.42,2,8,193.04,Orthodox,41,3,205,0,1,1,6,0,0,8,FALSE,LightHeavyweight,Red
 24,1,0,175.26,4,2,195.58,Orthodox,20,0,170,0,1,3,1,2,0,7,38,0,1,175.26,7,3,177.8,Southpaw,34,0,155,0,1,5,2,2,1,11,FALSE,Lightweight,Blue
 29,3,0,167.64,2,3,165.1,Orthodox,13,1,135,0,0,0,0,2,0,2,32,0,1,167.64,4,3,170.18,Orthodox,28,0,135,0,1,4,0,3,0,8,FALSE,Bantamweight,Blue
@@ -1600,9 +1573,7 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 30,0,1,172.72,1,0,172.72,Orthodox,3,0,155,0,0,1,0,0,0,1,31,1,0,180.34,4,2,182.88,Orthodox,15,0,145,0,0,1,1,3,0,5,FALSE,Featherweight,Red
 32,0,1,162.56,1,1,165.1,Orthodox,6,0,115,0,0,0,0,2,0,2,23,0,1,165.1,1,0,167.64,Orthodox,3,0,125,0,0,1,0,0,0,1,FALSE,WomenStrawweight,Blue
 29,0,3,170.18,3,1,182.88,Orthodox,11,1,145,0,0,0,1,2,0,3,30,1,0,167.64,7,3,167.64,Orthodox,29,1,155,0,2,4,1,2,0,9,FALSE,Featherweight,Blue
-25,1,0,193.04,1,1,203.2,Orthodox,4,0,265,0,0,0,1,0,0,1,29,0,1,190.5,1,0,193.04,Orthodox,2,0,205,0,0,0,1,0,0,1,FALSE,Heavyweight,Draw
 27,1,0,167.64,2,2,162.56,Orthodox,9,0,125,0,0,1,0,1,0,2,27,0,3,154.94,3,1,152.4,Orthodox,12,0,115,0,0,3,0,0,0,3,FALSE,WomenStrawweight,Red
-27,0,1,182.88,1,0,193.04,Orthodox,1,0,170,0,0,0,0,1,0,1,26,0,2,180.34,2,0,182.88,Orthodox,6,0,170,0,1,1,0,0,0,2,FALSE,Welterweight,Draw
 26,2,0,185.42,0,2,193.04,Southpaw,4,1,205,0,0,0,0,0,0,0,32,1,0,185.42,0,1,190.5,Orthodox,1,0,205,0,0,0,0,0,0,0,FALSE,LightHeavyweight,Blue
 30,1,0,187.96,3,3,190.5,Southpaw,16,0,205,0,0,1,4,1,0,6,37,0,4,182.88,4,9,187.96,Orthodox,45,1,185,0,0,4,6,3,0,13,FALSE,Middleweight,Blue
 32,0,2,180.34,3,4,187.96,Orthodox,33,0,170,0,0,5,2,1,0,8,33,0,4,185.42,8,4,185.42,Orthodox,48,1,170,0,0,6,8,5,0,19,FALSE,Welterweight,Blue
@@ -1630,7 +1601,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 29,0,6,170.18,6,1,167.64,Orthodox,10,7,135,0,0,0,3,3,0,6,28,0,2,172.72,4,1,175.26,Orthodox,11,1,145,0,0,1,3,2,0,6,TRUE,WomenBantamweight,Red
 25,0,5,172.72,5,0,165.1,Orthodox,9,0,135,0,0,1,4,0,0,5,31,0,5,172.72,5,0,172.72,Orthodox,21,4,135,0,1,3,1,0,0,5,TRUE,Bantamweight,Blue
 23,0,1,182.88,1,0,187.96,Southpaw,1,0,185,0,0,0,0,1,0,1,26,0,1,187.96,1,3,200.66,Orthodox,16,1,185,0,0,1,0,2,0,3,FALSE,Middleweight,Red
-32,0,2,187.96,4,4,190.5,Orthodox,28,0,170,0,1,2,4,1,0,8,28,1,0,180.34,3,2,193.04,Orthodox,17,0,170,0,0,2,2,1,0,5,FALSE,Welterweight,Draw
 28,0,3,180.34,3,1,182.88,Orthodox,14,0,170,0,0,1,2,2,0,5,27,0,1,182.88,2,1,182.88,Southpaw,11,0,170,0,0,1,1,1,0,3,FALSE,Welterweight,Blue
 38,1,0,167.64,2,7,172.72,Orthodox,27,0,135,0,2,1,1,1,0,5,37,0,1,167.64,4,6,170.18,Orthodox,47,4,135,0,0,3,0,6,0,9,FALSE,Bantamweight,Red
 30,0,1,160.02,1,0,157.48,Orthodox,3,0,115,0,0,0,0,1,0,1,22,0,3,162.56,3,1,165.1,Orthodox,16,0,115,0,0,1,2,1,0,4,FALSE,WomenStrawweight,Blue
@@ -1692,7 +1662,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 32,2,0,190.5,2,3,187.96,Southpaw,13,0,155,0,0,1,1,0,0,2,32,0,2,182.88,2,2,190.5,Southpaw,13,0,185,0,0,2,1,1,0,4,FALSE,Welterweight,Red
 31,0,3,162.56,3,2,165.1,Orthodox,20,1,125,0,0,3,1,0,0,4,26,0,4,165.1,4,1,167.64,Orthodox,20,1,125,0,0,4,2,0,0,6,FALSE,Flyweight,Red
 35,0,1,182.88,4,9,187.96,Orthodox,43,0,185,0,2,3,5,0,0,10,33,2,0,182.88,4,6,195.58,Orthodox,42,0,185,0,2,5,1,1,0,9,FALSE,Middleweight,Blue
-33,0,1,182.88,7,1,190.5,Orthodox,20,0,170,0,0,3,5,0,0,8,34,0,1,175.26,3,2,187.96,Orthodox,15,1,170,0,1,0,5,0,0,6,TRUE,Welterweight,Draw
 30,1,0,175.26,3,11,180.34,Orthodox,62,0,145,0,1,5,5,0,1,12,35,0,3,167.64,5,6,172.72,Orthodox,74,8,135,0,0,8,4,2,0,14,FALSE,Featherweight,Red
 28,0,7,175.26,7,1,187.96,Southpaw,18,2,155,1,0,1,6,0,0,8,32,1,0,175.26,3,1,175.26,Orthodox,10,1,155,0,2,0,1,0,0,3,TRUE,Lightweight,Blue
 30,1,0,177.8,4,6,185.42,Southpaw,37,1,155,0,0,5,4,0,0,9,28,0,7,177.8,7,0,177.8,Orthodox,18,0,155,0,0,4,2,1,0,7,FALSE,Lightweight,Red
@@ -1791,7 +1760,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 36,1,0,185.42,0,1,190.5,Orthodox,1,0,241,0,0,0,0,0,0,0,36,1,0,195.58,1,3,193.04,Orthodox,10,0,260,0,0,1,1,0,0,2,FALSE,Heavyweight,Red
 31,0,2,180.34,3,4,187.96,Orthodox,29,0,170,0,0,4,1,1,0,6,31,0,3,172.72,3,9,175.26,Orthodox,51,1,155,0,2,4,4,0,1,11,FALSE,Welterweight,Blue
 34,0,1,175.26,2,2,187.96,Orthodox,14,0,170,0,1,0,4,0,0,5,34,0,3,180.34,5,4,187.96,Southpaw,48,4,170,0,3,3,6,0,0,12,TRUE,Welterweight,Blue
-27,0,1,182.88,1,0,193.04,Southpaw,3,0,170,0,0,1,0,0,0,1,25,0,2,177.8,2,0,180.34,Orthodox,5,0,170,0,0,1,0,1,0,2,FALSE,Welterweight,Draw
 32,2,0,170.18,2,5,175.26,Orthodox,19,1,135,0,1,0,2,0,0,3,35,0,3,167.64,3,1,167.64,Orthodox,12,0,135,0,1,2,0,0,0,3,FALSE,Bantamweight,Blue
 25,2,0,162.56,1,2,165.1,Orthodox,8,0,115,0,0,0,0,1,0,1,31,0,1,162.56,1,1,165.1,Orthodox,5,0,115,0,0,0,0,1,0,1,FALSE,WomenStrawweight,Red
 28,0,1,165.1,1,1,167.64,Southpaw,6,0,125,0,1,0,0,0,0,1,34,0,3,172.72,3,1,175.26,Southpaw,13,2,135,0,1,1,1,0,0,3,FALSE,WomenBantamweight,Blue
@@ -1811,7 +1779,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 41,0,16,187.96,16,4,195.58,Southpaw,49,13,185,0,0,2,11,3,0,16,37,0,4,180.34,4,1,182.88,Orthodox,23,3,235,0,1,2,1,2,0,6,FALSE,LightHeavyweight,Red
 26,0,3,167.64,3,0,175.26,Orthodox,5,1,135,0,0,1,2,0,0,3,34,0,2,167.64,2,1,172.72,Southpaw,7,1,145,0,0,0,2,0,0,2,FALSE,WomenBantamweight,Blue
 24,0,5,175.26,5,2,180.34,Southpaw,21,1,185,0,2,1,1,2,0,6,32,0,4,175.26,6,4,175.26,Southpaw,43,3,185,1,2,4,5,0,0,12,FALSE,Welterweight,Blue
-42,1,0,177.8,4,5,182.88,Orthodox,29,1,265,0,0,1,6,0,0,7,38,1,0,190.5,4,3,205.74,Orthodox,12,4,265,0,0,1,2,1,0,4,FALSE,Heavyweight,Draw
 32,1,0,187.96,4,2,193.04,Orthodox,11,0,205,0,0,1,4,0,0,5,30,0,1,187.96,2,3,193.04,Orthodox,21,0,185,0,0,3,1,1,0,5,FALSE,Middleweight,Red
 32,0,3,177.8,3,8,180.34,Orthodox,39,0,155,0,0,1,3,7,1,12,34,0,6,177.8,6,8,182.88,Southpaw,64,2,170,0,3,7,5,0,0,15,FALSE,Lightweight,Blue
 33,0,1,198.12,3,4,200.66,Orthodox,23,0,255,0,0,1,7,1,0,9,33,0,7,185.42,7,2,195.58,Orthodox,27,6,240,0,0,2,9,0,0,11,FALSE,Heavyweight,Red
@@ -1852,7 +1819,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 34,0,1,170.18,4,10,177.8,Orthodox,59,0,155,0,3,4,1,4,0,12,25,1,0,172.72,2,1,175.26,Switch,7,0,145,0,0,0,1,1,0,2,FALSE,Featherweight,Red
 27,2,0,177.8,2,7,185.42,Southpaw,33,0,145,0,2,2,0,2,0,6,32,0,2,185.42,2,8,185.42,Orthodox,39,0,145,0,0,2,1,7,0,10,FALSE,Featherweight,Blue
 38,1,0,175.26,2,4,180.34,Southpaw,17,0,185,0,0,1,2,0,0,3,45,0,2,180.34,4,8,187.96,Orthodox,40,3,185,0,2,3,3,0,0,8,FALSE,Middleweight,Red
-29,1,0,182.88,0,1,182.88,Orthodox,3,0,185,0,0,0,0,0,0,0,34,2,0,180.34,1,4,195.58,Southpaw,10,0,185,0,0,1,0,0,0,1,FALSE,Middleweight,Draw
 27,1,0,180.34,0,1,177.8,Orthodox,3,0,155,0,0,0,0,0,0,0,31,0,1,180.34,1,0,180.34,Orthodox,1,0,155,0,0,0,1,0,0,1,FALSE,Lightweight,Red
 24,0,3,190.5,3,0,185.42,Southpaw,5,0,185,0,0,1,2,0,0,3,25,0,2,185.42,2,1,193.04,Orthodox,13,0,185,0,1,1,1,1,0,4,FALSE,Welterweight,Red
 24,0,3,172.72,3,0,165.1,Orthodox,7,0,135,0,0,1,2,0,0,3,24,0,4,170.18,4,0,177.8,Southpaw,7,0,145,0,0,1,3,0,0,4,FALSE,Bantamweight,Blue
@@ -1971,7 +1937,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 31,0,1,162.56,2,2,165.1,Southpaw,13,0,125,0,0,2,0,1,0,3,27,0,1,165.1,2,2,165.1,Orthodox,18,0,125,0,2,0,2,0,0,4,FALSE,Flyweight,Blue
 31,2,0,190.5,1,2,187.96,Southpaw,9,0,155,0,0,1,0,0,0,1,34,0,2,182.88,2,1,185.42,Orthodox,11,0,170,0,0,2,1,0,0,3,FALSE,Welterweight,Blue
 29,0,1,177.8,1,1,177.8,Orthodox,4,0,145,0,1,0,0,0,0,1,27,2,0,177.8,2,7,185.42,Southpaw,30,0,145,0,2,1,0,2,0,5,FALSE,Featherweight,Red
-27,0,1,172.72,1,1,172.72,Orthodox,6,0,145,0,1,0,0,0,0,1,27,2,0,180.34,0,2,180.34,Switch,3,0,145,0,0,0,0,0,0,0,FALSE,Featherweight,Draw
 37,0,1,175.26,4,3,177.8,Southpaw,25,0,155,0,1,3,2,2,0,8,31,0,3,172.72,3,7,175.26,Orthodox,42,1,155,0,1,4,4,0,1,10,FALSE,Lightweight,Blue
 35,2,0,185.42,3,8,195.58,Orthodox,37,1,205,0,1,2,2,4,0,9,34,0,1,182.88,4,8,187.96,Orthodox,39,0,185,0,2,3,4,0,0,9,FALSE,LightHeavyweight,Blue
 32,1,0,175.26,1,1,175.26,Orthodox,6,0,155,0,1,0,0,0,0,1,28,1,0,177.8,5,2,182.88,Orthodox,16,3,155,0,1,0,2,2,0,5,FALSE,Lightweight,Blue
@@ -1997,7 +1962,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 30,0,5,182.88,5,8,193.04,Southpaw,47,2,170,0,1,1,2,8,0,12,29,1,0,177.8,4,5,185.42,Southpaw,33,1,155,0,0,5,3,0,0,8,FALSE,Lightweight,Blue
 29,0,1,193.04,1,3,193.04,Switch,12,0,185,0,0,1,1,1,0,3,27,0,3,190.5,3,0,200.66,Orthodox,5,0,185,0,0,0,2,1,0,3,FALSE,Middleweight,Blue
 24,1,0,187.96,2,1,187.96,Southpaw,7,0,170,0,0,1,1,0,0,2,28,0,1,182.88,1,0,193.04,Switch,2,1,170,0,0,0,0,1,0,1,FALSE,Welterweight,Red
-29,0,1,175.26,1,1,180.34,Orthodox,5,0,145,0,1,0,0,0,0,1,31,0,2,185.42,2,7,185.42,Orthodox,37,0,145,0,0,2,1,7,0,10,FALSE,Featherweight,Draw
 36,0,1,175.26,3,6,180.34,Orthodox,34,0,155,0,1,4,2,0,0,7,31,0,1,172.72,4,6,172.72,Orthodox,41,0,145,0,1,6,1,1,0,9,FALSE,Lightweight,Red
 27,0,6,175.26,6,0,187.96,Southpaw,10,1,155,0,0,1,5,0,0,6,29,0,7,170.18,7,0,177.8,Orthodox,30,7,135,0,0,5,2,0,0,7,TRUE,Featherweight,Blue
 27,0,4,180.34,4,1,182.88,Switch,13,0,170,0,0,1,0,4,0,5,38,0,5,185.42,5,6,182.88,Southpaw,55,1,170,0,0,7,1,7,0,15,FALSE,Welterweight,Red
@@ -2021,7 +1985,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 31,1,0,187.96,2,2,193.04,Orthodox,7,0,205,0,0,0,3,0,0,3,27,0,3,185.42,3,0,190.5,Orthodox,7,1,185,0,0,1,2,0,0,3,FALSE,Middleweight,Blue
 21,0,3,162.56,3,0,165.1,Orthodox,9,0,115,0,0,1,1,1,0,3,23,1,0,165.1,1,1,165.1,Orthodox,4,1,115,0,0,0,0,1,0,1,FALSE,WomenStrawweight,Red
 32,0,4,170.18,4,6,182.88,Orthodox,35,0,170,0,4,1,2,0,0,7,31,0,2,187.96,4,4,190.5,Orthodox,24,0,170,0,1,2,2,1,0,6,FALSE,Welterweight,Red
-34,2,0,180.34,1,2,195.58,Southpaw,6,0,185,0,0,1,0,0,0,1,25,0,1,187.96,1,1,200.66,Orthodox,9,1,185,0,0,1,0,1,0,2,FALSE,Middleweight,Draw
 37,1,0,170.18,2,1,180.34,Orthodox,7,0,135,0,0,1,1,0,0,2,26,0,3,170.18,3,0,180.34,Orthodox,9,0,135,0,0,1,1,1,0,3,FALSE,Bantamweight,Red
 31,3,0,175.26,1,3,182.88,Orthodox,10,1,145,0,1,0,0,0,0,1,24,0,2,172.72,2,0,172.72,Orthodox,4,0,145,0,0,1,1,0,0,2,FALSE,Featherweight,Red
 27,1,0,190.5,1,1,198.12,Orthodox,4,0,230,0,1,0,0,0,0,1,30,1,0,177.8,1,3,185.42,Southpaw,11,0,185,0,0,0,1,0,0,1,FALSE,Middleweight,Red
@@ -2064,7 +2027,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 33,1,0,180.34,1,2,180.34,Orthodox,9,0,170,0,0,1,0,0,0,1,31,0,1,180.34,1,1,190.5,Orthodox,4,0,170,0,0,0,1,0,0,1,FALSE,Welterweight,Red
 26,0,1,162.56,1,0,172.72,Orthodox,1,0,135,0,0,0,1,0,0,1,29,1,0,167.64,1,2,165.1,Orthodox,5,0,135,0,0,0,1,0,0,1,FALSE,Bantamweight,Blue
 37,0,1,180.34,1,1,185.42,Orthodox,8,0,155,0,0,0,0,2,0,2,28,0,3,180.34,3,3,177.8,Southpaw,20,1,155,0,0,3,1,0,0,4,FALSE,Lightweight,Red
-22,0,1,182.88,1,0,187.96,Southpaw,2,0,185,0,0,0,1,0,0,1,30,0,1,180.34,1,0,187.96,Orthodox,3,0,170,0,1,0,0,0,0,1,FALSE,Welterweight,Draw
 28,2,0,167.64,1,2,170.18,Orthodox,4,0,125,0,0,0,0,1,0,1,36,1,0,162.56,2,2,162.56,Orthodox,12,0,125,0,0,2,0,0,0,2,FALSE,Flyweight,Red
 28,1,0,180.34,1,1,185.42,Orthodox,6,0,155,0,0,1,0,0,0,1,25,0,2,177.8,2,0,177.8,Southpaw,3,0,155,0,0,0,2,0,0,2,FALSE,Lightweight,Red
 32,1,0,175.26,2,1,175.26,Southpaw,6,0,145,0,0,1,1,0,0,2,31,0,1,177.8,5,4,180.34,Orthodox,28,0,145,0,1,5,2,0,0,8,FALSE,Featherweight,Red
@@ -2207,7 +2169,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 25,0,2,177.8,3,5,187.96,Orthodox,23,0,155,0,0,1,0,6,0,7,30,0,1,172.72,4,5,172.72,Orthodox,38,0,145,0,1,6,1,1,0,9,FALSE,Featherweight,Blue
 30,0,1,162.56,2,1,165.1,Southpaw,10,0,125,0,0,2,0,1,0,3,30,1,0,165.1,2,2,170.18,Orthodox,10,0,125,0,0,2,0,1,0,3,FALSE,Flyweight,Red
 33,0,1,185.42,1,3,185.42,Orthodox,12,0,205,0,0,1,2,0,0,3,35,0,1,185.42,1,1,190.5,Orthodox,6,0,205,0,0,1,0,0,0,1,FALSE,LightHeavyweight,Red
-26,1,0,180.34,0,1,180.34,Switch,2,0,145,0,0,0,0,0,0,0,31,0,3,170.18,3,2,185.42,Orthodox,11,1,145,0,0,1,2,1,0,4,FALSE,Featherweight,Draw
 31,1,0,175.26,7,6,177.8,Orthodox,45,1,170,0,0,4,7,1,1,13,31,1,0,187.96,5,4,190.5,Orthodox,30,2,170,0,1,1,4,0,0,6,FALSE,Welterweight,Red
 24,0,2,172.72,2,0,177.8,Orthodox,6,0,145,1,0,1,0,0,0,2,26,1,0,182.88,3,2,182.88,Southpaw,11,0,145,0,0,0,2,1,0,3,FALSE,Featherweight,Blue
 36,0,4,180.34,4,1,182.88,Orthodox,15,1,235,0,0,2,1,1,0,4,31,0,1,187.96,3,4,198.12,Orthodox,24,0,205,0,0,2,8,0,0,10,TRUE,LightHeavyweight,Blue
@@ -2274,7 +2235,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 25,2,0,182.88,1,2,185.42,Orthodox,6,0,170,0,0,0,0,1,0,1,35,0,1,182.88,1,1,190.5,Orthodox,8,1,155,0,0,1,0,1,0,2,FALSE,Lightweight,Red
 33,0,1,172.72,1,1,167.64,Orthodox,6,0,145,0,0,1,0,1,0,2,30,0,2,182.88,2,0,187.96,Orthodox,5,0,145,0,1,0,1,0,0,2,FALSE,Featherweight,Red
 37,0,2,177.8,5,9,185.42,Orthodox,51,1,170,0,1,5,6,3,0,15,30,0,1,182.88,1,4,187.96,Orthodox,14,0,170,0,0,0,2,3,0,5,FALSE,Welterweight,Red
-26,2,0,172.72,1,2,177.8,Southpaw,7,0,155,0,0,0,0,1,0,1,29,2,0,175.26,1,2,182.88,Orthodox,7,0,155,0,0,0,0,1,0,1,FALSE,Lightweight,Draw
 24,0,1,180.34,1,1,187.96,Orthodox,8,0,145,0,0,1,1,0,0,2,27,1,0,170.18,2,3,185.42,Orthodox,10,1,145,0,1,0,1,1,0,3,FALSE,Featherweight,Red
 34,0,1,182.88,7,6,190.5,Orthodox,42,0,170,0,0,2,9,1,0,12,31,0,4,175.26,6,3,175.26,Southpaw,39,3,185,1,2,3,5,0,0,11,FALSE,Welterweight,Red
 28,0,1,162.56,1,0,162.56,Orthodox,3,0,135,0,0,1,0,0,0,1,33,0,1,160.02,3,4,162.56,Southpaw,31,1,125,0,2,4,1,0,0,7,FALSE,Flyweight,Blue
@@ -2317,7 +2277,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 24,1,0,160.02,4,2,170.18,Orthodox,16,0,135,0,0,1,4,0,0,5,30,3,0,165.1,2,3,162.56,Orthodox,15,0,125,0,0,2,0,0,0,2,FALSE,Flyweight,Blue
 32,1,0,185.42,1,3,185.42,Orthodox,14,0,185,0,0,1,1,0,0,2,32,2,0,182.88,3,5,195.58,Orthodox,30,0,185,0,1,4,0,1,0,6,FALSE,Middleweight,Red
 31,0,2,185.42,2,1,195.58,Southpaw,10,0,185,0,0,2,0,1,0,3,34,2,0,185.42,3,7,195.58,Orthodox,36,1,205,0,1,2,2,4,0,9,FALSE,Middleweight,Blue
-31,0,2,185.42,3,6,193.04,Southpaw,37,2,185,0,0,1,4,2,0,7,39,0,16,187.96,16,2,195.58,Southpaw,39,13,185,0,0,2,11,3,0,16,FALSE,Middleweight,Draw
 23,2,0,190.5,0,2,198.12,Orthodox,6,0,185,0,0,0,0,0,0,0,31,1,0,187.96,1,2,193.04,Orthodox,5,0,205,0,0,0,1,0,0,1,FALSE,Middleweight,Red
 33,0,1,180.34,1,2,180.34,Orthodox,6,0,205,0,0,0,1,0,0,1,22,1,0,190.5,1,2,195.58,Orthodox,6,0,205,0,0,0,2,0,0,2,FALSE,LightHeavyweight,Red
 29,0,1,187.96,1,2,193.04,Orthodox,12,0,185,0,0,1,0,1,0,2,44,0,2,180.34,4,6,187.96,Orthodox,37,3,185,0,2,3,2,0,0,7,FALSE,Middleweight,Blue
@@ -2338,7 +2297,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 26,0,6,177.8,6,0,185.42,Orthodox,13,0,145,0,1,2,2,1,0,6,31,0,4,185.42,5,3,185.42,Orthodox,30,0,170,0,0,4,4,4,0,12,FALSE,Lightweight,Red
 30,1,0,160.02,1,3,160.02,Orthodox,9,0,125,0,0,0,0,1,0,1,24,0,3,165.1,3,0,167.64,Orthodox,6,0,125,0,0,1,2,0,0,3,FALSE,Flyweight,Red
 30,0,1,180.34,1,0,177.8,Orthodox,3,0,155,0,1,0,0,0,0,1,35,0,1,175.26,3,4,180.34,Orthodox,29,0,155,0,1,4,2,0,0,7,FALSE,Lightweight,Blue
-34,0,2,177.8,2,5,182.88,Orthodox,24,0,170,0,1,2,1,1,0,5,36,1,0,175.26,2,2,180.34,Southpaw,11,0,185,0,0,1,2,0,0,3,FALSE,Welterweight,Draw
 34,0,1,170.18,2,3,180.34,Orthodox,16,0,155,0,1,1,0,1,0,3,33,0,4,177.8,4,6,177.8,Southpaw,31,0,155,0,3,1,1,1,1,7,FALSE,Lightweight,Red
 31,1,0,187.96,3,5,193.04,Orthodox,27,1,185,0,1,4,2,2,0,9,36,0,8,185.42,8,5,187.96,Southpaw,49,5,185,0,1,6,5,1,0,13,FALSE,Middleweight,Red
 25,2,0,185.42,0,2,187.96,Orthodox,6,0,170,0,0,0,0,0,0,0,30,0,1,182.88,1,4,187.96,Orthodox,13,0,170,0,0,0,2,2,0,4,FALSE,Welterweight,Red
@@ -2357,7 +2315,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 26,2,0,172.72,0,2,177.8,Southpaw,6,0,155,0,0,0,0,0,0,0,30,1,0,172.72,2,5,180.34,Orthodox,17,0,155,0,1,0,1,1,0,3,FALSE,Lightweight,Blue
 31,0,3,187.96,3,3,195.58,Orthodox,16,0,170,0,0,1,2,2,0,5,32,0,1,182.88,1,4,177.8,Southpaw,12,0,185,0,0,1,1,1,1,4,FALSE,Welterweight,Blue
 25,0,2,177.8,2,5,187.96,Orthodox,20,0,155,0,0,0,0,6,0,6,28,1,0,175.26,3,9,180.34,Orthodox,50,0,145,0,1,4,4,0,1,10,FALSE,Featherweight,Blue
-29,0,2,172.72,2,3,182.88,Switch,22,0,155,0,1,2,3,0,0,6,32,1,0,177.8,2,1,177.8,Orthodox,7,0,155,0,0,1,1,0,0,2,FALSE,Lightweight,Draw
 27,3,0,177.8,1,3,190.5,Orthodox,5,0,155,0,0,0,0,1,0,1,29,0,1,177.8,2,1,182.88,Orthodox,9,0,155,0,0,1,2,0,0,3,FALSE,Lightweight,Blue
 32,0,3,180.34,3,4,187.96,Southpaw,33,1,170,0,1,3,5,0,0,9,31,0,4,175.26,6,2,175.26,Southpaw,34,2,185,1,2,3,5,0,0,11,TRUE,Welterweight,Blue
 26,0,1,190.5,1,0,200.66,Orthodox,2,0,185,0,0,0,1,0,0,1,31,0,1,182.88,1,0,193.04,Orthodox,1,1,185,0,0,0,1,0,0,1,FALSE,Middleweight,Blue
@@ -2406,7 +2363,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 34,1,0,185.42,1,4,190.5,Orthodox,20,0,155,0,0,2,1,0,0,3,29,0,2,172.72,2,3,182.88,Switch,19,0,155,0,1,1,3,0,0,5,FALSE,Lightweight,Red
 30,0,2,172.72,2,1,172.72,Orthodox,13,0,135,0,0,0,0,4,0,4,32,1,0,165.1,6,1,167.64,Orthodox,17,0,135,0,1,3,1,1,0,6,FALSE,Bantamweight,Red
 26,0,1,182.88,1,0,180.34,Orthodox,3,0,170,0,1,0,0,0,0,1,33,0,1,185.42,1,0,187.96,Orthodox,3,0,170,0,0,1,0,0,0,1,FALSE,Welterweight,Red
-35,1,0,172.72,0,1,182.88,Orthodox,1,0,135,0,0,0,0,0,0,0,28,1,0,167.64,1,1,165.1,Orthodox,4,0,135,0,0,0,1,0,0,1,FALSE,Bantamweight,Draw
 30,1,0,190.5,0,1,187.96,Southpaw,3,0,155,0,0,0,0,0,0,0,28,0,2,182.88,2,1,190.5,Orthodox,7,0,170,0,0,1,0,1,0,2,FALSE,Welterweight,Red
 22,1,0,180.34,3,3,175.26,Orthodox,23,0,145,0,1,1,3,1,0,6,32,0,3,172.72,3,1,172.72,Orthodox,9,0,145,0,1,1,0,0,0,3,FALSE,Featherweight,Blue
 30,1,0,175.26,6,6,180.34,Southpaw,41,0,170,0,2,4,2,2,0,10,26,0,4,180.34,4,0,182.88,Switch,7,0,170,0,0,1,0,3,0,4,FALSE,Welterweight,Blue
@@ -2581,10 +2537,8 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 37,0,2,182.88,3,5,185.42,Orthodox,23,1,263,0,0,0,6,0,0,6,37,0,2,190.5,2,4,195.58,Orthodox,18,2,240,0,0,2,1,2,0,5,FALSE,Heavyweight,Blue
 35,0,1,170.18,1,0,175.26,Orthodox,2,0,145,0,0,0,0,1,0,1,32,0,1,170.18,4,8,177.8,Orthodox,50,0,155,0,3,2,1,4,0,10,FALSE,Featherweight,Red
 31,0,1,182.88,1,0,187.96,Southpaw,3,0,247,0,0,0,1,0,0,1,27,0,1,187.96,1,0,190.5,Orthodox,3,0,265,0,0,1,0,0,0,1,FALSE,Heavyweight,Red
-31,0,2,177.8,2,1,180.34,Orthodox,8,0,135,0,0,0,2,0,0,2,29,0,1,167.64,3,2,170.18,Orthodox,16,0,135,0,0,3,0,1,0,4,FALSE,Bantamweight,Draw
 30,1,0,187.96,3,5,193.04,Orthodox,23,1,185,0,1,3,1,2,0,7,29,0,3,185.42,3,0,198.12,Southpaw,7,1,185,0,1,1,0,1,0,3,FALSE,Middleweight,Blue
 28,1,0,190.5,1,1,193.04,Orthodox,5,0,230,0,0,0,1,0,0,1,34,0,1,185.42,2,3,190.5,Orthodox,17,0,205,0,1,1,1,0,0,3,FALSE,LightHeavyweight,Red
-27,0,3,180.34,3,0,177.8,Southpaw,9,1,155,0,0,3,0,0,0,3,34,0,1,182.88,1,0,190.5,Orthodox,2,1,155,0,0,0,0,1,0,1,FALSE,Lightweight,Draw
 30,1,0,187.96,0,1,193.04,Orthodox,1,0,205,0,0,0,0,0,0,0,25,0,3,185.42,3,1,190.5,Orthodox,12,0,185,0,1,2,0,0,0,3,FALSE,Middleweight,Blue
 27,0,3,180.34,3,2,177.8,Orthodox,17,0,145,0,0,3,1,1,0,5,30,0,3,170.18,3,1,185.42,Orthodox,7,1,145,0,0,1,1,1,0,3,FALSE,Featherweight,Red
 31,0,2,165.1,2,4,167.64,Orthodox,17,0,135,0,0,1,1,1,0,3,28,1,0,165.1,1,2,170.18,Orthodox,6,0,125,0,0,1,0,0,0,1,FALSE,Flyweight,Red
@@ -2605,7 +2559,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 30,1,0,177.8,0,1,185.42,Orthodox,3,0,230,0,0,0,0,0,0,0,40,0,1,198.12,2,3,205.74,Southpaw,13,0,205,1,0,1,1,1,0,4,FALSE,LightHeavyweight,Blue
 34,0,3,185.42,3,0,200.66,Orthodox,5,0,205,0,0,0,1,0,2,3,27,0,1,195.58,6,2,200.66,Orthodox,19,1,205,0,0,2,3,2,0,7,FALSE,LightHeavyweight,Red
 30,0,1,175.26,5,9,180.34,Orthodox,35,0,155,0,2,2,7,0,1,12,27,1,0,177.8,3,4,185.42,Southpaw,24,1,155,0,0,3,3,0,0,6,FALSE,Lightweight,Red
-29,1,0,160.02,1,2,160.02,Orthodox,8,0,125,0,0,0,0,1,0,1,30,1,0,162.56,1,2,165.1,Orthodox,6,0,125,0,0,1,0,0,0,1,FALSE,Flyweight,Draw
 29,0,1,182.88,2,2,190.5,Southpaw,9,0,260,0,0,0,3,0,0,3,35,0,5,190.5,5,3,208.28,Switch,16,0,265,0,0,1,5,0,0,6,FALSE,Heavyweight,Red
 26,0,4,185.42,4,1,190.5,Orthodox,22,0,170,0,1,5,1,0,0,7,32,0,2,187.96,3,3,193.04,Southpaw,31,0,170,0,1,6,2,0,0,9,FALSE,Welterweight,Red
 31,1,0,167.64,1,3,167.64,Orthodox,10,0,125,0,0,1,0,1,0,2,30,2,0,167.64,1,5,177.8,Orthodox,21,0,135,0,1,1,0,0,0,2,FALSE,Bantamweight,Blue
@@ -2636,7 +2589,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 31,0,1,177.8,1,0,182.88,Southpaw,2,0,155,0,0,0,0,1,0,1,30,0,4,185.42,4,3,185.42,Orthodox,23,0,170,0,0,3,2,3,0,8,FALSE,Lightweight,Red
 20,0,1,167.64,1,0,175.26,Orthodox,3,0,125,0,0,1,0,0,0,1,25,2,0,177.8,2,4,185.42,Southpaw,20,0,145,0,2,1,0,1,0,4,FALSE,Bantamweight,Red
 35,0,2,177.8,2,1,180.34,Orthodox,7,0,155,1,0,0,2,0,0,3,30,0,7,175.26,7,1,177.8,Southpaw,30,5,170,0,2,5,0,0,0,7,FALSE,Lightweight,Red
-32,1,0,175.26,1,1,180.34,Orthodox,3,0,145,0,0,0,0,1,0,1,28,0,1,167.64,1,1,167.64,Orthodox,9,0,125,0,0,2,0,0,0,2,FALSE,Bantamweight,Draw
 34,0,4,187.96,4,6,193.04,Orthodox,26,1,242,0,0,0,7,4,0,11,31,0,3,193.04,3,1,203.2,Orthodox,11,0,240,0,0,2,2,0,0,4,FALSE,Heavyweight,Red
 34,1,0,170.18,3,2,172.72,Orthodox,14,0,135,0,3,1,0,0,0,4,29,2,0,170.18,2,3,175.26,Orthodox,13,1,135,0,1,0,1,0,0,2,FALSE,Bantamweight,Red
 21,1,0,190.5,0,1,195.58,Orthodox,3,0,205,0,0,0,0,0,0,0,30,1,0,195.58,0,1,195.58,Southpaw,3,0,250,0,0,0,0,0,0,0,FALSE,Heavyweight,Blue
@@ -2659,7 +2611,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 38,0,16,187.96,16,1,195.58,Southpaw,37,12,185,0,0,2,11,3,0,16,29,0,6,187.96,6,0,198.12,Orthodox,12,1,185,0,0,2,2,2,0,6,TRUE,Middleweight,Red
 29,0,1,180.34,1,1,185.42,Orthodox,4,0,170,0,0,0,1,0,0,1,30,0,4,170.18,4,3,182.88,Orthodox,22,0,170,0,3,0,2,0,0,5,FALSE,Welterweight,Red
 27,1,0,177.8,3,4,185.42,Southpaw,22,1,155,0,0,3,2,0,0,5,30,1,0,177.8,3,7,180.34,Southpaw,50,0,155,0,3,5,1,4,0,13,FALSE,Lightweight,Blue
-32,1,0,165.1,2,5,170.18,Orthodox,20,1,135,0,0,2,0,2,0,4,34,1,0,167.64,4,6,177.8,Orthodox,36,0,145,0,0,5,3,2,0,10,FALSE,Featherweight,Draw
 34,2,0,182.88,0,2,187.96,Orthodox,5,0,170,0,0,0,0,0,0,0,22,1,0,180.34,0,1,190.5,Orthodox,2,1,170,0,0,0,0,0,0,0,FALSE,Welterweight,Red
 29,0,3,162.56,3,1,165.1,Southpaw,19,1,125,0,0,3,3,0,0,6,27,0,2,160.02,4,2,167.64,Orthodox,32,4,125,0,1,4,0,1,0,6,TRUE,Flyweight,Red
 22,0,4,175.26,4,1,177.8,Orthodox,14,1,135,0,1,1,2,1,0,5,34,0,1,167.64,3,2,170.18,Orthodox,23,2,135,0,0,2,0,3,0,5,FALSE,Bantamweight,Red
@@ -2673,7 +2624,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 32,0,1,187.96,4,2,190.5,Orthodox,13,0,185,0,0,2,3,0,0,5,32,1,0,185.42,2,6,193.04,Orthodox,30,3,205,0,0,0,5,0,0,5,FALSE,LightHeavyweight,Red
 41,3,0,190.5,3,4,190.5,Orthodox,12,0,205,0,0,0,2,2,0,4,30,0,5,187.96,5,4,187.96,Orthodox,24,1,205,0,0,4,3,1,0,8,FALSE,LightHeavyweight,Red
 30,2,0,167.64,1,4,177.8,Orthodox,18,0,135,0,1,1,0,0,0,2,29,0,1,170.18,3,2,175.26,Orthodox,20,0,135,0,3,1,1,0,0,5,FALSE,Bantamweight,Red
-34,1,0,193.04,2,2,208.28,Orthodox,6,1,264,0,0,0,2,0,0,2,39,1,0,177.8,4,2,182.88,Orthodox,13,0,265,0,0,1,3,0,0,4,FALSE,Heavyweight,Draw
 36,1,0,193.04,1,1,205.74,Orthodox,6,0,265,0,0,0,1,0,0,1,34,0,1,180.34,1,6,187.96,Orthodox,18,0,235,0,0,1,4,0,0,5,FALSE,Heavyweight,Blue
 25,1,0,185.42,1,1,185.42,Orthodox,5,0,185,0,0,0,0,1,0,1,34,0,2,182.88,2,2,187.96,Southpaw,15,0,185,0,0,2,0,1,0,3,FALSE,Middleweight,Blue
 27,0,1,187.96,1,0,195.58,Orthodox,3,0,205,0,0,0,1,0,0,1,34,0,2,185.42,2,0,187.96,Switch,4,0,185,0,0,0,2,0,0,2,FALSE,Middleweight,Blue
@@ -2707,9 +2657,7 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 32,1,0,190.5,4,3,190.5,Orthodox,15,0,170,0,1,0,1,2,0,4,26,0,1,190.5,1,1,203.2,Orthodox,4,0,170,0,0,1,0,0,0,1,FALSE,Welterweight,Blue
 36,0,1,182.88,1,0,185.42,Southpaw,1,0,185,0,0,0,1,0,0,1,25,0,3,185.42,3,0,190.5,Orthodox,9,0,185,0,1,2,0,0,0,3,FALSE,Middleweight,Blue
 29,0,1,175.26,1,0,180.34,Orthodox,3,0,135,0,1,0,0,0,0,1,25,0,1,172.72,1,0,175.26,Orthodox,1,0,145,0,0,0,1,0,0,1,FALSE,WomenBantamweight,Red
-26,1,0,177.8,0,1,190.5,Orthodox,1,0,155,0,0,0,0,0,0,0,37,2,0,175.26,6,8,185.42,Southpaw,41,0,155,0,1,2,5,2,0,10,FALSE,Lightweight,Draw
 35,1,0,182.88,4,3,180.34,Orthodox,24,0,185,0,1,3,4,0,0,8,35,0,8,185.42,8,4,187.96,Southpaw,38,4,185,0,1,5,4,1,0,11,FALSE,Middleweight,Red
-30,0,1,175.26,5,8,180.34,Orthodox,34,0,155,0,2,2,7,0,1,12,29,0,3,172.72,3,3,175.26,Orthodox,26,1,155,0,0,4,2,0,1,7,FALSE,Lightweight,Draw
 23,1,0,160.02,3,1,170.18,Orthodox,9,0,135,0,0,1,2,0,0,3,30,1,0,162.56,1,1,165.1,Orthodox,5,0,125,0,0,1,0,0,0,1,FALSE,Flyweight,Blue
 31,0,1,185.42,1,1,185.42,Orthodox,7,0,205,0,0,1,1,0,0,2,33,0,2,185.42,2,0,200.66,Orthodox,3,0,205,0,0,0,0,0,2,2,FALSE,LightHeavyweight,Red
 26,0,1,175.26,1,0,180.34,Orthodox,2,0,155,0,0,0,0,1,0,1,26,1,0,177.8,1,1,177.8,Orthodox,4,1,155,0,0,1,0,0,0,1,FALSE,Lightweight,Red
@@ -2763,7 +2711,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 31,0,4,182.88,4,5,182.88,Orthodox,32,0,170,0,2,2,2,5,0,11,29,1,0,187.96,5,3,190.5,Orthodox,24,2,170,0,1,1,3,0,0,5,FALSE,Welterweight,Red
 30,0,2,180.34,2,2,185.42,Orthodox,12,0,145,0,1,1,0,0,0,2,29,0,1,177.8,5,2,180.34,Orthodox,16,0,145,0,0,4,2,0,0,6,FALSE,Featherweight,Red
 30,0,1,190.5,1,0,190.5,Southpaw,3,0,185,0,0,0,0,1,0,1,25,0,2,185.42,3,1,187.96,Orthodox,16,0,185,0,1,3,1,0,0,5,FALSE,Middleweight,Red
-29,0,1,172.72,1,1,177.8,Orthodox,5,0,155,0,0,0,1,0,0,1,30,1,0,175.26,0,1,172.72,Orthodox,2,0,155,0,0,0,0,0,0,0,FALSE,Lightweight,Draw
 31,2,0,172.72,0,2,185.42,Southpaw,4,0,155,0,0,0,0,0,0,0,29,1,0,185.42,2,2,185.42,Orthodox,8,0,170,0,1,0,0,1,0,2,FALSE,Welterweight,Blue
 33,0,2,175.26,2,2,180.34,Southpaw,11,0,135,0,0,2,1,0,0,3,34,0,1,167.64,2,2,170.18,Orthodox,20,2,135,0,0,1,0,3,0,4,FALSE,Bantamweight,Red
 36,1,0,185.42,3,6,185.42,Southpaw,30,3,205,0,0,5,0,1,0,6,31,1,0,185.42,2,5,193.04,Orthodox,29,3,205,0,0,0,5,0,0,5,FALSE,LightHeavyweight,Blue
@@ -2836,7 +2783,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 36,1,0,185.42,3,5,185.42,Southpaw,29,2,205,0,0,5,0,1,0,6,25,0,3,193.04,8,1,213.36,Orthodox,31,5,205,0,0,3,3,5,0,11,TRUE,LightHeavyweight,Red
 37,0,2,193.04,3,6,208.28,Orthodox,36,0,240,1,0,3,6,0,1,11,36,0,2,182.88,2,3,185.42,Orthodox,16,1,263,0,0,0,5,0,0,5,FALSE,Heavyweight,Red
 29,1,0,187.96,4,5,190.5,Orthodox,28,0,185,0,1,0,4,3,1,9,34,0,4,185.42,4,5,190.5,Orthodox,42,1,185,0,1,4,8,0,0,13,FALSE,Middleweight,Red
-29,1,0,182.88,0,1,182.88,Orthodox,1,0,155,0,0,0,0,0,0,0,29,0,2,172.72,7,3,180.34,Southpaw,34,0,155,0,0,5,2,4,0,11,FALSE,Lightweight,Draw
 30,0,2,177.8,2,0,180.34,Orthodox,5,0,135,0,0,0,2,0,0,2,28,0,2,172.72,2,1,172.72,Orthodox,8,0,135,0,0,0,0,2,0,2,FALSE,Bantamweight,Red
 25,0,1,182.88,1,3,182.88,Switch,7,0,155,0,0,0,0,2,0,2,33,1,0,177.8,1,6,172.72,Orthodox,21,0,145,0,1,0,0,1,0,2,FALSE,Featherweight,Blue
 23,0,1,182.88,1,0,185.42,Orthodox,1,0,170,0,0,0,1,0,0,1,32,0,1,182.88,4,5,190.5,Orthodox,31,0,170,0,0,2,6,1,0,9,FALSE,Welterweight,Red
@@ -2882,7 +2828,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 22,0,4,175.26,4,0,177.8,Orthodox,8,0,135,0,1,1,2,0,0,4,26,0,4,167.64,4,0,177.8,Orthodox,12,1,145,0,0,3,0,1,0,4,TRUE,Bantamweight,Red
 24,0,4,175.26,4,1,182.88,Southpaw,14,0,155,0,0,2,0,3,0,5,29,1,0,172.72,3,1,177.8,Orthodox,7,0,145,0,0,0,3,0,0,3,FALSE,Featherweight,Red
 39,0,1,198.12,2,2,205.74,Southpaw,12,0,205,1,0,1,1,1,0,4,32,0,1,185.42,1,0,200.66,Orthodox,2,0,205,0,0,0,0,0,1,1,FALSE,LightHeavyweight,Red
-27,0,3,185.42,3,4,193.04,Southpaw,32,0,170,0,1,4,1,0,0,7,30,0,1,185.42,1,1,193.04,Orthodox,4,0,170,0,0,0,2,0,0,2,FALSE,Welterweight,Draw
 33,0,1,175.26,3,2,180.34,Orthodox,15,0,155,0,1,2,1,0,0,4,24,0,3,182.88,3,1,185.42,Orthodox,4,0,155,0,0,0,0,3,0,3,FALSE,Lightweight,Blue
 32,0,1,185.42,1,4,190.5,Orthodox,11,0,170,0,0,0,1,0,0,1,24,0,1,180.34,1,0,182.88,Switch,1,0,170,0,0,0,0,1,0,1,FALSE,Welterweight,Red
 24,3,0,180.34,0,3,187.96,Orthodox,7,0,145,0,0,0,0,0,0,0,24,1,0,172.72,0,1,175.26,Orthodox,3,0,145,0,0,0,0,0,0,0,FALSE,Featherweight,Red
@@ -2925,7 +2870,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 30,0,1,167.64,1,0,170.18,Orthodox,3,0,135,0,1,0,0,0,0,1,29,1,0,170.18,1,1,180.34,Orthodox,6,0,135,0,0,0,0,1,0,1,FALSE,Bantamweight,Blue
 31,0,1,182.88,2,3,182.88,Southpaw,16,0,185,0,1,1,0,1,0,3,24,0,1,180.34,2,2,190.5,Orthodox,9,0,170,0,0,1,0,2,0,3,FALSE,Welterweight,Red
 25,1,0,170.18,0,1,167.64,Southpaw,3,0,125,0,0,0,0,0,0,0,24,2,0,172.72,0,2,170.18,Southpaw,4,0,135,0,0,0,0,0,0,0,FALSE,Flyweight,Blue
-31,0,2,185.42,2,5,190.5,Orthodox,21,0,185,0,0,1,2,0,0,3,33,2,0,182.88,3,4,187.96,Orthodox,17,0,205,0,0,1,2,1,0,4,FALSE,LightHeavyweight,Draw
 32,0,1,172.72,3,3,180.34,Orthodox,18,0,170,0,0,2,0,5,0,7,34,1,0,175.26,0,1,180.34,Southpaw,3,0,185,0,0,0,0,0,0,0,FALSE,Middleweight,Red
 28,0,3,172.72,3,3,175.26,Orthodox,21,1,155,0,0,4,0,0,1,5,35,0,7,177.8,7,2,180.34,Orthodox,19,0,155,0,0,2,1,4,0,7,FALSE,Lightweight,Blue
 31,1,0,190.5,4,1,190.5,Orthodox,11,0,170,0,1,0,1,2,0,4,32,0,1,172.72,3,3,180.34,Orthodox,28,0,170,0,1,3,2,1,0,7,FALSE,Welterweight,Red
@@ -2951,7 +2895,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 32,0,1,170.18,1,0,180.34,Orthodox,1,0,155,0,0,0,0,1,0,1,33,1,0,175.26,1,1,177.8,Orthodox,4,0,145,0,0,0,1,0,0,1,FALSE,Featherweight,Red
 28,0,1,177.8,3,1,180.34,Orthodox,11,0,145,0,0,3,1,0,0,4,25,0,3,180.34,3,0,177.8,Orthodox,7,0,145,0,0,2,0,1,0,3,FALSE,Featherweight,Blue
 31,0,1,180.34,2,4,187.96,Orthodox,19,0,170,0,0,2,1,1,0,4,30,0,2,187.96,3,3,193.04,Southpaw,23,0,170,0,1,4,1,0,0,6,FALSE,Welterweight,Red
-30,0,1,180.34,1,0,180.34,Orthodox,1,0,205,0,0,0,1,0,0,1,29,0,4,187.96,4,4,187.96,Orthodox,16,0,205,0,0,0,5,0,0,5,FALSE,LightHeavyweight,Draw
 32,0,2,172.72,2,5,177.8,Orthodox,23,1,155,0,0,2,1,2,0,5,34,1,0,170.18,1,3,177.8,Southpaw,9,0,155,0,0,0,2,0,0,2,FALSE,Lightweight,Red
 40,1,0,175.26,1,1,177.8,Southpaw,5,0,185,0,0,1,0,0,0,1,38,0,7,185.42,7,5,193.04,Southpaw,45,5,185,0,0,4,8,1,1,14,FALSE,Middleweight,Blue
 34,0,1,170.18,1,1,172.72,Orthodox,6,0,135,0,0,1,0,0,0,1,28,0,1,170.18,1,2,175.26,Orthodox,11,0,135,0,1,0,1,0,0,2,FALSE,Bantamweight,Red
@@ -2996,7 +2939,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 22,0,1,172.72,1,0,172.72,Orthodox,1,0,135,0,0,0,0,1,0,1,29,1,0,172.72,2,1,180.34,Southpaw,5,0,135,0,1,0,0,1,0,2,FALSE,Bantamweight,Blue
 23,1,0,182.88,0,1,185.42,Orthodox,3,0,185,0,0,0,0,0,0,0,30,1,0,190.5,1,3,190.5,Orthodox,10,0,185,0,0,1,1,0,0,2,FALSE,Middleweight,Blue
 20,1,0,180.34,1,1,175.26,Orthodox,4,0,145,0,0,1,0,0,0,1,22,0,1,172.72,1,0,170.18,Orthodox,3,0,145,0,0,0,1,0,0,1,FALSE,Featherweight,Blue
-31,2,0,185.42,3,5,195.58,Orthodox,24,1,205,0,0,1,2,4,0,7,33,0,1,182.88,1,2,182.88,Orthodox,12,1,170,0,1,1,0,0,0,2,FALSE,Middleweight,Draw
 27,1,0,172.72,2,1,180.34,Orthodox,5,0,155,0,0,0,1,1,0,2,28,0,3,177.8,3,4,180.34,Orthodox,19,0,155,0,0,0,2,6,0,8,FALSE,Lightweight,Red
 29,0,5,187.96,5,2,187.96,Orthodox,20,1,205,0,0,4,3,0,0,7,34,0,8,185.42,8,3,187.96,Southpaw,30,4,185,0,0,5,3,1,0,9,FALSE,LightHeavyweight,Red
 30,1,0,185.42,2,4,190.5,Orthodox,13,1,170,0,0,0,2,2,0,4,33,0,5,185.42,5,3,195.58,Orthodox,24,0,170,1,0,2,4,2,0,9,FALSE,Welterweight,Red
@@ -3005,8 +2947,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 27,0,1,167.64,1,1,170.18,Orthodox,6,0,135,0,0,1,0,0,0,1,23,2,0,180.34,0,2,187.96,Orthodox,6,0,145,0,0,0,0,0,0,0,FALSE,Featherweight,Blue
 36,4,0,167.64,1,5,172.72,Orthodox,18,0,145,0,0,1,0,0,0,1,31,1,0,165.1,2,5,170.18,Orthodox,14,1,135,0,0,0,0,2,0,2,FALSE,Featherweight,Red
 27,0,1,182.88,1,0,190.5,Southpaw,2,0,260,0,0,0,1,0,0,1,37,0,2,193.04,3,6,208.28,Orthodox,33,0,240,1,0,2,6,0,1,10,FALSE,Heavyweight,Red
-26,0,3,185.42,3,3,193.04,Southpaw,26,0,170,0,1,3,1,0,0,6,36,0,1,177.8,1,0,177.8,Orthodox,3,0,170,0,1,0,0,0,0,1,FALSE,Welterweight,Draw
-30,1,0,172.72,1,1,177.8,Orthodox,6,0,135,0,0,1,0,0,0,1,28,0,2,175.26,2,0,180.34,Orthodox,4,0,135,0,0,0,0,2,0,2,FALSE,Bantamweight,Draw
 28,1,0,185.42,1,1,185.42,Orthodox,4,0,170,0,0,0,0,1,0,1,31,0,4,182.88,4,0,185.42,Southpaw,10,0,170,0,1,2,1,0,0,4,FALSE,Welterweight,Blue
 33,0,2,182.88,2,1,187.96,Southpaw,9,0,185,0,0,1,0,1,0,2,27,0,3,180.34,3,1,190.5,Orthodox,11,1,170,0,0,1,0,2,0,3,FALSE,Middleweight,Blue
 26,0,2,170.18,2,1,175.26,Orthodox,5,0,145,0,0,0,0,2,0,2,33,1,0,175.26,0,1,177.8,Orthodox,3,0,145,0,0,0,0,0,0,0,FALSE,Featherweight,Red
@@ -3170,7 +3110,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 30,1,0,190.5,1,1,190.5,Orthodox,5,0,170,0,0,0,0,1,0,1,30,0,1,182.88,3,4,190.5,Orthodox,20,0,170,0,0,1,3,1,0,5,FALSE,Welterweight,Blue
 24,0,1,170.18,1,1,172.72,Orthodox,6,0,135,0,0,0,0,1,0,1,30,0,1,175.26,1,1,193.04,Orthodox,6,0,135,0,0,1,0,0,0,1,FALSE,Bantamweight,Red
 29,0,1,175.26,1,1,190.5,Southpaw,6,0,155,0,0,1,0,0,0,1,32,0,1,175.26,1,1,180.34,Orthodox,6,0,155,0,0,1,0,0,0,1,FALSE,Lightweight,Red
-25,0,1,172.72,1,0,180.34,Orthodox,3,0,145,0,0,1,0,0,0,1,31,0,1,175.26,1,0,182.88,Orthodox,1,0,145,0,0,0,0,1,0,1,FALSE,Featherweight,Draw
 27,0,2,175.26,2,0,177.8,Southpaw,6,0,170,0,0,2,0,0,0,2,29,0,1,170.18,4,5,177.8,Orthodox,36,0,155,0,2,2,1,4,0,9,FALSE,Lightweight,Blue
 27,0,7,193.04,7,0,195.58,Orthodox,13,0,238,0,0,2,5,0,0,7,29,0,7,185.42,7,0,195.58,Orthodox,11,1,240,0,0,1,6,0,0,7,TRUE,Heavyweight,Blue
 28,0,2,185.42,2,0,185.42,Orthodox,2,0,145,0,0,0,1,1,0,2,22,0,2,175.26,2,0,182.88,Southpaw,6,0,155,0,0,2,0,0,0,2,FALSE,Featherweight,Red
@@ -3259,7 +3198,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 28,0,4,170.18,4,2,182.88,Orthodox,16,0,170,0,2,0,2,0,0,4,30,0,1,182.88,3,4,190.5,Orthodox,17,0,170,0,0,0,3,1,0,4,FALSE,Welterweight,Red
 34,0,2,177.8,2,1,182.88,Orthodox,8,0,170,0,0,1,1,0,0,2,30,1,0,177.8,3,2,187.96,Southpaw,9,0,170,0,1,0,0,2,0,3,FALSE,Welterweight,Blue
 30,1,0,165.1,2,3,170.18,Orthodox,8,1,135,0,0,0,0,2,0,2,27,0,1,167.64,4,5,172.72,Orthodox,31,0,145,0,1,4,1,1,0,7,FALSE,Featherweight,Red
-21,0,2,177.8,2,1,187.96,Orthodox,5,0,155,0,0,0,0,2,0,2,26,0,1,172.72,4,1,172.72,Orthodox,18,0,145,0,1,3,0,1,0,5,FALSE,Lightweight,Draw
 33,0,3,185.42,3,2,195.58,Open Stance,15,0,205,0,0,1,1,2,1,5,28,0,1,187.96,1,2,185.42,Southpaw,5,0,185,0,0,0,0,1,0,1,FALSE,LightHeavyweight,Blue
 33,0,5,185.42,5,2,182.88,Southpaw,23,1,170,0,0,3,0,5,0,8,33,1,0,182.88,3,2,180.34,Orthodox,14,0,185,0,1,1,3,0,0,5,FALSE,Middleweight,Red
 28,0,1,167.64,1,0,170.18,Orthodox,3,0,145,0,1,0,0,0,0,1,35,1,0,177.8,6,4,187.96,Southpaw,34,3,145,0,0,1,2,7,1,11,FALSE,Featherweight,Red
@@ -3308,7 +3246,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 29,0,1,187.96,1,0,190.5,Orthodox,3,0,185,0,0,0,1,0,0,1,24,0,1,195.58,1,1,200.66,Orthodox,4,0,205,0,0,0,1,1,0,2,FALSE,LightHeavyweight,Red
 34,0,2,170.18,3,5,172.72,Southpaw,34,0,155,0,0,4,2,2,1,9,26,0,3,172.72,3,1,175.26,Orthodox,10,1,155,0,0,2,0,0,1,3,FALSE,Lightweight,Red
 32,1,0,167.64,3,4,177.8,Orthodox,20,0,145,0,0,1,3,2,0,6,33,0,7,177.8,7,0,180.34,Orthodox,15,0,155,0,0,2,1,4,0,7,FALSE,Lightweight,Blue
-33,0,8,182.88,8,1,187.96,Orthodox,40,1,170,0,1,8,1,3,0,13,32,0,3,175.26,3,7,177.8,Orthodox,56,11,155,0,0,1,6,4,1,12,FALSE,Welterweight,Draw
 30,0,2,185.42,2,0,193.04,Southpaw,4,0,170,0,0,0,1,1,0,2,24,0,2,187.96,2,0,190.5,Orthodox,6,0,185,0,1,1,0,0,0,2,FALSE,Middleweight,Blue
 35,1,0,187.96,1,2,193.04,Orthodox,5,0,258,1,0,0,0,0,0,1,36,1,0,177.8,0,1,182.88,Orthodox,1,0,265,0,0,0,0,0,0,0,FALSE,Heavyweight,Red
 27,0,5,187.96,5,0,187.96,Orthodox,13,1,205,0,0,3,2,0,0,5,23,0,3,193.04,3,1,213.36,Orthodox,11,0,205,0,0,2,2,1,0,5,FALSE,LightHeavyweight,Red
@@ -3325,8 +3262,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 34,2,0,175.26,6,4,185.42,Southpaw,26,0,155,0,1,2,3,1,0,7,23,0,1,182.88,1,0,182.88,Switch,1,0,155,0,0,0,0,1,0,1,FALSE,Lightweight,Blue
 32,1,0,170.18,1,1,177.8,Southpaw,4,0,155,0,0,0,1,0,0,1,29,0,1,170.18,3,5,177.8,Orthodox,31,0,155,0,2,1,1,3,0,7,FALSE,Lightweight,Red
 30,1,0,185.42,2,2,187.96,Orthodox,13,0,205,0,0,2,0,1,0,3,30,0,5,180.34,5,5,185.42,Southpaw,35,0,185,0,1,2,6,2,0,11,FALSE,Middleweight,Blue
-28,0,4,187.96,4,2,187.96,Orthodox,10,0,205,0,0,0,5,0,0,5,33,0,4,190.5,4,5,198.12,Orthodox,24,0,230,0,0,2,4,1,0,7,FALSE,LightHeavyweight,Draw
-31,1,0,175.26,8,1,177.8,Orthodox,24,0,155,0,2,5,1,0,0,8,29,0,3,167.64,5,1,172.72,Orthodox,28,2,135,0,0,6,1,1,0,8,TRUE,Lightweight,Draw
 23,0,1,185.42,1,0,187.96,Orthodox,3,0,185,0,0,1,0,0,0,1,34,0,1,175.26,2,6,182.88,Orthodox,20,0,170,0,0,1,2,0,0,3,FALSE,Middleweight,Blue
 37,1,0,177.8,6,5,177.8,Southpaw,28,0,170,0,1,1,3,4,0,9,24,1,0,175.26,2,5,180.34,Orthodox,25,0,145,0,1,1,2,0,1,5,FALSE,Lightweight,Red
 29,0,2,187.96,2,1,193.04,Southpaw,15,0,170,0,1,2,1,0,0,4,25,0,5,182.88,5,3,193.04,Southpaw,24,1,170,0,1,0,1,6,0,8,FALSE,Welterweight,Blue
@@ -3368,7 +3303,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 27,0,2,182.88,2,2,187.96,Southpaw,9,0,205,0,0,1,0,1,0,2,30,4,0,180.34,4,6,190.5,Orthodox,23,2,170,0,1,1,2,0,0,4,FALSE,Middleweight,Blue
 34,2,0,187.96,0,2,195.58,Orthodox,4,0,225,0,0,0,0,0,0,0,30,0,3,182.88,3,0,182.88,Orthodox,9,0,240,0,1,2,0,0,0,3,FALSE,Heavyweight,Red
 26,1,0,187.96,2,1,190.5,Orthodox,9,0,170,0,1,0,1,0,0,2,28,0,4,182.88,4,1,187.96,Orthodox,15,1,170,0,2,1,1,0,0,4,FALSE,Welterweight,Blue
-28,0,1,198.12,1,0,200.66,Orthodox,1,0,255,0,0,0,1,0,0,1,35,0,2,193.04,3,4,208.28,Orthodox,25,0,240,1,0,1,5,0,1,8,FALSE,Heavyweight,Draw
 35,0,1,177.8,1,1,190.5,Orthodox,6,0,170,0,1,0,0,0,0,1,31,0,4,185.42,4,3,190.5,Orthodox,26,1,185,0,1,2,6,0,0,9,FALSE,Middleweight,Red
 35,1,0,182.88,1,2,187.96,Orthodox,9,0,170,0,0,0,0,2,0,2,23,0,4,185.42,4,0,190.5,Orthodox,10,0,170,0,0,3,1,0,0,4,FALSE,Welterweight,Blue
 23,0,1,195.58,1,1,200.66,Orthodox,2,0,205,0,0,0,1,0,0,1,37,0,1,198.12,1,0,205.74,Southpaw,1,0,205,0,0,0,1,0,0,1,FALSE,LightHeavyweight,Blue
@@ -3503,7 +3437,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 23,0,2,175.26,2,0,180.34,Orthodox,4,1,155,0,0,1,1,0,0,2,28,0,2,177.8,2,0,177.8,Southpaw,4,0,155,0,1,0,1,0,0,2,FALSE,Lightweight,Red
 26,0,2,182.88,2,0,187.96,Southpaw,4,0,205,0,0,1,0,1,0,2,35,0,2,182.88,2,0,185.42,Orthodox,3,0,170,0,0,0,2,0,0,2,FALSE,Middleweight,Red
 27,2,0,175.26,1,2,180.34,Orthodox,4,0,155,0,0,0,1,0,0,1,25,2,0,172.72,1,2,177.8,Southpaw,9,0,155,0,0,1,0,0,0,1,FALSE,Lightweight,Red
-25,0,1,172.72,1,0,172.72,Orthodox,3,0,145,0,0,1,0,0,0,1,25,0,2,170.18,2,3,177.8,Orthodox,19,0,145,0,0,3,0,1,0,4,FALSE,Lightweight,Draw
 27,0,1,175.26,1,0,182.88,Orthodox,3,0,170,0,0,0,0,0,1,1,25,1,0,175.26,1,1,180.34,Southpaw,5,0,170,0,0,0,0,1,0,1,FALSE,Welterweight,Red
 25,1,0,187.96,0,1,190.5,Southpaw,1,0,185,0,0,0,0,0,0,0,28,0,1,182.88,1,2,182.88,Southpaw,7,0,185,0,0,0,0,1,0,1,FALSE,Middleweight,Red
 25,0,3,177.8,3,1,180.34,Orthodox,10,0,155,0,0,0,2,3,0,5,25,0,1,175.26,1,4,177.8,Orthodox,19,0,155,0,1,2,0,0,0,3,FALSE,Lightweight,Red
@@ -3636,7 +3569,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 32,2,0,175.26,4,4,182.88,Southpaw,22,0,155,0,1,1,0,3,0,5,25,1,0,177.8,3,3,180.34,Southpaw,14,0,155,0,0,2,0,1,0,3,FALSE,Lightweight,Red
 26,0,4,187.96,4,0,187.96,Orthodox,5,0,205,0,0,0,4,0,0,4,30,0,5,185.42,5,0,187.96,Southpaw,14,0,185,0,0,4,0,1,0,5,FALSE,LightHeavyweight,Red
 23,0,5,182.88,5,0,193.04,Southpaw,9,1,170,0,1,0,0,4,0,5,27,0,1,170.18,2,3,177.8,Orthodox,18,0,155,0,1,1,1,1,0,4,FALSE,Lightweight,Red
-27,0,2,187.96,2,0,193.04,Southpaw,6,0,170,0,1,0,1,0,0,2,26,0,1,177.8,4,3,182.88,Orthodox,28,0,170,0,1,5,1,1,0,8,FALSE,Welterweight,Draw
 27,1,0,165.1,2,2,170.18,Orthodox,5,1,135,0,0,0,0,2,0,2,24,0,2,170.18,2,3,177.8,Orthodox,16,0,145,0,0,2,0,1,0,3,FALSE,Lightweight,Red
 30,0,3,175.26,3,4,177.8,Orthodox,32,6,155,0,0,1,5,3,0,9,27,0,2,180.34,5,2,193.04,Orthodox,29,6,185,0,1,4,4,2,0,11,TRUE,Welterweight,Red
 34,0,1,170.18,1,1,172.72,Switch,5,0,170,0,0,0,0,1,0,1,30,0,8,182.88,8,1,187.96,Orthodox,25,1,170,0,1,3,1,3,0,8,FALSE,Welterweight,Red
@@ -3814,7 +3746,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 31,0,2,180.34,2,1,182.88,Orthodox,7,0,205,0,1,0,0,1,0,2,31,0,1,185.42,3,4,190.5,Orthodox,18,1,205,1,0,1,0,3,0,5,FALSE,LightHeavyweight,Red
 31,0,1,193.04,1,1,198.12,Orthodox,4,0,245,0,0,0,1,0,0,1,28,0,2,190.5,4,3,200.66,Southpaw,13,1,264,0,0,1,1,4,0,7,FALSE,Heavyweight,Red
 28,0,4,182.88,4,0,187.96,Orthodox,11,0,185,0,0,3,0,1,0,4,32,0,3,187.96,3,0,195.58,Southpaw,4,1,185,0,0,0,2,1,0,3,TRUE,Middleweight,Red
-32,0,1,190.5,6,5,187.96,Orthodox,46,10,205,0,2,3,7,1,1,14,27,0,5,182.88,5,0,190.5,Orthodox,13,1,205,1,2,0,2,0,0,5,FALSE,LightHeavyweight,Draw
 32,0,2,167.64,3,2,180.34,Orthodox,19,0,155,0,0,1,2,2,0,5,33,0,3,167.64,3,2,170.18,Orthodox,21,2,155,0,0,3,0,1,1,5,TRUE,Lightweight,Red
 32,1,0,170.18,6,2,177.8,Southpaw,24,3,145,1,0,3,2,0,0,6,28,0,3,175.26,3,4,177.8,Orthodox,25,4,155,0,0,1,4,1,0,6,FALSE,Lightweight,Red
 25,0,4,187.96,4,0,190.5,Southpaw,12,0,170,0,0,2,2,0,0,4,32,0,7,185.42,7,1,193.04,Southpaw,19,4,185,0,0,1,5,1,1,8,FALSE,Middleweight,Red
@@ -3966,7 +3897,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 28,1,0,170.18,2,3,177.8,Southpaw,18,2,155,0,0,2,1,0,0,3,29,0,1,167.64,1,0,180.34,Orthodox,3,0,155,0,0,1,0,0,0,1,FALSE,Lightweight,Red
 33,0,1,187.96,7,1,193.04,Orthodox,17,0,205,0,0,5,2,0,1,8,39,0,7,185.42,7,2,190.5,Orthodox,24,7,205,1,0,1,4,1,0,7,TRUE,LightHeavyweight,Red
 29,0,3,167.64,3,0,170.18,Orthodox,6,0,155,0,0,1,0,1,1,3,29,0,2,175.26,4,1,185.42,Switch,16,4,170,0,0,1,3,0,2,6,TRUE,Welterweight,Red
-27,1,0,170.18,2,2,177.8,Southpaw,13,1,155,0,0,2,1,0,0,3,24,0,3,175.26,3,1,177.8,Orthodox,13,1,155,0,0,1,4,0,0,5,TRUE,Lightweight,Draw
 26,0,1,175.26,2,1,182.88,Orthodox,7,0,170,0,0,1,2,0,0,3,32,0,4,182.88,4,1,187.96,Southpaw,14,1,185,1,0,1,2,0,0,5,FALSE,Middleweight,Red
 27,0,1,185.42,1,1,190.5,Orthodox,9,0,205,1,0,1,0,0,0,2,32,0,1,187.96,6,1,193.04,Orthodox,16,0,205,0,0,5,1,0,1,7,FALSE,LightHeavyweight,Red
 38,0,2,185.42,2,3,182.88,Orthodox,12,0,205,0,0,0,1,4,0,5,27,0,1,190.5,5,2,187.96,Orthodox,22,7,205,0,0,2,4,1,1,8,TRUE,LightHeavyweight,Red
@@ -4219,7 +4149,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 22,0,0,167.64,0,0,167.64,Orthodox,0,0,145,0,0,0,0,0,0,0,30,1,0,170.18,0,1,175.26,Orthodox,2,0,145,0,0,0,0,0,0,0,FALSE,Featherweight,Red
 29,0,0,162.56,0,0,160.02,Southpaw,0,0,135,0,0,0,0,0,0,0,32,0,2,165.1,2,2,162.56,Orthodox,12,0,125,0,1,1,0,0,0,2,FALSE,WomenBantamweight,Red
 25,0,0,177.8,0,0,182.88,Southpaw,0,0,125,0,0,0,0,0,0,0,36,2,0,170.18,1,2,172.72,Orthodox,7,0,125,0,0,0,1,0,0,1,FALSE,Bantamweight,Red
-33,0,0,180.34,0,0,185.42,Orthodox,0,0,155,0,0,0,0,0,0,0,26,0,2,187.96,2,2,185.42,Orthodox,13,0,155,0,0,2,0,2,0,4,FALSE,Lightweight,Draw
 32,0,0,170.18,0,0,177.8,Orthodox,0,0,135,0,0,0,0,0,0,0,34,0,1,167.64,2,4,167.64,Switch,18,0,145,0,0,1,2,2,0,5,FALSE,Featherweight,Red
 26,0,0,180.34,0,0,190.5,Orthodox,0,0,170,0,0,0,0,0,0,0,29,1,0,177.8,1,2,190.5,Orthodox,6,0,185,0,0,0,1,0,0,1,FALSE,Middleweight,Blue
 33,0,0,172.72,0,0,180.34,Orthodox,0,0,145,0,0,0,0,0,0,0,32,2,0,177.8,2,11,185.42,Southpaw,58,0,145,0,3,5,0,2,1,11,FALSE,Featherweight,Red
@@ -4231,7 +4160,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 33,0,0,177.8,0,0,185.42,Southpaw,0,0,145,0,0,0,0,0,0,0,23,0,2,177.8,2,0,182.88,Switch,6,0,145,0,0,2,0,0,0,2,FALSE,Featherweight,Red
 29,0,0,167.64,0,0,172.72,Orthodox,0,0,135,0,0,0,0,0,0,0,31,1,0,167.64,0,1,170.18,Southpaw,3,0,135,0,0,0,0,0,0,0,FALSE,Bantamweight,Red
 30,0,0,167.64,0,0,172.72,Orthodox,0,0,145,0,0,0,0,0,0,0,31,1,0,177.8,0,1,187.96,Orthodox,3,0,145,0,0,0,0,0,0,0,FALSE,Featherweight,Red
-29,0,0,170.18,0,0,170.18,Southpaw,0,0,125,0,0,0,0,0,0,0,29,1,0,175.26,3,1,170.18,Orthodox,10,0,145,0,1,1,1,0,0,3,FALSE,Bantamweight,Draw
 24,0,0,187.96,0,0,198.12,Orthodox,0,0,170,0,0,0,0,0,0,0,26,0,1,187.96,1,0,190.5,Orthodox,2,0,170,0,0,0,0,1,0,1,FALSE,Welterweight,Red
 32,0,0,185.42,0,0,195.58,Orthodox,0,0,155,0,0,0,0,0,0,0,41,0,1,175.26,7,6,177.8,Southpaw,53,0,155,0,1,8,3,2,1,15,FALSE,Lightweight,Red
 28,0,0,167.64,0,0,180.34,Switch,0,0,135,0,0,0,0,0,0,0,27,0,3,167.64,3,1,175.26,Orthodox,10,0,140,0,0,0,0,3,0,3,FALSE,Bantamweight,Red
@@ -4270,7 +4198,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 28,0,0,160.02,0,0,162.56,Orthodox,0,0,125,0,0,0,0,0,0,0,25,2,0,167.64,0,2,170.18,Orthodox,6,0,125,0,0,0,0,0,0,0,FALSE,WomenFlyweight,Red
 25,0,0,165.1,0,0,165.1,Orthodox,0,0,135,0,0,0,0,0,0,0,31,1,0,165.1,0,1,165.1,Orthodox,3,0,135,0,0,0,0,0,0,0,FALSE,WomenBantamweight,Blue
 27,0,0,198.12,0,0,205.74,Orthodox,0,0,260,0,0,0,0,0,0,0,29,0,1,193.04,1,0,205.74,Orthodox,1,0,245,0,0,0,0,1,0,1,FALSE,Heavyweight,Red
-29,0,0,182.88,0,0,182.88,Southpaw,0,0,265,0,0,0,0,0,0,0,31,1,0,195.58,2,1,203.2,Orthodox,4,0,265,0,0,0,2,0,0,2,FALSE,Heavyweight,Draw
 23,0,0,170.18,0,0,172.72,Orthodox,0,0,125,0,0,0,0,0,0,0,29,1,0,162.56,2,1,157.48,Orthodox,8,0,125,0,0,2,0,0,0,2,FALSE,WomenFlyweight,Red
 27,0,0,182.88,0,0,180.34,Switch,0,0,145,0,0,0,0,0,0,0,35,0,3,177.8,3,12,180.34,Orthodox,52,0,155,0,1,1,4,7,1,14,FALSE,Lightweight,Red
 27,0,0,187.96,0,0,198.12,Orthodox,0,0,145,0,0,0,0,0,0,0,32,1,0,170.18,1,4,177.8,Orthodox,18,0,145,0,1,1,0,0,0,2,FALSE,Featherweight,Blue
@@ -4281,12 +4208,10 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 29,0,0,187.96,0,0,190.5,Orthodox,0,0,185,0,0,0,0,0,0,0,29,1,0,182.88,2,3,187.96,Orthodox,15,0,185,0,2,0,1,0,0,3,FALSE,Middleweight,Blue
 31,0,0,182.88,0,0,187.96,Orthodox,0,0,145,0,0,0,0,0,0,0,29,1,0,177.8,1,4,182.88,Orthodox,16,0,135,0,0,1,0,1,0,2,FALSE,Featherweight,Blue
 31,0,0,165.1,0,0,165.1,Orthodox,0,0,135,0,0,0,0,0,0,0,31,2,0,175.26,3,3,172.72,Orthodox,18,0,135,0,1,1,0,1,0,3,FALSE,WomenBantamweight,Red
-26,0,0,167.64,0,0,170.18,Orthodox,0,0,125,0,0,0,0,0,0,0,25,0,3,170.18,3,2,177.8,Orthodox,14,0,125,0,1,0,0,2,0,3,FALSE,Flyweight,Draw
 35,0,0,170.18,0,0,172.72,Orthodox,0,0,125,0,0,0,0,0,0,0,26,0,1,167.64,4,5,175.26,Orthodox,40,0,125,0,1,7,0,0,0,8,FALSE,Flyweight,Red
 25,0,0,170.18,0,0,167.64,Orthodox,0,0,135,0,0,0,0,0,0,0,30,0,1,180.34,1,0,170.18,Orthodox,3,0,135,0,0,1,0,0,0,1,FALSE,Bantamweight,Blue
 33,0,0,177.8,0,0,172.72,Orthodox,0,0,170,0,0,0,0,0,0,0,25,0,1,185.42,1,0,185.42,Orthodox,1,0,170,0,0,0,1,0,0,1,FALSE,Welterweight,Blue
 27,0,0,172.72,0,0,175.26,Orthodox,0,0,145,0,0,0,0,0,0,0,27,0,2,167.64,2,1,162.56,Orthodox,9,1,135,0,0,2,0,0,0,2,FALSE,Bantamweight,Blue
-28,0,0,175.26,0,0,185.42,Orthodox,0,0,145,0,0,0,0,0,0,0,28,0,3,172.72,3,1,172.72,Orthodox,10,0,145,0,1,1,1,0,0,3,FALSE,Featherweight,Draw
 22,0,0,185.42,0,0,190.5,Orthodox,0,0,155,0,0,0,0,0,0,0,28,0,1,182.88,1,0,182.88,Southpaw,2,0,155,0,0,0,1,0,0,1,FALSE,Lightweight,Red
 25,0,0,160.02,0,0,165.1,Orthodox,0,0,125,0,0,0,0,0,0,0,23,1,0,172.72,1,1,167.64,Orthodox,4,0,125,0,0,0,0,1,0,1,FALSE,WomenFlyweight,Blue
 32,0,0,180.34,0,0,187.96,Orthodox,0,0,155,0,0,0,0,0,0,0,26,0,2,175.26,2,0,193.04,Orthodox,2,0,155,0,0,0,2,0,0,2,FALSE,Lightweight,Blue
@@ -4294,7 +4219,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 24,0,0,172.72,0,0,177.8,Orthodox,0,0,145,0,0,0,0,0,0,0,28,1,0,172.72,2,1,185.42,Orthodox,7,0,145,0,1,1,0,0,0,2,FALSE,Featherweight,Red
 24,0,0,167.64,0,0,180.34,Orthodox,0,0,135,0,0,0,0,0,0,0,25,1,0,162.56,3,4,160.02,Orthodox,27,1,135,0,0,3,0,2,0,5,FALSE,Bantamweight,Red
 22,0,0,182.88,0,0,182.88,Orthodox,0,0,185,0,0,0,0,0,0,0,28,0,1,185.42,1,2,187.96,Southpaw,6,0,185,0,0,1,0,1,0,2,FALSE,Middleweight,Red
-26,0,0,185.42,0,0,190.5,Orthodox,0,0,205,0,0,0,0,0,0,0,30,1,0,193.04,1,1,208.28,Southpaw,4,0,205,0,0,0,1,0,0,1,FALSE,LightHeavyweight,Draw
 25,0,0,152.4,0,0,157.48,Southpaw,0,0,115,0,0,0,0,0,0,0,28,0,2,160.02,2,0,160.02,Orthodox,4,0,115,0,1,0,0,1,0,2,FALSE,WomenStrawweight,Blue
 25,0,0,177.8,0,0,180.34,Orthodox,0,0,135,0,0,0,0,0,0,0,26,1,0,172.72,3,4,177.8,Switch,26,0,135,0,0,1,3,3,0,7,FALSE,Bantamweight,Red
 30,0,0,165.1,0,0,170.18,Orthodox,0,0,135,0,0,0,0,0,0,0,23,0,3,175.26,3,1,182.88,Orthodox,10,0,145,0,1,1,1,0,0,3,FALSE,Bantamweight,Red
@@ -4355,12 +4279,10 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 26,0,0,198.12,0,0,208.28,Orthodox,0,0,205,0,0,0,0,0,0,0,28,2,0,185.42,2,3,193.04,Southpaw,10,1,205,0,0,0,3,0,0,3,FALSE,LightHeavyweight,Blue
 30,0,0,180.34,0,0,182.88,Orthodox,0,0,185,0,0,0,0,0,0,0,33,0,3,185.42,3,4,198.12,Southpaw,28,1,185,0,2,4,0,3,0,9,FALSE,Middleweight,Blue
 33,0,0,165.1,0,0,177.8,Orthodox,0,0,135,0,0,0,0,0,0,0,31,0,1,172.72,1,0,177.8,Orthodox,3,0,145,0,0,1,0,0,0,1,FALSE,Featherweight,Red
-28,0,0,177.8,0,0,185.42,Orthodox,0,0,145,0,0,0,0,0,0,0,33,1,0,180.34,4,3,182.88,Orthodox,20,0,145,0,0,1,1,4,0,6,FALSE,Featherweight,Draw
 23,0,0,175.26,0,0,177.8,Orthodox,0,0,155,0,0,0,0,0,0,0,29,0,1,177.8,5,5,182.88,Southpaw,27,0,155,0,1,3,1,3,0,8,FALSE,Lightweight,Red
 24,0,0,172.72,0,0,177.8,Southpaw,0,0,135,0,0,0,0,0,0,0,30,2,0,175.26,1,3,177.8,Orthodox,11,0,135,0,0,0,1,0,0,1,FALSE,Bantamweight,Red
 26,0,0,172.72,0,0,172.72,Orthodox,0,0,145,0,0,0,0,0,0,0,30,0,2,180.34,2,1,182.88,Orthodox,9,0,145,0,0,1,1,0,0,2,FALSE,Featherweight,Red
 23,0,0,190.5,0,0,195.58,Southpaw,0,0,155,0,0,0,0,0,0,0,26,1,0,180.34,4,2,190.5,Orthodox,14,0,170,0,0,0,3,3,0,6,FALSE,Welterweight,Red
-31,0,0,167.64,0,0,165.1,Orthodox,0,0,115,0,0,0,0,0,0,0,33,1,0,162.56,1,5,160.02,Orthodox,25,0,115,0,1,3,0,0,0,4,FALSE,WomenStrawweight,Draw
 30,0,0,172.72,0,0,190.5,Southpaw,0,0,135,0,0,0,0,0,0,0,31,0,7,167.64,7,5,177.8,Orthodox,43,6,145,0,0,4,2,3,0,9,FALSE,Bantamweight,Blue
 27,0,0,195.58,0,0,200.66,Orthodox,0,0,205,0,0,0,0,0,0,0,25,1,0,187.96,2,3,187.96,Orthodox,13,0,243,0,0,0,0,2,0,2,FALSE,LightHeavyweight,Blue
 22,0,0,172.72,0,0,185.42,Orthodox,0,0,170,0,0,0,0,0,0,0,31,1,0,180.34,5,1,185.42,Orthodox,16,0,170,0,1,2,2,0,0,5,FALSE,Welterweight,Red
@@ -4406,7 +4328,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 28,0,0,193.04,0,0,203.2,Switch,0,0,185,0,0,0,0,0,0,0,25,1,0,190.5,0,1,203.2,Orthodox,2,0,185,0,0,0,0,0,0,0,FALSE,Middleweight,Blue
 29,0,0,170.18,0,0,165.1,Orthodox,0,0,135,0,0,0,0,0,0,0,29,0,1,165.1,2,2,167.64,Southpaw,18,1,125,0,1,1,0,1,0,3,FALSE,WomenFlyweight,Red
 27,0,0,177.8,0,0,182.88,Orthodox,0,0,135,0,0,0,0,0,0,0,30,1,0,170.18,1,2,177.8,Orthodox,9,0,145,0,1,0,0,0,0,1,FALSE,Featherweight,Red
-22,0,0,182.88,0,0,187.96,Southpaw,0,0,205,0,0,0,0,0,0,0,27,2,0,185.42,2,2,193.04,Southpaw,6,1,205,0,0,0,2,0,0,2,FALSE,LightHeavyweight,Draw
 23,0,0,167.64,0,0,165.1,Orthodox,0,0,135,0,0,0,0,0,0,0,31,1,0,170.18,2,6,167.64,Southpaw,25,1,125,0,0,3,0,0,0,3,FALSE,Bantamweight,Red
 29,0,0,185.42,0,0,185.42,Orthodox,0,0,185,0,0,0,0,0,0,0,30,0,1,185.42,1,0,190.5,Southpaw,1,0,185,0,0,0,1,0,0,1,FALSE,Middleweight,Red
 23,0,0,177.8,0,0,185.42,Switch,0,0,135,0,0,0,0,0,0,0,26,2,0,175.26,1,3,182.88,Orthodox,11,0,135,0,1,0,0,0,0,1,FALSE,Bantamweight,Blue
@@ -4478,7 +4399,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 25,0,0,190.5,0,0,200.66,Orthodox,0,0,205,0,0,0,0,0,0,0,26,1,0,185.42,0,1,193.04,Southpaw,3,1,205,0,0,0,0,0,0,0,FALSE,LightHeavyweight,Blue
 28,0,0,165.1,0,0,172.72,Orthodox,0,0,125,0,0,0,0,0,0,0,25,1,0,165.1,1,2,162.56,Orthodox,7,0,125,0,1,0,0,0,0,1,FALSE,Flyweight,Blue
 29,0,0,180.34,0,0,177.8,Orthodox,0,0,205,0,0,0,0,0,0,0,31,0,2,185.42,2,1,190.5,Orthodox,4,0,253,0,0,0,2,1,0,3,FALSE,LightHeavyweight,Blue
-25,0,0,182.88,0,0,187.96,Orthodox,0,0,185,0,0,0,0,0,0,0,36,0,1,185.42,2,2,190.5,Orthodox,14,0,205,0,0,3,0,0,0,3,FALSE,LightHeavyweight,Draw
 26,0,0,182.88,0,0,185.42,Orthodox,0,0,185,0,0,0,0,0,0,0,34,1,0,195.58,4,1,200.66,Orthodox,10,0,185,0,0,1,1,2,0,4,FALSE,Middleweight,Blue
 28,0,0,200.66,0,0,203.2,Orthodox,0,0,250,0,0,0,0,0,0,0,31,0,1,190.5,1,1,195.58,Southpaw,7,0,265,0,0,1,1,0,0,2,FALSE,Heavyweight,Blue
 32,0,0,193.04,0,0,195.58,Orthodox,0,0,240,0,0,0,0,0,0,0,28,0,1,193.04,1,0,203.2,Orthodox,3,0,205,0,0,1,0,0,0,1,FALSE,Heavyweight,Red
@@ -4490,7 +4410,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 34,0,0,170.18,0,0,165.1,Orthodox,0,0,135,0,0,0,0,0,0,0,31,0,1,172.72,1,0,172.72,Orthodox,1,0,145,0,0,0,1,0,0,1,FALSE,CatchWeight,Red
 29,0,0,170.18,0,0,180.34,Orthodox,0,0,155,0,0,0,0,0,0,0,25,0,1,182.88,1,1,195.58,Orthodox,6,1,155,0,0,0,0,1,0,1,FALSE,Lightweight,Blue
 27,0,0,182.88,0,0,177.8,Southpaw,0,0,145,0,0,0,0,0,0,0,34,0,4,177.8,4,6,177.8,Southpaw,40,0,155,0,3,4,1,1,1,10,FALSE,Lightweight,Red
-25,0,0,175.26,0,0,182.88,Orthodox,0,0,135,0,0,0,0,0,0,0,27,0,1,167.64,2,1,170.18,Orthodox,7,1,145,0,0,1,2,0,0,3,FALSE,Bantamweight,Draw
 26,0,0,187.96,0,0,187.96,Southpaw,0,0,155,0,0,0,0,0,0,0,27,2,0,172.72,1,4,177.8,Southpaw,13,0,155,0,0,1,0,1,0,2,FALSE,Lightweight,Red
 20,0,0,162.56,0,0,162.56,Southpaw,0,0,125,0,0,0,0,0,0,0,29,1,0,172.72,1,1,170.18,Orthodox,4,0,135,0,1,0,0,0,0,1,FALSE,WomenBantamweight,Red
 28,0,0,185.42,0,0,195.58,Orthodox,0,0,185,0,0,0,0,0,0,0,28,1,0,190.5,1,2,190.5,Southpaw,8,0,185,0,0,0,2,0,0,2,FALSE,Middleweight,Blue
@@ -4511,7 +4430,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 26,0,0,190.5,0,0,193.04,Orthodox,0,0,205,0,0,0,0,0,0,0,28,0,1,187.96,1,0,190.5,Southpaw,1,0,205,0,0,0,1,0,0,1,FALSE,LightHeavyweight,Blue
 28,0,0,177.8,0,0,182.88,Orthodox,0,0,145,0,0,0,0,0,0,0,32,0,1,172.72,2,3,177.8,Orthodox,15,0,155,0,0,0,3,1,0,5,FALSE,Lightweight,Red
 28,0,0,190.5,0,0,193.04,Orthodox,0,0,205,0,0,0,0,0,0,0,37,1,0,190.5,0,1,203.2,Orthodox,1,0,250,0,0,0,0,0,0,0,FALSE,Heavyweight,Blue
-22,0,0,182.88,0,0,190.5,Orthodox,0,0,170,0,0,0,0,0,0,0,33,1,0,182.88,4,1,182.88,Orthodox,13,1,170,0,0,1,1,2,0,4,FALSE,Welterweight,Draw
 31,0,0,167.64,0,0,177.8,Orthodox,0,0,145,0,0,0,0,0,0,0,31,0,1,180.34,1,2,185.42,Orthodox,13,0,155,0,0,1,1,1,0,3,FALSE,Lightweight,Blue
 28,0,0,177.8,0,0,177.8,Southpaw,0,0,155,0,0,0,0,0,0,0,27,0,6,177.8,6,0,177.8,Orthodox,16,0,155,0,0,4,1,1,0,6,FALSE,CatchWeight,Red
 25,0,0,193.04,0,0,203.2,Orthodox,0,0,265,0,0,0,0,0,0,0,29,0,1,193.04,1,0,210.82,Orthodox,2,0,250,0,0,0,1,0,0,1,FALSE,Heavyweight,Red
@@ -4536,7 +4454,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 23,0,0,177.8,0,0,180.34,Orthodox,0,0,145,0,0,0,0,0,0,0,37,0,1,170.18,1,1,175.26,Orthodox,8,0,145,0,0,1,0,1,0,2,FALSE,Featherweight,Red
 27,0,0,180.34,0,0,177.8,Orthodox,0,0,155,0,0,0,0,0,0,0,27,1,0,177.8,0,1,187.96,Orthodox,1,0,170,0,0,0,0,0,0,0,FALSE,Welterweight,Red
 19,0,0,182.88,0,0,180.34,Orthodox,0,0,170,0,0,0,0,0,0,0,33,0,1,175.26,1,1,177.8,Orthodox,6,0,155,0,0,1,0,0,0,1,FALSE,Lightweight,Blue
-24,0,0,170.18,0,0,175.26,Southpaw,0,0,135,0,0,0,0,0,0,0,34,2,0,170.18,0,2,170.18,Orthodox,6,0,155,0,0,0,0,0,0,0,FALSE,Featherweight,Draw
 25,0,0,165.1,0,0,167.64,Orthodox,0,0,125,0,0,0,0,0,0,0,22,1,0,162.56,2,1,160.02,Orthodox,7,0,135,0,0,0,0,2,0,2,FALSE,Flyweight,Red
 28,0,0,180.34,0,0,198.12,Switch,0,0,185,0,0,0,0,0,0,0,31,2,0,182.88,3,3,200.66,Orthodox,14,1,185,0,0,1,0,0,2,3,FALSE,Middleweight,Red
 28,0,0,187.96,0,0,190.5,Southpaw,0,0,205,0,0,0,0,0,0,0,27,1,0,177.8,1,1,182.88,Orthodox,4,0,185,0,1,0,0,0,0,1,FALSE,LightHeavyweight,Blue
@@ -4596,7 +4513,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 32,0,0,182.88,0,0,185.42,Southpaw,0,0,170,0,0,0,0,0,0,0,32,1,0,190.5,4,4,190.5,Orthodox,21,0,170,0,1,1,1,2,0,5,FALSE,Welterweight,Blue
 31,0,0,165.1,0,0,170.18,Orthodox,0,0,125,0,0,0,0,0,0,0,33,0,1,167.64,1,1,167.64,Orthodox,2,1,135,0,0,0,1,0,0,1,FALSE,WomenBantamweight,Red
 28,0,0,187.96,0,0,190.5,Southpaw,0,0,205,0,0,0,0,0,0,0,32,1,0,185.42,1,3,185.42,Orthodox,11,0,185,0,0,0,1,0,0,1,FALSE,Middleweight,Red
-23,0,0,172.72,0,0,175.26,Switch,0,0,145,0,0,0,0,0,0,0,27,1,0,180.34,0,1,180.34,Orthodox,3,0,145,0,0,0,0,0,0,0,FALSE,Featherweight,Draw
 26,0,0,177.8,0,0,182.88,Orthodox,0,0,185,0,0,0,0,0,0,0,30,1,0,177.8,1,1,185.42,Orthodox,4,0,230,0,0,0,0,1,0,1,FALSE,LightHeavyweight,Red
 34,0,0,172.72,0,0,182.88,Orthodox,0,0,135,0,0,0,0,0,0,0,29,1,0,172.72,0,1,175.26,Orthodox,3,0,155,0,0,0,0,0,0,0,FALSE,Lightweight,Red
 27,0,0,172.72,0,0,180.34,Orthodox,0,0,135,0,0,0,0,0,0,0,32,1,0,185.42,2,6,182.88,Orthodox,27,0,135,0,1,2,2,0,0,5,FALSE,Bantamweight,Blue
@@ -4669,7 +4585,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 23,0,0,182.88,0,0,185.42,Orthodox,0,0,170,0,0,0,0,0,0,0,31,0,3,185.42,3,5,187.96,Orthodox,28,0,185,0,1,1,0,4,0,6,FALSE,Welterweight,Blue
 25,0,0,180.34,0,0,185.42,Southpaw,0,0,155,0,0,0,0,0,0,0,35,1,0,175.26,1,1,182.88,Orthodox,5,0,155,0,1,0,0,0,0,1,FALSE,Lightweight,Blue
 28,0,0,190.5,0,0,195.58,Orthodox,0,0,170,0,0,0,0,0,0,0,29,0,1,182.88,1,0,185.42,Orthodox,3,0,185,0,1,0,0,0,0,1,FALSE,Welterweight,Blue
-25,0,0,175.26,0,0,185.42,Orthodox,0,0,135,0,0,0,0,0,0,0,24,2,0,177.8,2,3,185.42,Southpaw,14,0,145,0,1,1,0,1,0,3,FALSE,Bantamweight,Draw
 29,0,0,175.26,0,0,187.96,Orthodox,0,0,155,0,0,0,0,0,0,0,28,0,1,175.26,2,7,177.8,Orthodox,38,0,155,0,2,4,1,0,0,7,FALSE,Lightweight,Red
 26,0,0,177.8,0,0,180.34,Orthodox,0,0,155,0,0,0,0,0,0,0,32,2,0,175.26,5,3,180.34,Southpaw,21,0,155,0,2,3,0,1,0,6,FALSE,Lightweight,Blue
 23,0,0,170.18,0,0,180.34,Orthodox,0,0,135,0,0,0,0,0,0,0,28,0,1,167.64,1,0,167.64,Orthodox,3,0,125,0,0,1,0,0,0,1,FALSE,Bantamweight,Blue
@@ -4687,7 +4602,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 32,0,0,185.42,0,0,200.66,Orthodox,0,0,205,0,0,0,0,0,0,0,30,1,0,193.04,4,3,200.66,Orthodox,17,0,205,0,1,2,1,0,0,4,FALSE,LightHeavyweight,Blue
 24,0,0,180.34,0,0,182.88,Switch,0,0,170,0,0,0,0,0,0,0,30,1,0,185.42,2,5,190.5,Orthodox,15,1,170,0,0,0,2,2,0,4,FALSE,CatchWeight,Blue
 27,0,0,167.64,0,0,167.64,Orthodox,0,0,125,0,0,0,0,0,0,0,25,1,0,175.26,1,2,187.96,Orthodox,5,0,135,0,0,0,0,1,0,1,FALSE,Bantamweight,Blue
-25,0,0,182.88,0,0,187.96,Southpaw,0,0,205,0,0,0,0,0,0,0,27,0,5,187.96,5,1,200.66,Orthodox,17,0,205,0,0,3,0,2,0,5,FALSE,LightHeavyweight,Draw
 30,0,0,185.42,0,0,185.42,Orthodox,0,0,205,0,0,0,0,0,0,0,39,3,0,190.5,3,3,190.5,Orthodox,10,0,205,0,0,0,1,2,0,3,FALSE,LightHeavyweight,Blue
 27,0,0,165.1,0,0,165.1,Southpaw,0,0,135,0,0,0,0,0,0,0,27,0,1,172.72,1,0,172.72,Orthodox,2,0,135,0,0,0,0,1,0,1,FALSE,Bantamweight,Red
 28,0,0,172.72,0,0,175.26,Orthodox,0,0,155,0,0,0,0,0,0,0,31,0,2,175.26,2,0,180.34,Southpaw,6,0,135,0,0,2,0,0,0,2,FALSE,Featherweight,Blue
@@ -4701,7 +4615,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 28,0,0,172.72,0,0,180.34,Orthodox,0,0,145,0,0,0,0,0,0,0,27,0,1,162.56,1,0,180.34,Southpaw,3,0,135,0,0,1,0,0,0,1,FALSE,Featherweight,Red
 27,0,0,180.34,0,0,185.42,Orthodox,0,0,170,0,0,0,0,0,0,0,31,0,1,180.34,2,3,187.96,Orthodox,18,0,170,0,0,2,1,1,0,4,FALSE,Welterweight,Blue
 30,0,0,195.58,0,0,200.66,Orthodox,0,0,185,0,0,0,0,0,0,0,30,0,1,190.5,1,0,198.12,Orthodox,3,0,205,0,0,1,0,0,0,1,FALSE,Middleweight,Red
-27,0,0,165.1,0,0,162.56,Orthodox,0,0,125,0,0,0,0,0,0,0,25,0,2,160.02,2,1,167.64,Orthodox,11,1,125,0,0,2,0,0,0,2,FALSE,Flyweight,Draw
 26,0,0,185.42,0,0,193.04,Orthodox,0,0,170,0,0,0,0,0,0,0,31,0,3,185.42,3,1,193.04,Southpaw,6,0,170,0,0,0,1,2,0,3,FALSE,Middleweight,Blue
 27,0,0,165.1,0,0,160.02,Orthodox,0,0,135,0,0,0,0,0,0,0,33,0,1,172.72,1,1,175.26,Orthodox,4,0,155,0,0,0,0,1,0,1,FALSE,Featherweight,Blue
 20,0,0,180.34,0,0,175.26,Orthodox,0,0,145,0,0,0,0,0,0,0,23,0,3,175.26,3,0,182.88,Southpaw,8,0,155,0,0,2,0,1,0,3,FALSE,Featherweight,Red
@@ -4763,7 +4676,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 33,0,0,187.96,0,0,195.58,Orthodox,0,0,225,0,0,0,0,0,0,0,25,0,3,193.04,3,0,195.58,Orthodox,5,0,238,0,0,0,3,0,0,3,FALSE,Heavyweight,Red
 29,0,0,177.8,0,0,187.96,Southpaw,0,0,170,0,0,0,0,0,0,0,26,0,1,175.26,1,0,175.26,Southpaw,1,0,185,0,0,0,1,0,0,1,FALSE,Welterweight,Red
 28,0,0,175.26,0,0,182.88,Switch,0,0,205,0,0,0,0,0,0,0,29,1,0,185.42,1,1,187.96,Orthodox,4,0,205,0,0,1,0,0,0,1,FALSE,LightHeavyweight,Red
-30,0,0,177.8,0,0,180.34,Orthodox,0,0,155,0,0,0,0,0,0,0,34,1,0,170.18,2,5,177.8,Southpaw,23,2,155,0,0,2,1,0,0,3,FALSE,Lightweight,Draw
 29,0,0,175.26,0,0,180.34,Southpaw,0,0,155,0,0,0,0,0,0,0,28,0,1,180.34,1,1,187.96,Orthodox,4,0,170,0,0,0,1,0,0,1,FALSE,Welterweight,Red
 28,0,0,193.04,0,0,198.12,Orthodox,0,0,265,0,0,0,0,0,0,0,27,0,4,185.42,4,0,195.58,Orthodox,7,0,240,0,0,1,3,0,0,4,FALSE,Heavyweight,Red
 25,0,0,175.26,0,0,180.34,Orthodox,0,0,170,0,0,0,0,0,0,0,25,1,0,175.26,0,1,180.34,Southpaw,3,0,170,0,0,0,0,0,0,0,FALSE,Welterweight,Red
@@ -4848,7 +4760,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 25,0,0,190.5,0,0,190.5,Orthodox,0,0,185,0,0,0,0,0,0,0,29,0,0,185.42,0,0,190.5,Southpaw,0,0,185,0,0,0,0,0,0,0,FALSE,Middleweight,Blue
 34,0,0,177.8,0,0,182.88,Orthodox,0,0,250,0,0,0,0,0,0,0,29,0,0,187.96,0,0,190.5,Southpaw,0,0,262,0,0,0,0,0,0,0,FALSE,Heavyweight,Red
 27,0,0,185.42,0,0,190.5,Switch,0,0,170,0,0,0,0,0,0,0,27,0,0,177.8,0,0,190.5,Orthodox,0,0,170,0,0,0,0,0,0,0,FALSE,Welterweight,Blue
-30,0,0,170.18,0,0,177.8,Southpaw,0,0,140,0,0,0,0,0,0,0,30,0,0,167.64,0,0,170.18,Orthodox,0,0,145,0,0,0,0,0,0,0,FALSE,CatchWeight,Draw
 35,0,0,182.88,0,0,190.5,Orthodox,0,0,265,0,0,0,0,0,0,0,30,0,0,190.5,0,0,193.04,Orthodox,0,0,250,0,0,0,0,0,0,0,FALSE,Heavyweight,Red
 33,0,0,175.26,0,0,177.8,Switch,0,0,135,0,0,0,0,0,0,0,25,0,0,170.18,0,0,175.26,Orthodox,0,0,145,0,0,0,0,0,0,0,FALSE,Featherweight,Red
 29,0,0,177.8,0,0,182.88,Orthodox,0,0,135,0,0,0,0,0,0,0,27,0,0,175.26,0,0,180.34,Orthodox,0,0,145,0,0,0,0,0,0,0,FALSE,Featherweight,Blue
@@ -4952,7 +4863,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 30,0,0,195.58,0,0,195.58,Southpaw,0,0,250,0,0,0,0,0,0,0,27,0,0,187.96,0,0,190.5,Orthodox,0,0,265,0,0,0,0,0,0,0,FALSE,Heavyweight,Red
 25,0,0,170.18,0,0,170.18,Orthodox,0,0,135,0,0,0,0,0,0,0,31,0,0,170.18,0,0,175.26,Orthodox,0,0,125,0,0,0,0,0,0,0,FALSE,WomenBantamweight,Blue
 24,0,0,165.1,0,0,172.72,Orthodox,0,0,125,0,0,0,0,0,0,0,29,0,0,162.56,0,0,162.56,Orthodox,0,0,125,0,0,0,0,0,0,0,FALSE,Flyweight,Red
-27,0,0,167.64,0,0,167.64,Orthodox,0,0,125,0,0,0,0,0,0,0,28,0,0,165.1,0,0,167.64,Orthodox,0,0,135,0,0,0,0,0,0,0,FALSE,WomenBantamweight,Draw
 32,0,0,182.88,0,0,182.88,Orthodox,0,0,155,0,0,0,0,0,0,0,30,0,0,180.34,0,0,187.96,Southpaw,0,0,155,0,0,0,0,0,0,0,FALSE,Lightweight,Red
 31,0,0,193.04,0,0,200.66,Orthodox,0,0,185,0,0,0,0,0,0,0,33,0,0,180.34,0,0,187.96,Orthodox,0,0,185,0,0,0,0,0,0,0,FALSE,Middleweight,Red
 33,0,0,182.88,0,0,190.5,Orthodox,0,0,155,0,0,0,0,0,0,0,21,0,0,180.34,0,0,190.5,Orthodox,0,0,170,0,0,0,0,0,0,0,TRUE,Welterweight,Blue
@@ -5020,7 +4930,6 @@ B_age,B_current_lose_streak,B_current_win_streak,B_Height_cms,B_longest_win_stre
 24,0,0,187.96,0,0,193.04,Orthodox,0,0,185,0,0,0,0,0,0,0,27,0,0,177.8,0,0,190.5,Orthodox,0,0,170,0,0,0,0,0,0,0,TRUE,Middleweight,Red
 23,0,0,177.8,0,0,180.34,Orthodox,0,0,170,0,0,0,0,0,0,0,27,0,0,172.72,0,0,177.8,Orthodox,0,0,155,0,0,0,0,0,0,0,TRUE,Welterweight,Red
 26,0,0,165.1,0,0,170.18,Orthodox,0,0,135,0,0,0,0,0,0,0,22,0,0,182.88,0,0,193.04,Southpaw,0,0,170,0,0,0,0,0,0,0,TRUE,Lightweight,Red
-25,0,0,175.26,0,0,177.8,Orthodox,0,0,155,0,0,0,0,0,0,0,28,0,0,175.26,0,0,177.8,Orthodox,0,0,155,0,0,0,0,0,0,0,FALSE,Lightweight,Draw
 25,0,0,172.72,0,0,177.8,Orthodox,0,0,145,0,0,0,0,0,0,0,21,0,0,185.42,0,0,185.42,Orthodox,0,0,155,0,0,0,0,0,0,0,FALSE,Lightweight,Red
 25,0,0,172.72,0,0,167.64,Southpaw,0,0,155,0,0,0,0,0,0,0,22,0,0,170.18,0,0,177.8,Orthodox,0,0,145,0,0,0,0,0,0,0,FALSE,Lightweight,Red
 26,0,0,177.8,0,0,180.34,Orthodox,0,0,155,0,0,0,0,0,0,0,23,0,0,175.26,0,0,177.8,Orthodox,0,0,155,0,0,0,0,0,0,0,FALSE,Lightweight,Red
