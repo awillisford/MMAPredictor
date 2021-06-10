@@ -92,8 +92,8 @@ float CsvToVector::contains_text(const std::string& str) {
             throw 999;
         }
         catch(int e) {
-            std::cout << "An exception occured in function \"contains_text()\", exception no. "
-                      << e << std::endl;
+            // std::cout << "An exception occured in function \"contains_text()\", exception no. "
+            //           << e << '\n';
         }
         return 999;
     }
@@ -102,18 +102,18 @@ float CsvToVector::contains_text(const std::string& str) {
 float CsvToVector::check_cell_type(const std::string& cell) {
     // if cell contains a number return type float of string
     if (contains_number(cell)) {
-        std::cout << "cell value: " << std::stof(cell) << ": ";
+        // std::cout << "cell value: " << std::stof(cell) << ": ";
         return std::stof(cell);
     }
     // return float value assigned to cell given by contains_text()
     else {
-        std::cout << "cell value: '" << cell << "': ";
+        // std::cout << "cell value: '" << cell << "': ";
         return contains_text(cell);
     }
 }
 
 bool CsvToVector::compare_floats(float& a, float b, float epsilon) {
-    std::cout << "fabs(" << a << " - " << b << ") = " << fabs(a - b) << ", " << "ret: " << (fabs(a - b) < epsilon) << " - ";
+    // std::cout << "fabs(" << a << " - " << b << ") = " << fabs(a - b) << ", " << "ret: " << (fabs(a - b) < epsilon) << " - ";
     return fabs(a - b) < epsilon;
 }
 
@@ -136,31 +136,36 @@ void CsvToVector::extract_data(const std::string& csvFile) {
         // iterate through cells in line
         while(std::getline(ss, cell, ',')) {
             float cell_checked = check_cell_type(cell);
-            std::cout << "cell_checked: " << cell_checked << ", ";
+            // std::cout << "cell_checked: " << cell_checked << ", ";
 
             if (compare_floats(cell_checked, -1)) {
                 std::vector<float> blue = {1, 0};
                 labels.push_back(blue);
-                std::cout << "Labels push_back: blue - {1, 0} " << std::endl;
+                // std::cout << "Labels push_back: blue - {1, 0} " << '\n';
                 continue;
             }
             else if (compare_floats(cell_checked, -2)) {
                 std::vector<float> red = {0, 1};
                 labels.push_back(red);
-                std::cout << "Labels push_back: red - {0, 1} " << std::endl;
+                // std::cout << "Labels push_back: red - {0, 1} " << '\n';
                 continue;
             }
             else {
                 temp_vector.push_back(cell_checked);
-                std::cout << "temp_vector push_back: " << cell_checked << std::endl;
+                // std::cout << "temp_vector push_back: " << cell_checked << '\n';
 
             }
         }
         features.push_back(temp_vector); // push vector containing row into features
-        std::cout << "Features: push_back(temp_vector)" << std::endl;
+        // std::cout << "Features: push_back(temp_vector)" << '\n';
     }
 }
 
 int main() {
+    std::cout << "Features size: " << CsvToVector::features.size() << '\n';
+    std::cout << "Labels size: " << CsvToVector::labels.size() << '\n';
     CsvToVector::extract_data("data_filtered.csv");
+    std::cout << "Features size: " << CsvToVector::features.size() << '\n';
+    std::cout << "Labels size: " << CsvToVector::labels.size() << '\n';
+    std::cout << "Feature no. 4946: " << CsvToVector::features[4945][18];
 }
