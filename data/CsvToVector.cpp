@@ -161,10 +161,45 @@ void CsvToVector::extract_data(const std::string& csvFile) {
     }
 }
 
+void CsvToVector::print_features() {
+    std::cout << "["; // show beginning of vector
+    // iterate through vector
+    for (int x = 0; x < features.size(); ++x) {
+        // add spacing to align brackets 
+        if (x > 0) {
+            std::cout << " ["; // show beginning of new vector
+        }
+        else {
+            std::cout << "["; // show beginning of new vector
+        }
+        // iterate through subvectors
+        for (int y = 0; y < features[x].size(); ++y) {
+            // if not last element
+            if (y < features[x].size() - 1) {
+                std::cout << features[x][y] << ", ";
+            }
+            // last element
+            else {
+                std::cout << features[x][y];
+            }
+        }
+        // if not last row
+        if (x < features.size() - 1) {
+            std::cout << "],\n"; // end vector and print newline
+        }
+        else {
+            std::cout << "]"; // end of last vector
+        }
+    }
+    std::cout << "]"; // show end of vector
+}
+
 int main() {
     std::cout << "Features size: " << CsvToVector::features.size() << '\n';
     std::cout << "Labels size: " << CsvToVector::labels.size() << '\n';
     CsvToVector::extract_data("data_filtered.csv");
     std::cout << "Features size: " << CsvToVector::features.size() << '\n';
     std::cout << "Labels size: " << CsvToVector::labels.size() << '\n';
+
+    CsvToVector::print_features();
 }

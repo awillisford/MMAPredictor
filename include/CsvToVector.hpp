@@ -21,6 +21,8 @@ class CsvToVector {
     // takes data from csv and puts data into matrix of float values
     static void extract_data(const std::string& csvFile);
 
+    // prints out features
+    static void print_features();
 
     // class members
     static std::vector<std::vector<float>> features;
