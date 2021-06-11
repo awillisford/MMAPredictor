@@ -1,4 +1,4 @@
-#include "include/Model.h"
+#include "include/Model.hpp"
 #include <iostream>
 
 Model::Model(std::vector<std::vector<float>> input, uint numLayers, uint neuronsPerLayer, float learningRate) {

@@ -2,7 +2,7 @@
 #include <sstream>
 #include <iostream>
 #include <cmath>
-#include "../include/csvToVector.h"
+#include "../include/CsvToVector.hpp"
 
 // declare class members
 std::vector<std::vector<float>> CsvToVector::features;
@@ -167,5 +167,4 @@ int main() {
     CsvToVector::extract_data("data_filtered.csv");
     std::cout << "Features size: " << CsvToVector::features.size() << '\n';
     std::cout << "Labels size: " << CsvToVector::labels.size() << '\n';
-    std::cout << "Feature no. 4946: " << CsvToVector::features[4945][18];
 }
