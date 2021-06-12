@@ -193,13 +193,3 @@ void CsvToVector::print_features() {
     }
     std::cout << "]"; // show end of vector
 }
-
-int main() {
-    std::cout << "Features size: " << CsvToVector::features.size() << '\n';
-    std::cout << "Labels size: " << CsvToVector::labels.size() << '\n';
-    CsvToVector::extract_data("data_filtered.csv");
-    std::cout << "Features size: " << CsvToVector::features.size() << '\n';
-    std::cout << "Labels size: " << CsvToVector::labels.size() << '\n';
-
-    CsvToVector::print_features();
-}
