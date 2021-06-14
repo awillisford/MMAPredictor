@@ -1,6 +1,7 @@
 #include "include/Model.hpp"
 #include "include/CsvToVector.hpp"
 #include <iostream>
+#include <sstream>
 
 Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     // assign class attribute to constructor parameter
@@ -27,18 +28,18 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
             weights[x + 1]->push_back(new std::vector<float>);
 
             // create each weight float per nodes in next layer
-            float temp;
+            float temp = 1.1;
             // if not currently on last hidden layer
             if (x < numHiddenLayers - 1) {
                 for (uint z = 0; z < neuronsPerLayer; ++z) {
-                    (*weights[x + 1])[y]->push_back(temp);
+                    (*weights[x])[y]->push_back(temp);
                 }
             }
             // if on last layer
             else {
                 // create two weights per node
                 for (uint z = 0; z <= 1; ++z) {
-                    (*weights[x + 1])[y]->push_back(temp);
+                    (*weights[x])[y]->push_back(temp);
                 }
             }
         }
@@ -51,40 +52,57 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     }
 }
 
+template <typename T> std::string Model::toStr(const T& t) { 
+   std::ostringstream os; 
+   os << t; 
+   return os.str(); 
+} 
+
 std::string Model::weightsToString() {
     std::string str;
     str += "["; // show beginning of weight vector
 
-    // layers
-    for (int z = 0; z < weights.size(); ++z) {
-        str += "["; // show beginning of layer
-        // 
-        for (int x = 0; x < weights[z]->size(); ++x) {
-            str += "["; // beginning of node
-            // node vector 
-            for (int y = 0; y < (*weights[z])[x]->size(); ++y) {
+    // weight layers
+    for (int x = 0; x < weights.size(); ++x) {
+        str += "[";
+        // node weight vector
+        int nodeLayerSize = weights[x]->size();
+        for (int y = 0; y < nodeLayerSize; ++y) {
+            str += "[";
+            // individual weights
+            int nodeSize = (*weights[x])[y]->size();
+            for (int z = 0; z < nodeSize; ++z) {
                 // if not last element
-                if (y < (*weights[z])[x]->size() - 1)
-                    str += (*(*weights[z])[x])[y] , ", "; // end of current element, onto next
+                if (z < nodeSize - 1) {
+                    str += toStr((*(*weights[x])[y])[z]);
+                    str += ", ";
+                    std::cout << "nL: " << (*(*weights[x])[y])[z] << '\n';
+                }
                 // if last element
-                else
-                    str += (*(*weights[z])[x])[y];
+                else {
+                    str += toStr((*(*weights[x])[y])[z]);
+                    std::cout << "last: " << (*(*weights[x])[y])[z] << '\n';
+                }
             }
-            // if not last node in layer
-            if (x < weights[z]->size() - 1)
-                str += "], "; // end of current node, onto next
-            // last node in layer
-            else
+            // if not last element
+            if (y < nodeLayerSize - 1) {
+                str += "], ";
+            }
+            // if last element
+            else {
                 str += "]";
+            }
         }
-        // if not last layer
-        if (z < weights.size() - 1)
-            str += "],\n "; // end of current layer, onto next
-        // last layer
-        else 
+        // if not last element
+        if (x < weights.size() - 1) {
+            str += "],\n";
+        }
+        // if last element
+        else {
             str += "]";
+        }
     }
-    str += "]"; // show end of weight vector
+    str += "]";
 
     return str;
 }

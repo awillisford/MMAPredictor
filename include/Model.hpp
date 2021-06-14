@@ -6,6 +6,9 @@
 typedef unsigned int uint;
 
 class Model {
+    private:
+    template <typename T> std::string toStr(const T& t);
+
     public:
     // constructor
     Model(uint numLayers, uint neuronsPerLayer, float learningRate = 0.05);
