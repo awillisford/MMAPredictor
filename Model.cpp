@@ -115,3 +115,32 @@ std::string Model::weightsToString() {
 
     return str;
 }
+
+std::string Model::layersToString() {
+    //    std::vector<std::vector<uint>*> layers;
+    std::string str;
+    str += "[";
+
+    for (int x = 0; x < layers.size(); ++x) {
+        if (x == 0)
+            str += "[";
+        else
+            str += " [";
+        
+        for (int y = 0; y < layers[x]->size(); ++y) {
+            if (y < layers[x]->size() - 1) {
+                str += toStr((*layers[x])[y]);
+                str += ", ";
+            }
+            else
+                str += toStr((*layers[x])[y]);
+        }
+        if (x < layers.size() - 1)
+            str += "]\n";
+        else
+            str += "]";
+    }
+    str += "]";
+
+    return str;
+}

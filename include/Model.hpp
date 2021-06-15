@@ -16,6 +16,9 @@ class Model {
     // weight vector to string for printing to console
     std::string weightsToString();
 
+    // layer vector to string for printing to console
+    std::string layersToString();
+
     // attributes
     std::vector<std::vector<uint>*> layers; // vector matrix
     uint learningRate;
