@@ -17,6 +17,17 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
         weights[0]->push_back(new std::vector<float>);
     }
 
+    // initialize input weights
+    float temp = 1.2;
+    int numInputs = 0;
+    for (int y = 0; y < weights[0]->size(); ++y) {
+        for (int z = 0; z < neuronsPerLayer; ++z) {
+            (*weights[0])[y]->push_back(temp);
+        }
+        numInputs++;
+    }
+    std::cout << "Inputs: " << numInputs << '\n';
+
     // create hidden layer nodes and weights
     for (uint x = 0; x < numHiddenLayers; ++x) {
         // create hidden layers and weights
@@ -32,14 +43,14 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
             // if not currently on last hidden layer
             if (x < numHiddenLayers - 1) {
                 for (uint z = 0; z < neuronsPerLayer; ++z) {
-                    (*weights[x])[y]->push_back(temp);
+                    (*weights[x + 1])[y]->push_back(temp);
                 }
             }
             // if on last layer
             else {
-                // create two weights per node
+                // create two weights per node, since theres two outputs
                 for (uint z = 0; z <= 1; ++z) {
-                    (*weights[x])[y]->push_back(temp);
+                    (*weights[x + 1])[y]->push_back(temp);
                 }
             }
         }
@@ -76,12 +87,10 @@ std::string Model::weightsToString() {
                 if (z < nodeSize - 1) {
                     str += toStr((*(*weights[x])[y])[z]);
                     str += ", ";
-                    std::cout << "nL: " << (*(*weights[x])[y])[z] << '\n';
                 }
                 // if last element
                 else {
                     str += toStr((*(*weights[x])[y])[z]);
-                    std::cout << "last: " << (*(*weights[x])[y])[z] << '\n';
                 }
             }
             // if not last element
