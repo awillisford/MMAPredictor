@@ -58,7 +58,7 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
 
     // create output layer nodes 
     layers.push_back(new std::vector<uint>);
-    for (uint it = 0; it <= 2; ++it) {
+    for (uint it = 0; it <= 1; ++it) { // two iterations for two outputs
         layers.back()->push_back(it);
     }
 }
@@ -136,7 +136,7 @@ std::string Model::layersToString() {
                 str += toStr((*layers[x])[y]);
         }
         if (x < layers.size() - 1)
-            str += "]\n";
+            str += "],\n";
         else
             str += "]";
     }
