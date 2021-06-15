@@ -75,7 +75,10 @@ std::string Model::weightsToString() {
 
     // weight layers
     for (int x = 0; x < weights.size(); ++x) {
-        str += "[";
+        if (x > 0)
+            str += " [";
+        else
+            str += "[";
         // node weight vector
         int nodeLayerSize = weights[x]->size();
         for (int y = 0; y < nodeLayerSize; ++y) {
