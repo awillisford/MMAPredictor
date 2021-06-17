@@ -68,13 +68,16 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
 
 void Model::init_biases() {
     for (int x = 0; x < layers.size(); ++x) {
-        // skip applying biases for input layer
+        // if not input layer
         if (x > 0) {
+            biases.push_back(new std::vector<float>);
+            // add bias element for each node
             for (int y = 0; y < layers[x]->size(); ++y) {
-                float temp = 1.0;
-                biases[x].push_back(temp);
+                float temp = 1.5;
+                biases[x - 1]->push_back(temp);
             }
         }
+        // skip applying biases for input layer
         else {
             continue;
         }
@@ -132,7 +135,7 @@ std::string Model::weightsToString() {
             str += "]";
         }
     }
-    str += "]";
+    str += "(weights)]";
 
     return str;
 }
@@ -160,7 +163,35 @@ std::string Model::layersToString() {
         else
             str += "]";
     }
-    str += "]";
+    str += "(layers)]";
+
+    return str;
+}
+
+std::string Model::biasesToString() {
+    std::string str;
+    str += "[";
+
+    for (int x = 0; x < biases.size(); ++x) {
+        if (x == 0)
+            str += "[";
+        else
+            str += " [";
+        
+        for (int y = 0; y < biases[x]->size(); ++y) {
+            if (y < biases[x]->size() - 1) {
+                str += toStr((*biases[x])[y]);
+                str += ", ";
+            }
+            else
+                str += toStr((*biases[x])[y]);
+        }
+        if (x < biases.size() - 1)
+            str += "],\n";
+        else
+            str += "]";
+    }
+    str += "(biases)]";
 
     return str;
 }

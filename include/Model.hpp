@@ -9,7 +9,7 @@ class Model {
     private:
     // attributes 
     std::vector<std::vector<uint>*> layers; // holds nodes
-    std::vector<std::vector<float>> biases; // holds biases for nodes, except input 
+    std::vector<std::vector<float>*> biases; // holds biases for nodes, except input 
     uint learningRate;
     std::vector<std::vector<std::vector<float>*>*> weights;
 
@@ -29,4 +29,7 @@ class Model {
 
     // layer vector to string for printing to console
     std::string layersToString();
+
+    // biases vector to string for printing to console
+    std::string biasesToString();
 };
