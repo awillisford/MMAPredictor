@@ -61,6 +61,24 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     for (uint it = 0; it <= 1; ++it) { // two iterations for two outputs
         layers.back()->push_back(it);
     }
+
+    // initialize biases
+    init_biases();
+}
+
+void Model::init_biases() {
+    for (int x = 0; x < layers.size(); ++x) {
+        // skip applying biases for input layer
+        if (x > 0) {
+            for (int y = 0; y < layers[x]->size(); ++y) {
+                float temp = 1.0;
+                biases[x].push_back(temp);
+            }
+        }
+        else {
+            continue;
+        }
+    }
 }
 
 template <typename T> std::string Model::toStr(const T& t) { 
@@ -120,7 +138,6 @@ std::string Model::weightsToString() {
 }
 
 std::string Model::layersToString() {
-    //    std::vector<std::vector<uint>*> layers;
     std::string str;
     str += "[";
 
