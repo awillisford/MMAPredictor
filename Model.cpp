@@ -2,6 +2,7 @@
 #include "include/CsvToVector.hpp"
 #include <iostream>
 #include <sstream>
+#include <cmath>
 
 Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     // assign class attribute to constructor parameter
@@ -32,10 +33,14 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     for (uint x = 0; x < numHiddenLayers; ++x) {
         // create hidden layers and weights
         layers.push_back(new std::vector<uint>); 
+        cache.push_back(new std::vector<float>);
+        activated.push_back(new std::vector<float>);
         weights.push_back(new std::vector<std::vector<float>*>);
         // node creation and weights vector per node
         for (uint y = 0; y < neuronsPerLayer; ++y) {
             layers[x + 1]->push_back(y);
+            cache[x]->push_back(y);
+            activated[x]->push_back(y);
             weights[x + 1]->push_back(new std::vector<float>);
 
             // create each weight float per nodes in next layer
@@ -58,12 +63,47 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
 
     // create output layer nodes 
     layers.push_back(new std::vector<uint>);
+    cache.push_back(new std::vector<float>);
+    activated.push_back(new std::vector<float>);
     for (uint it = 0; it <= 1; ++it) { // two iterations for two outputs
         layers.back()->push_back(it);
+        cache.back()->push_back(it);
+        activated.back()->push_back(it);
     }
-
     // initialize biases
     init_biases();
+}
+
+float Model::sigmoid(const float& in) {
+    return 1/(1 + std::exp(-in));
+}
+
+std::vector<float> Model::forward(const std::vector<float>& feature) {
+    for (int x = 0; x < layers.size(); ++x) {
+        // skip first iteration, I started at zero because it makes readability easier
+        if (x == 0) {
+            continue;
+        }
+
+        for (int y = 0; y < layers[x]->size(); ++y) {
+            float sum = 0;
+            // iterate through weights that connect to current node
+            for (int it = 0; it < weights[x - 1]->size(); ++it) {
+                if (x == 1) {
+                    sum += (*(*weights[x - 1])[it])[y] * feature[it];
+                }
+                else {
+                    sum += (*(*weights[x - 1])[it])[y] * (*activated[x - 1])[y];
+                }
+            }
+            // assign cache values to sum of previous outputs * weights + bias
+            (*cache[x - 1])[y] = sum + (*biases[x - 1])[y];
+            // assign activated values to cache put through sigmoid function
+            (*activated[x - 1])[y] = sigmoid((*cache[x - 1])[y]);
+        }
+    }
+    // return deferenced output, predicted bout winner
+    return *activated.back();
 }
 
 void Model::init_biases() {
