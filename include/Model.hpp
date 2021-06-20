@@ -31,6 +31,9 @@ class Model {
     // feed input forward and get output
     std::vector<float> forward(const std::vector<float>& feature);
 
+    // mean squared error function for calculating loss
+    float MSE(std::vector<float> output, std::vector<float> label);
+
     // weight vector to string for printing to console
     std::string weightsToString();
 
@@ -39,4 +42,6 @@ class Model {
 
     // biases vector to string for printing to console
     std::string biasesToString();
+
+
 };

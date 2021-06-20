@@ -106,6 +106,16 @@ std::vector<float> Model::forward(const std::vector<float>& feature) {
     return *activated.back();
 }
 
+float Model::MSE(std::vector<float> output, std::vector<float> label) {
+    float sum = 0;
+    int size = output.size();
+    for (int x = 0; x < size; ++x) {
+        float squared = std::pow(output[0] - label[0], 2) ;
+        sum += squared;
+    }
+    return (sum / size);
+}
+
 void Model::init_biases() {
     for (int x = 0; x < layers.size(); ++x) {
         // if not input layer
