@@ -77,11 +77,16 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     deltas = biases;
 }
 
-float Model::sigmoid(const float& in) {
+float Model::sigmoid(const float& in, bool derivative) {
+    // using derivative when already passed through sigmoid function
+    if (derivative == true) {
+        return in * (1 - in);
+    }
+
     return 1/(1 + std::exp(-in));
 }
 
-std::vector<float> Model::forward(const std::vector<float>& feature) {
+void Model::forward(const std::vector<float>& feature) {
     for (int x = 0; x < layers.size(); ++x) {
         // skip first iteration, I started at zero because it makes readability easier
         if (x == 0) {
@@ -105,8 +110,6 @@ std::vector<float> Model::forward(const std::vector<float>& feature) {
             (*activated[x - 1])[y] = sigmoid((*cache[x - 1])[y]);
         }
     }
-    // return deferenced output, predicted bout winner
-    return *activated.back();
 }
 
 float Model::MSE(std::vector<float> output, std::vector<float> label) {

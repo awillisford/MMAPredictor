@@ -23,14 +23,14 @@ class Model {
     template <typename T> std::string toStr(const T& t);
 
     // sigmoid activation function
-    float sigmoid(const float& in);
+    float sigmoid(const float& in, bool derivative="False");
  
     public:
     // constructor
     Model(uint numLayers, uint neuronsPerLayer, float learningRate = 0.05);
 
     // feed input forward and get output
-    std::vector<float> forward(const std::vector<float>& feature);
+    void forward(const std::vector<float>& feature);
 
     // mean squared error function for calculating loss
     float MSE(std::vector<float> output, std::vector<float> label);
@@ -43,6 +43,4 @@ class Model {
 
     // biases vector to string for printing to console
     std::string biasesToString();
-
-
 };
