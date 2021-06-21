@@ -72,6 +72,9 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     }
     // initialize biases
     init_biases();
+
+    // initialize deltas
+    deltas = biases;
 }
 
 float Model::sigmoid(const float& in) {
