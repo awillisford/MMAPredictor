@@ -11,7 +11,8 @@ class Model {
     std::vector<std::vector<uint>*> layers; // holds nodes
     std::vector<std::vector<float>*> cache; // holds unactivated values of node
     std::vector<std::vector<float>*> activated; // holds activated values of nodes
-    std::vector<std::vector<float>*> biases; // holds biases for nodes, except input 
+    std::vector<std::vector<float>*> biases; // holds biases for nodes, except input
+    std::vector<std::vector<float>*> deltas; // holds error for each node
     std::vector<std::vector<std::vector<float>*>*> weights;
     uint learningRate;
 
