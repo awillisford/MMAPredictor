@@ -116,7 +116,7 @@ float Model::MSE(std::vector<float> output, std::vector<float> label) {
     float sum = 0;
     int size = output.size();
     for (int x = 0; x < size; ++x) {
-        float squared = std::pow(output[x] - label[x], 2) ;
+        float squared = std::pow(label[x] - output[x], 2) ;
         sum += squared;
     }
     return (sum / size);
