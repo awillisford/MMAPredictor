@@ -19,7 +19,7 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     }
 
     // initialize input weights
-    float temp = 1.2;
+    float temp = 0.5;
     int numInputs = 0;
     for (int y = 0; y < weights[0]->size(); ++y) {
         for (int z = 0; z < neuronsPerLayer; ++z) {
@@ -44,7 +44,7 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
             weights[x + 1]->push_back(new std::vector<float>);
 
             // create each weight float per nodes in next layer
-            float temp = 1.1;
+            float temp = 0.5;
             // if not currently on last hidden layer
             if (x < numHiddenLayers - 1) {
                 for (uint z = 0; z < neuronsPerLayer; ++z) {
@@ -73,8 +73,10 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     // initialize biases
     init_biases();
 
-    // initialize deltas
-    deltas = biases;
+    // initialize gradients
+    gradientsB = biases;
+    gradientsW = weights;
+    
 }
 
 float Model::sigmoid(const float& in, bool derivative) {
@@ -112,6 +114,44 @@ void Model::forward(const std::vector<float>& feature) {
     }
 }
 
+// void Model::backward(int currentLabel) {
+//     float loss = MSE(*activated.back(), CsvToVector::labels[currentLabel]);
+
+//     // start from end
+//     for (int x = weights.size() - 1; x >= 0; x--) {
+//         // iterate through each weight vector in layer
+//         for (int y = 0; y < weights[x]->size(); ++y) {
+//             // each individual weight
+//             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
+                
+//                 for (int itX = weights.size() - 1; itX > x; itX--) {
+//                     for (int itY = 0; itY < weights[itX]->size(); ++itY) {
+//                         for (int itZ = 0; itZ < (*weights[itX])[itY]->size(); ++itZ) {
+//                             gradientsW[x]
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+void Model::zeroGradients() {
+    // zero weight gradients
+    for (int x = 0; x < gradientsW.size(); ++x) {
+        for (int y = 0; y < gradientsW[y]->size(); ++y) {
+            for (int z = 0; z < (*gradientsW[x])[y]->size(); ++z) {
+                (*(*gradientsW[x])[y])[z] = 0;
+            }
+        }
+    }
+    // zero bias gradients
+    for (int x = 0; x < gradientsB.size(); ++x) {
+        for (int y = 0; y < gradientsB[x]->size(); ++y) {
+            (*gradientsB[x])[y] = 0;
+        }
+    }
+}
 float Model::MSE(std::vector<float> output, std::vector<float> label, bool derivative, int element) {
     if (derivative == true) {
         return output[element] - label[element];
@@ -132,7 +172,7 @@ void Model::init_biases() {
             biases.push_back(new std::vector<float>);
             // add bias element for each node
             for (int y = 0; y < layers[x]->size(); ++y) {
-                float temp = 1.5;
+                float temp = 0.5;
                 biases[x - 1]->push_back(temp);
             }
         }
