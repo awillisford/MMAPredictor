@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
+#include <tuple>
 
 Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     // assign class attribute to constructor parameter
@@ -141,6 +142,10 @@ void Model::init_biases() {
             continue;
         }
     }
+}
+
+float Model::getActivated(std::tuple<int, int> position) {
+    return (*activated[std::get<0>(position)])[std::get<1>(position)];
 }
 
 template <typename T> std::string Model::toStr(const T& t) { 

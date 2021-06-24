@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <string>
+#include <tuple>
 
 typedef unsigned int uint;
 
@@ -31,6 +32,9 @@ class Model {
 
     // feed input forward and get output
     void forward(const std::vector<float>& feature);
+
+    // return activated output from given node position
+    float getActivated(std::tuple<int, int> position);
 
     // mean squared error function for calculating loss
     float MSE(std::vector<float> output, std::vector<float> label, bool derivative=false, int element=0);
