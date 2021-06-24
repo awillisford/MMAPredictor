@@ -33,7 +33,7 @@ class Model {
     void forward(const std::vector<float>& feature);
 
     // mean squared error function for calculating loss
-    float MSE(std::vector<float> output, std::vector<float> label);
+    float MSE(std::vector<float> output, std::vector<float> label, bool derivative=false, int element=0);
 
     // weight vector to string for printing to console
     std::string weightsToString();

@@ -112,7 +112,10 @@ void Model::forward(const std::vector<float>& feature) {
     }
 }
 
-float Model::MSE(std::vector<float> output, std::vector<float> label) {
+float Model::MSE(std::vector<float> output, std::vector<float> label, bool derivative, int element) {
+    if (derivative == true) {
+        return output[element] - label[element];
+    }
     float sum = 0;
     int size = output.size();
     for (int x = 0; x < size; ++x) {
