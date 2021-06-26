@@ -114,30 +114,29 @@ void Model::forward(const std::vector<float>& feature) {
     }
 }
 
-// void Model::backward(int currentLabel) {
-//     float loss = MSE(*activated.back(), CsvToVector::labels[currentLabel]);
+void Model::backward(int currentLabel) {
+    float loss = MSE(*activated.back(), CsvToVector::labels[currentLabel]);
 
-//     // start from end
-//     for (int x = weights.size() - 1; x >= 0; x--) {
-//         // iterate through each weight vector in layer
-//         for (int y = 0; y < weights[x]->size(); ++y) {
-//             // each individual weight
-//             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
-                
-//                 for (int itX = weights.size() - 1; itX > x; itX--) {
-//                     for (int itY = 0; itY < weights[itX]->size(); ++itY) {
-//                         for (int itZ = 0; itZ < (*weights[itX])[itY]->size(); ++itZ) {
-//                             gradientsW[x]
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+    // start from end, weight layers
+    for (int x = weights.size() - 1; x >= 0; x--) {
+        // each output 
+        for (int it = 0; it <= 1; ++it) {
+            // iterate through each weight vector in weight layer
+            for (int y = 0; y < weights[x]->size(); ++y) {
+                // each individual weight
+                for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
+                    // if last weight layer
+                    if (x == weights.size() - 1) {
+                        sigmoid((*activated[x])[it], true) * MSE(*activated.back(), CsvToVector::labels[currentLabel], true, it);
+                    }
+                }
+            }
+        }
+    }
+}
 
 void Model::zeroGradients() {
-    // zero weight gradients
+    // set weight gradients to zero
     for (int x = 0; x < gradientsW.size(); ++x) {
         for (int y = 0; y < gradientsW[y]->size(); ++y) {
             for (int z = 0; z < (*gradientsW[x])[y]->size(); ++z) {
@@ -145,7 +144,7 @@ void Model::zeroGradients() {
             }
         }
     }
-    // zero bias gradients
+    // set bias gradients to zero
     for (int x = 0; x < gradientsB.size(); ++x) {
         for (int y = 0; y < gradientsB[x]->size(); ++y) {
             (*gradientsB[x])[y] = 0;
@@ -295,6 +294,36 @@ std::string Model::biasesToString() {
             str += "]";
     }
     str += "(biases)]";
+
+    return str;
+}
+
+std::string Model::activatedToString() {
+    std::string str = "[";
+    for (int x = 0; x < activated.size(); ++x) {
+        if (x > 0) {
+            str += " [";
+        }
+        else {
+            str += "[";
+        }
+        for (int y = 0; y < activated[x]->size(); ++y) {
+            if (y < activated[x]->size() - 1) {
+                str += toStr((*activated[x])[y]);
+                str += ", ";
+            }
+            else {
+                str += toStr((*activated[x])[y]);
+            }
+        }
+        if (x < activated.size() - 1) {
+            str += "],\n";
+        }
+        else {
+            str += "]";
+        }
+    }
+    str += "(activated)]";
 
     return str;
 }

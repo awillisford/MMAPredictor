@@ -52,4 +52,7 @@ class Model {
 
     // biases vector to string for printing to console
     std::string biasesToString();
+
+    // activated vector to string for printing to console
+    std::string activatedToString();
 };
