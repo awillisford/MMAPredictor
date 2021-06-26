@@ -116,18 +116,27 @@ void Model::forward(const std::vector<float>& feature) {
 
 void Model::backward(int currentLabel) {
     float loss = MSE(*activated.back(), CsvToVector::labels[currentLabel]);
-
+    std::vector<std::vector<float>*> temp;
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
-        // each output 
-        for (int it = 0; it <= 1; ++it) {
-            // iterate through each weight vector in weight layer
-            for (int y = 0; y < weights[x]->size(); ++y) {
+        temp.insert(temp.begin(), new std::vector<float>);
+        // iterate through each weight vector in weight layer         
+        for (int y = 0; y < weights[x]->size(); ++y) {
+            temp[weights.size() - 1 - x]->push_back(0.0); // initialize gradients at pre-activated nodes in network 
+            // each output 
+            for (int it = 0; it <= 1; ++it) {
                 // each individual weight
                 for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                     // if last weight layer
                     if (x == weights.size() - 1) {
-                        sigmoid((*activated[x])[it], true) * MSE(*activated.back(), CsvToVector::labels[currentLabel], true, it);
+                        (*temp[0])[y] =
+                            MSE(*activated.back(), CsvToVector::labels[currentLabel], true, it) // partial derivative of cost with respect to output
+                            * sigmoid((*activated[x])[y], true); // partial derivative of output with respect to cache (output pre-activation)
+
+                        (*(*gradientsW[x])[y])[z] += (*temp[0])[y] * (*activated[x])[y]; // add to weight gradient
+                    }
+                    else {
+                        // to be added
                     }
                 }
             }
@@ -151,6 +160,7 @@ void Model::zeroGradients() {
         }
     }
 }
+
 float Model::MSE(std::vector<float> output, std::vector<float> label, bool derivative, int element) {
     if (derivative == true) {
         return output[element] - label[element];
