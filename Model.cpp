@@ -74,8 +74,8 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     init_biases();
 
     // initialize gradients
-    gradientsB = biases;
-    gradientsW = weights;
+    nablaB = biases;
+    nablaW = weights;
     
 }
 
@@ -116,27 +116,29 @@ void Model::forward(const std::vector<float>& feature) {
 
 void Model::backward(int currentLabel) {
     float loss = MSE(*activated.back(), CsvToVector::labels[currentLabel]);
-    std::vector<std::vector<float>*> temp;
+    std::vector<std::vector<float>*> nablaA;
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
-        temp.insert(temp.begin(), new std::vector<float>);
+        nablaA.insert(nablaA.begin(), new std::vector<float>);
         // iterate through each weight vector in weight layer         
         for (int y = 0; y < weights[x]->size(); ++y) {
-            temp[weights.size() - 1 - x]->push_back(0.0); // initialize gradients at pre-activated nodes in network 
+            nablaA[0]->push_back(0.0); // initialize gradients at pre-activated nodes in network 
             // each output 
             for (int it = 0; it <= 1; ++it) {
                 // each individual weight
                 for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                     // if last weight layer
                     if (x == weights.size() - 1) {
-                        (*temp[0])[y] =
+                        (*nablaA[0])[y] =
                             MSE(*activated.back(), CsvToVector::labels[currentLabel], true, it) // partial derivative of cost with respect to output
                             * sigmoid((*activated[x])[y], true); // partial derivative of output with respect to cache (output pre-activation)
 
-                        (*(*gradientsW[x])[y])[z] += (*temp[0])[y] * (*activated[x])[y]; // add to weight gradient
+                        (*(*nablaW[x])[y])[z] += (*nablaA[0])[y] * (*activated[x])[y]; // pderivCost/pderivCache * pderivCache/pderivWeight
                     }
                     else {
-                        // to be added
+                        for (int act = 0; act < weights[x]->size(); ++act) {
+
+                        }
                     }
                 }
             }
@@ -146,17 +148,17 @@ void Model::backward(int currentLabel) {
 
 void Model::zeroGradients() {
     // set weight gradients to zero
-    for (int x = 0; x < gradientsW.size(); ++x) {
-        for (int y = 0; y < gradientsW[y]->size(); ++y) {
-            for (int z = 0; z < (*gradientsW[x])[y]->size(); ++z) {
-                (*(*gradientsW[x])[y])[z] = 0;
+    for (int x = 0; x < nablaW.size(); ++x) {
+        for (int y = 0; y < nablaW[y]->size(); ++y) {
+            for (int z = 0; z < (*nablaW[x])[y]->size(); ++z) {
+                (*(*nablaW[x])[y])[z] = 0;
             }
         }
     }
     // set bias gradients to zero
-    for (int x = 0; x < gradientsB.size(); ++x) {
-        for (int y = 0; y < gradientsB[x]->size(); ++y) {
-            (*gradientsB[x])[y] = 0;
+    for (int x = 0; x < nablaB.size(); ++x) {
+        for (int y = 0; y < nablaB[x]->size(); ++y) {
+            (*nablaB[x])[y] = 0;
         }
     }
 }

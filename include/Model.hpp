@@ -12,8 +12,8 @@ class Model {
     std::vector<std::vector<float>*> cache; // holds unactivated values of node
     std::vector<std::vector<float>*> activated; // holds activated values of nodes
     std::vector<std::vector<float>*> biases; // holds biases for nodes, except input
-    std::vector<std::vector<float>*> gradientsB; // holds gradient for each bias
-    std::vector<std::vector<std::vector<float>*>*> gradientsW; // holds gradient for each weight
+    std::vector<std::vector<float>*> nablaB; // holds gradient for each bias
+    std::vector<std::vector<std::vector<float>*>*> nablaW; // holds gradient for each weight
     std::vector<std::vector<std::vector<float>*>*> weights;
     uint learningRate;
 
