@@ -126,14 +126,14 @@ void Model::backward(int currentLabel) {
         }
         // iterate through each weight vector in weight layer         
         for (int y = 0; y < weights[x]->size(); ++y) {
-            float sumAct;
+            (*nablaB[x])[y] = (*nablaCache[x])[y]; // partial deriv of loss with respect to biases
+            float sumAct; // holds summation of partial deriv of loss with respect to activated node values
             // each individual weight
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 // not first weight layer
                 if (x > 0) {
                     // set weight gradients from hidden layer output
                     (*(*nablaW[x])[y])[z] = (*nablaCache[x])[y] * (*activated[x - 1])[y];
-                    
                     // summation of weight * cache 
                     sumAct += (*nablaCache[x])[z] * (*(*weights[x])[y])[z];
                 }
@@ -143,9 +143,21 @@ void Model::backward(int currentLabel) {
                     (*(*nablaW[x])[y])[z] = (*nablaCache[x])[y] * CsvToVector::features[currentLabel][z];
                 }
             }
+            // set gradients of cache from activation for all layers spare input
             if (x > 0) {
-                // set gradient of cache from activation
                 (*nablaCache[x - 1])[y] = sigmoid(sumAct, true);
+            }
+        }
+    }
+
+    // update weights and biases by gradients
+    for (int x = 0; x < weights.size(); ++x) {
+        for (int y = 0; y < weights[x]->size(); ++y) {
+            // update biases
+            (*biases[x])[y] -= ((*nablaB[x])[y] * learningRate);
+            for (int z = 0; y < (*weights[x])[y]->size(); ++z) {
+                // update weights
+                (*(*weights[x])[y])[z] -= ((*(*nablaW[x])[y])[z] * learningRate);
             }
         }
     }
@@ -214,49 +226,39 @@ std::string Model::weightsToString() {
     std::string str;
     str += "["; // show beginning of weight vector
 
-    // weight layers
     for (int x = 0; x < weights.size(); ++x) {
         if (x > 0)
             str += " [";
         else
             str += "[";
-        // node weight vector
         int nodeLayerSize = weights[x]->size();
         for (int y = 0; y < nodeLayerSize; ++y) {
             str += "[";
-            // individual weights
             int nodeSize = (*weights[x])[y]->size();
             for (int z = 0; z < nodeSize; ++z) {
-                // if not last element
                 if (z < nodeSize - 1) {
                     str += toStr((*(*weights[x])[y])[z]);
                     str += ", ";
                 }
-                // if last element
                 else {
                     str += toStr((*(*weights[x])[y])[z]);
                 }
             }
-            // if not last element
             if (y < nodeLayerSize - 1) {
                 str += "], ";
             }
-            // if last element
             else {
                 str += "]";
             }
         }
-        // if not last element
         if (x < weights.size() - 1) {
             str += "],\n";
         }
-        // if last element
         else {
             str += "]";
         }
     }
     str += "(weights)]";
-
     return str;
 }
 
