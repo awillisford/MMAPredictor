@@ -26,10 +26,7 @@ class Model {
 
     // sigmoid activation function
     float sigmoid(const float& in, bool derivative=false);
-
-    // return activated output from given node position
-    float getActivated(const int x, const int y);
-
+    
     // mean squared error function for calculating loss
     float MSE(std::vector<float> output, std::vector<float> label, bool derivative=false, int element=0);
  

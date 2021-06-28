@@ -212,10 +212,6 @@ void Model::init_biases() {
     }
 }
 
-float Model::getActivated(const int x, const int y) {
-    return (*activated[x])[y];
-}
-
 template <typename T> std::string Model::toStr(const T& t) { 
    std::ostringstream os; 
    os << t; 
