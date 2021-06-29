@@ -19,7 +19,7 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     }
 
     // initialize input weights
-    float temp = 0.5;
+    float temp = 0.6;
     int numInputs = 0;
     for (int y = 0; y < weights[0]->size(); ++y) {
         for (int z = 0; z < neuronsPerLayer; ++z) {
@@ -44,7 +44,7 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
             weights[x + 1]->push_back(new std::vector<float>);
 
             // create each weight float per nodes in next layer
-            float temp = 0.5;
+            float temp = 0.4;
             // if not currently on last hidden layer
             if (x < numHiddenLayers - 1) {
                 for (uint z = 0; z < neuronsPerLayer; ++z) {
@@ -116,6 +116,9 @@ void Model::forward(const std::vector<float>& feature) {
 }
 
 void Model::backward(int currentLabel) {
+    // print loss to user
+    std::cout << "- " << MSE(*activated.back(), CsvToVector::labels[currentLabel])
+              << " loss\n";
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
         // if last weight layer
@@ -139,7 +142,7 @@ void Model::backward(int currentLabel) {
                 }
                 // first weight layer
                 else {
-                    // set weight graidents from input
+                    // set weight gradients from input
                     (*(*nablaW[x])[y])[z] = (*nablaCache[x])[y] * CsvToVector::features[currentLabel][z];
                 }
             }
@@ -155,28 +158,10 @@ void Model::backward(int currentLabel) {
         for (int y = 0; y < weights[x]->size(); ++y) {
             // update biases
             (*biases[x])[y] -= ((*nablaB[x])[y] * learningRate);
-            for (int z = 0; y < (*weights[x])[y]->size(); ++z) {
+            for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 // update weights
                 (*(*weights[x])[y])[z] -= ((*(*nablaW[x])[y])[z] * learningRate);
             }
-        }
-    }
-}
-
-void Model::zeroGradients() {
-    // set weight gradients to zero
-    for (int x = 0; x < nablaW.size(); ++x) {
-        for (int y = 0; y < nablaW[y]->size(); ++y) {
-            for (int z = 0; z < (*nablaW[x])[y]->size(); ++z) {
-                (*(*nablaW[x])[y])[z] = 0;
-            }
-        }
-    }
-    // set bias and cache gradients to zero
-    for (int x = 0; x < nablaB.size(); ++x) {
-        for (int y = 0; y < nablaB[x]->size(); ++y) {
-            (*nablaB[x])[y] = 0;
-            (*nablaCache[x])[y] = 0;
         }
     }
 }

@@ -39,8 +39,6 @@ class Model {
 
     // backpropagate to compute gradients for each weight and bias
     void backward(int currentLabel);
-
-    void zeroGradients();
     
     // weight vector to string for printing to console
     std::string weightsToString();
