@@ -51,4 +51,12 @@ class Model {
 
     // activated vector to string for printing to console
     std::string activatedToString();
+
+    std::string nablaWToString();
+
+    std::string nablaCacheToString();
+
+    std::string cacheToString();
+
+    std::string nablaBToString();
 };

@@ -236,10 +236,50 @@ std::string Model::weightsToString() {
             str += "],\n";
         }
         else {
-            str += "]";
+            str += "]\n";
         }
     }
     str += "(weights)]";
+    return str;
+}
+
+std::string Model::nablaWToString() {
+    std::string str;
+    str += "["; // show beginning of weight vector
+
+    for (int x = 0; x < nablaW.size(); ++x) {
+        if (x > 0)
+            str += " [";
+        else
+            str += "[";
+        int nodeLayerSize = nablaW[x]->size();
+        for (int y = 0; y < nodeLayerSize; ++y) {
+            str += "[";
+            int nodeSize = (*nablaW[x])[y]->size();
+            for (int z = 0; z < nodeSize; ++z) {
+                if (z < nodeSize - 1) {
+                    str += toStr((*(*nablaW[x])[y])[z]);
+                    str += ", ";
+                }
+                else {
+                    str += toStr((*(*nablaW[x])[y])[z]);
+                }
+            }
+            if (y < nodeLayerSize - 1) {
+                str += "], ";
+            }
+            else {
+                str += "]";
+            }
+        }
+        if (x < nablaW.size() - 1) {
+            str += "],\n";
+        }
+        else {
+            str += "]\n";
+        }
+    }
+    str += "(nablaW)]";
     return str;
 }
 
@@ -264,7 +304,7 @@ std::string Model::layersToString() {
         if (x < layers.size() - 1)
             str += "],\n";
         else
-            str += "]";
+            str += "]\n";
     }
     str += "(layers)]";
 
@@ -292,7 +332,7 @@ std::string Model::biasesToString() {
         if (x < biases.size() - 1)
             str += "],\n";
         else
-            str += "]";
+            str += "]\n";
     }
     str += "(biases)]";
 
@@ -321,10 +361,100 @@ std::string Model::activatedToString() {
             str += "],\n";
         }
         else {
-            str += "]";
+            str += "]\n";
         }
     }
     str += "(activated)]";
+
+    return str;
+}
+
+std::string Model::cacheToString() {
+    std::string str = "[";
+    for (int x = 0; x < cache.size(); ++x) {
+        if (x > 0) {
+            str += " [";
+        }
+        else {
+            str += "[";
+        }
+        for (int y = 0; y < cache[x]->size(); ++y) {
+            if (y < cache[x]->size() - 1) {
+                str += toStr((*cache[x])[y]);
+                str += ", ";
+            }
+            else {
+                str += toStr((*cache[x])[y]);
+            }
+        }
+        if (x < cache.size() - 1) {
+            str += "],\n";
+        }
+        else {
+            str += "]\n";
+        }
+    }
+    str += "(cache)]";
+
+    return str;
+}
+
+std::string Model::nablaCacheToString() {
+    std::string str = "[";
+    for (int x = 0; x < nablaCache.size(); ++x) {
+        if (x > 0) {
+            str += " [";
+        }
+        else {
+            str += "[";
+        }
+        for (int y = 0; y < nablaCache[x]->size(); ++y) {
+            if (y < nablaCache[x]->size() - 1) {
+                str += toStr((*nablaCache[x])[y]);
+                str += ", ";
+            }
+            else {
+                str += toStr((*nablaCache[x])[y]);
+            }
+        }
+        if (x < nablaCache.size() - 1) {
+            str += "],\n";
+        }
+        else {
+            str += "]\n";
+        }
+    }
+    str += "(nablaCache)]";
+
+    return str;
+}
+
+std::string Model::nablaBToString() {
+    std::string str = "[";
+    for (int x = 0; x < nablaB.size(); ++x) {
+        if (x > 0) {
+            str += " [";
+        }
+        else {
+            str += "[";
+        }
+        for (int y = 0; y < nablaB[x]->size(); ++y) {
+            if (y < nablaB[x]->size() - 1) {
+                str += toStr((*nablaB[x])[y]);
+                str += ", ";
+            }
+            else {
+                str += toStr((*nablaB[x])[y]);
+            }
+        }
+        if (x < nablaB.size() - 1) {
+            str += "],\n";
+        }
+        else {
+            str += "]\n";
+        }
+    }
+    str += "(nablaB)]";
 
     return str;
 }
