@@ -6,7 +6,7 @@
 int main() {
     CsvToVector::extract_data("data/data_filtered.csv");
 
-    Model m1(1, 2, 0.03);
+    Model m1(1, 1, 0.03);
 
     int EPOCHS = 3;
 
@@ -24,11 +24,6 @@ int main() {
             std::cout << m1.weightsToString() << "\n";
             std::cout << m1.nablaWToString() << "\n";
 
-            double sum{0};
-            for (int x = 0; x < CsvToVector::features[elem].size(); ++x) {
-                sum += CsvToVector::features[elem][x];
-            }
-            std::cout << "SUM OF INPUT: " << sum << '\n';
             m1.forward(CsvToVector::features[elem]);
 
             std::cout << "---------------AFTER FORWARD PASS-------------\n";
@@ -41,6 +36,13 @@ int main() {
             std::cout << m1.nablaWToString() << "\n";
 
             m1.backward(elem);
+
+           /* pDerivCost/pDerivOutput = nablaW = Output elem - cost elem
+            *
+            * Weights is the exact same output as nablaW, so something is def wrong
+            *
+            */
+
 
             std::cout << "---------------AFTER BACKWARD PASS-------------\n";
             std::cout << m1.activatedToString() << "\n";

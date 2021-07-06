@@ -77,7 +77,6 @@ Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
     nablaB = biases;
     nablaW = weights;
     nablaCache = nablaB;
-    
 }
 
 float Model::sigmoid(const float& in, bool derivative) {
@@ -120,39 +119,43 @@ void Model::forward(const std::vector<float>& feature) {
 }
 
 void Model::backward(int currentLabel) {
+    // print label to user
+    std::cout << "- [" << CsvToVector::labels[currentLabel][0] << ", "
+                       << CsvToVector::labels[currentLabel][1] << "] label\n";
     // print loss to user
     std::cout << "- " << MSE(*activated.back(), CsvToVector::labels[currentLabel])
               << " loss\n";
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
-        // if last weight layer
-        if (x == weights.size() - 1) {
-            // gradients of unactivated output nodes -> pderivLoss / pderivCache
-            (*nablaCache[x])[0] = MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 0);
-            (*nablaCache[x])[1] = MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 1);
-        }
         // iterate through each weight vector in weight layer         
         for (int y = 0; y < weights[x]->size(); ++y) {
-            (*nablaB[x])[y] = (*nablaCache[x])[y]; // partial deriv of loss with respect to biases
-            float sumAct; // holds summation of partial deriv of loss with respect to activated node values
-            // each individual weight
+            float summationActivation; // holds summation of partial deriv of loss with respect to activated node values
+
+            // assign gradient to unactivated value of output nodes
+            if (x == weights.size() - 1) {
+                (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 0), true);
+                (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 1), true);
+            }
+
+            (*nablaB[x])[y] = (*nablaCache[x])[y]; // bias gradient = cache of same node
+
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
-                // not first weight layer
+                // hidden weight layers
                 if (x > 0) {
                     // set weight gradients from hidden layer output
-                    (*(*nablaW[x])[y])[z] = (*nablaCache[x])[y] * (*activated[x - 1])[y];
-                    // summation of weight * cache 
-                    sumAct += (*nablaCache[x])[z] * (*(*weights[x])[y])[z];
+                    (*(*nablaW[x])[y])[z] = (*nablaCache[x])[z] * (*activated[x - 1])[y];
+                    // summation of weight * cache gradient
+                    summationActivation += (*(*weights[x])[y])[z] * (*nablaCache[x])[z];
                 }
-                // first weight layer
+                // input weight layer
                 else {
                     // set weight gradients from input
-                    (*(*nablaW[x])[y])[z] = (*nablaCache[x])[y] * CsvToVector::features[currentLabel][z];
+                    (*(*nablaW[x])[y])[z] = (*nablaCache[x])[z] * CsvToVector::features[currentLabel][y];
                 }
             }
             // set gradients of cache from activation for all layers spare input
             if (x > 0) {
-                (*nablaCache[x - 1])[y] = sigmoid(sumAct, true);
+                (*nablaCache[x - 1])[y] = sigmoid(summationActivation, true);
             }
         }
     }
@@ -161,10 +164,10 @@ void Model::backward(int currentLabel) {
     for (int x = 0; x < weights.size(); ++x) {
         for (int y = 0; y < weights[x]->size(); ++y) {
             // update biases
-            (*biases[x])[y] -= ((*nablaB[x])[y] * learningRate);
+            (*biases[x])[y] -= (*nablaB[x])[y] * learningRate;
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 // update weights
-                (*(*weights[x])[y])[z] -= ((*(*nablaW[x])[y])[z] * learningRate);
+                (*(*weights[x])[y])[z] -= (*(*nablaW[x])[y])[z] * learningRate;
             }
         }
     }
