@@ -90,27 +90,31 @@ float Model::sigmoid(const float& in, bool derivative) {
 }
 
 void Model::forward(const std::vector<float>& feature) {
-    for (int x = 0; x < layers.size(); ++x) {
-        // skip first iteration, I started at zero because it makes readability easier
-        if (x == 0) {
-            continue;
+    // zero values of each cache
+    for (int x = 0; x < cache.size(); ++x) {
+        for (int y = 0; y < cache[x]->size(); ++y) {
+            (*cache[x])[y] = 0;
         }
+    }
 
-        for (int y = 0; y < layers[x]->size(); ++y) {
-            float sum = 0;
-            // iterate through weights that connect to current node
-            for (int it = 0; it < weights[x - 1]->size(); ++it) {
-                if (x == 1) {
-                    sum += (*(*weights[x - 1])[it])[y] * feature[it];
+    // forward feed
+    for (int x = 0; x < weights.size(); ++x) {
+        for (int y = 0; y < weights[x]->size(); ++y) {
+            for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
+                // weights from input
+                if (x == 0) {
+                    (*cache[x])[z] += (*(*weights[x])[y])[z] * feature[y]; // add weight * value to cache value
                 }
+                // weights from hidden nodes
                 else {
-                    sum += (*(*weights[x - 1])[it])[y] * (*activated[x - 1])[y];
+                    (*cache[x])[z] += (*(*weights[x])[y])[z] * (*activated[x - 1])[y]; // add weight * value to cache value
+                }
+                // last group of weights in layer
+                if (y == weights[x]->size() - 1) {
+                    (*cache[x])[z] += (*biases[x])[z]; // add biases
+                    (*activated[x])[z] = sigmoid((*cache[x])[z]); // activated equal to cache through activation function
                 }
             }
-            // assign cache values to sum of previous outputs * weights + bias
-            (*cache[x - 1])[y] = sum + (*biases[x - 1])[y];
-            // assign activated values to cache put through sigmoid function
-            (*activated[x - 1])[y] = sigmoid((*cache[x - 1])[y]);
         }
     }
 }
@@ -236,10 +240,10 @@ std::string Model::weightsToString() {
             str += "],\n";
         }
         else {
-            str += "]\n";
+            str += "]";
         }
     }
-    str += "(weights)]";
+    str += "(weights)]\n";
     return str;
 }
 
@@ -276,10 +280,10 @@ std::string Model::nablaWToString() {
             str += "],\n";
         }
         else {
-            str += "]\n";
+            str += "]";
         }
     }
-    str += "(nablaW)]";
+    str += "(nablaW)]\n";
     return str;
 }
 
@@ -304,9 +308,9 @@ std::string Model::layersToString() {
         if (x < layers.size() - 1)
             str += "],\n";
         else
-            str += "]\n";
+            str += "]";
     }
-    str += "(layers)]";
+    str += "(layers)]\n";
 
     return str;
 }
@@ -332,9 +336,9 @@ std::string Model::biasesToString() {
         if (x < biases.size() - 1)
             str += "],\n";
         else
-            str += "]\n";
+            str += "]";
     }
-    str += "(biases)]";
+    str += "(biases)]\n";
 
     return str;
 }
@@ -361,10 +365,10 @@ std::string Model::activatedToString() {
             str += "],\n";
         }
         else {
-            str += "]\n";
+            str += "]";
         }
     }
-    str += "(activated)]";
+    str += "(activated)]\n";
 
     return str;
 }
@@ -391,10 +395,10 @@ std::string Model::cacheToString() {
             str += "],\n";
         }
         else {
-            str += "]\n";
+            str += "]";
         }
     }
-    str += "(cache)]";
+    str += "(cache)]\n";
 
     return str;
 }
@@ -421,10 +425,10 @@ std::string Model::nablaCacheToString() {
             str += "],\n";
         }
         else {
-            str += "]\n";
+            str += "]";
         }
     }
-    str += "(nablaCache)]";
+    str += "(nablaCache)]\n";
 
     return str;
 }
@@ -451,10 +455,10 @@ std::string Model::nablaBToString() {
             str += "],\n";
         }
         else {
-            str += "]\n";
+            str += "]";
         }
     }
-    str += "(nablaB)]";
+    str += "(nablaB)]\n";
 
     return str;
 }
