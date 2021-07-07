@@ -4,79 +4,78 @@
 #include <sstream>
 #include <cmath>
 
+typedef unsigned int uint;
+
 Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float learningRate) {
-    // assign class attribute to constructor parameter
+    // assign learning rate member to constructor parameter
     this->learningRate = learningRate;
 
-    // create layer and weight vector for input
+    init_members(numHiddenLayers, neuronsPerLayer);
+}
+
+void Model::init_members(const uint hiddenLayers, const uint neuronsPerLayer) {
+    // create weight layer and gradient for input
     weights.push_back(new std::vector<std::vector<float>*>);
-    layers.push_back(new std::vector<uint>);
+    nablaWeights.push_back(new std::vector<std::vector<float>*>);
 
-    // create input nodes for layer vector and input weights 
-    for (int it = 0; it < CsvToVector::features[0].size(); ++it) {
-        layers[0]->push_back(it);
+    // create input weights 
+    for (int x = 0; x < CsvToVector::features[0].size(); ++x) {
         weights[0]->push_back(new std::vector<float>);
-    }
-
-    // initialize input weights
-    float temp = 0.6;
-    int numInputs = 0;
-    for (int y = 0; y < weights[0]->size(); ++y) {
-        for (int z = 0; z < neuronsPerLayer; ++z) {
-            (*weights[0])[y]->push_back(temp);
+        nablaWeights[0]->push_back(new std::vector<float>);
+        for (int y = 0; y < neuronsPerLayer; ++y) {
+            (*weights[0])[x]->push_back(0.5);
+            (*nablaWeights[0])[x]->push_back(0.5);
         }
-        numInputs++;
     }
-    std::cout << "Inputs: " << numInputs << '\n';
 
-    // create hidden layer nodes and weights
-    for (uint x = 0; x < numHiddenLayers; ++x) {
-        // create hidden layers and weights
-        layers.push_back(new std::vector<uint>); 
-        cache.push_back(new std::vector<float>);
-        activated.push_back(new std::vector<float>);
+    for (int x = 0; x < hiddenLayers; ++x) {
         weights.push_back(new std::vector<std::vector<float>*>);
-        // node creation and weights vector per node
-        for (uint y = 0; y < neuronsPerLayer; ++y) {
-            layers[x + 1]->push_back(y);
-            cache[x]->push_back(y);
-            activated[x]->push_back(y);
-            weights[x + 1]->push_back(new std::vector<float>);
+        nablaWeights.push_back(new std::vector<std::vector<float>*>);
+        cache.push_back(new std::vector<float>);
+        nablaCache.push_back(new std::vector<float>);
+        biases.push_back(new std::vector<float>);
+        nablaBiases.push_back(new std::vector<float>);
+        activated.push_back(new std::vector<float>);
 
-            // create each weight float per nodes in next layer
-            float temp = 0.4;
-            // if not currently on last hidden layer
-            if (x < numHiddenLayers - 1) {
-                for (uint z = 0; z < neuronsPerLayer; ++z) {
-                    (*weights[x + 1])[y]->push_back(temp);
+        for (int y = 0; y < neuronsPerLayer; ++y) {
+            weights[x + 1]->push_back(new std::vector<float>);
+            nablaWeights[x + 1]->push_back(new std::vector<float>);
+            cache[x]->push_back(0.5);
+            nablaCache[x]->push_back(0.5);
+            biases[x]->push_back(0.4);
+            nablaBiases[x]->push_back(0.4);
+            activated[x]->push_back(0.5);
+
+            if (x < hiddenLayers - 1) {
+                for (int z = 0; z < neuronsPerLayer; ++z) {
+                    (*weights[x + 1])[y]->push_back(0.5);
+                    (*nablaWeights[x + 1])[y]->push_back(0.5);
                 }
             }
-            // if on last layer
             else {
-                // create two weights per node, since theres two outputs
-                for (uint z = 0; z <= 1; ++z) {
-                    (*weights[x + 1])[y]->push_back(temp);
+                for (int z = 0; z < 2; ++z) {
+                    (*weights[x + 1])[y]->push_back(0.5);
+                    (*nablaWeights[x + 1])[y]->push_back(0.5);
                 }
             }
         }
+        // last hidden layer
+        if (x == hiddenLayers - 1) {
+            // create members for output nodes
+            cache.push_back(new std::vector<float>);
+            nablaCache.push_back(new std::vector<float>);
+            biases.push_back(new std::vector<float>);
+            nablaBiases.push_back(new std::vector<float>);
+            activated.push_back(new std::vector<float>);
+            for (int y = 0; y < 2; ++y) {
+                cache[x + 1]->push_back(0.5);
+                nablaCache[x + 1]->push_back(0.5);
+                biases[x + 1]->push_back(0.4);
+                nablaBiases[x + 1]->push_back(0.4);
+                activated[x + 1]->push_back(0.5);
+            }
+        }
     }
-
-    // create output layer nodes 
-    layers.push_back(new std::vector<uint>);
-    cache.push_back(new std::vector<float>);
-    activated.push_back(new std::vector<float>);
-    for (uint it = 0; it <= 1; ++it) { // two iterations for two outputs
-        layers.back()->push_back(it);
-        cache.back()->push_back(it);
-        activated.back()->push_back(it);
-    }
-    // initialize biases
-    init_biases();
-
-    // initialize gradients
-    nablaB = biases;
-    nablaW = weights;
-    nablaCache = nablaB;
 }
 
 float Model::sigmoid(const float& in, bool derivative) {
@@ -125,6 +124,7 @@ void Model::backward(int currentLabel) {
     // print loss to user
     std::cout << "- " << MSE(*activated.back(), CsvToVector::labels[currentLabel])
               << " loss\n";
+    
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
         // iterate through each weight vector in weight layer         
@@ -137,20 +137,20 @@ void Model::backward(int currentLabel) {
                 (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 1), true);
             }
 
-            (*nablaB[x])[y] = (*nablaCache[x])[y]; // bias gradient = cache of same node
+            (*nablaBiases[x])[y] = (*nablaCache[x])[y]; // bias gradient = cache of same node
 
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 // hidden weight layers
                 if (x > 0) {
                     // set weight gradients from hidden layer output
-                    (*(*nablaW[x])[y])[z] = (*nablaCache[x])[z] * (*activated[x - 1])[y];
+                    (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * (*activated[x - 1])[y];
                     // summation of weight * cache gradient
                     summationActivation += (*(*weights[x])[y])[z] * (*nablaCache[x])[z];
                 }
                 // input weight layer
                 else {
                     // set weight gradients from input
-                    (*(*nablaW[x])[y])[z] = (*nablaCache[x])[z] * CsvToVector::features[currentLabel][y];
+                    (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * CsvToVector::features[currentLabel][y];
                 }
             }
             // set gradients of cache from activation for all layers spare input
@@ -164,10 +164,10 @@ void Model::backward(int currentLabel) {
     for (int x = 0; x < weights.size(); ++x) {
         for (int y = 0; y < weights[x]->size(); ++y) {
             // update biases
-            (*biases[x])[y] -= (*nablaB[x])[y] * learningRate;
+            (*biases[x])[y] -= (*nablaBiases[x])[y] * learningRate;
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 // update weights
-                (*(*weights[x])[y])[z] -= (*(*nablaW[x])[y])[z] * learningRate;
+                (*(*weights[x])[y])[z] -= (*(*nablaWeights[x])[y])[z] * learningRate;
             }
         }
     }
@@ -184,24 +184,6 @@ float Model::MSE(std::vector<float> output, std::vector<float> label, bool deriv
         sum += squared;
     }
     return (sum / size);
-}
-
-void Model::init_biases() {
-    for (int x = 0; x < layers.size(); ++x) {
-        // if not input layer
-        if (x > 0) {
-            biases.push_back(new std::vector<float>);
-            // add bias element for each node
-            for (int y = 0; y < layers[x]->size(); ++y) {
-                float temp = 0.5;
-                biases[x - 1]->push_back(temp);
-            }
-        }
-        // skip applying biases for input layer
-        else {
-            continue;
-        }
-    }
 }
 
 template <typename T> std::string Model::toStr(const T& t) { 
@@ -254,22 +236,22 @@ std::string Model::nablaWToString() {
     std::string str;
     str += "["; // show beginning of weight vector
 
-    for (int x = 0; x < nablaW.size(); ++x) {
+    for (int x = 0; x < nablaWeights.size(); ++x) {
         if (x > 0)
             str += " [";
         else
             str += "[";
-        int nodeLayerSize = nablaW[x]->size();
+        int nodeLayerSize = nablaWeights[x]->size();
         for (int y = 0; y < nodeLayerSize; ++y) {
             str += "[";
-            int nodeSize = (*nablaW[x])[y]->size();
+            int nodeSize = (*nablaWeights[x])[y]->size();
             for (int z = 0; z < nodeSize; ++z) {
                 if (z < nodeSize - 1) {
-                    str += toStr((*(*nablaW[x])[y])[z]);
+                    str += toStr((*(*nablaWeights[x])[y])[z]);
                     str += ", ";
                 }
                 else {
-                    str += toStr((*(*nablaW[x])[y])[z]);
+                    str += toStr((*(*nablaWeights[x])[y])[z]);
                 }
             }
             if (y < nodeLayerSize - 1) {
@@ -279,42 +261,14 @@ std::string Model::nablaWToString() {
                 str += "]";
             }
         }
-        if (x < nablaW.size() - 1) {
+        if (x < nablaWeights.size() - 1) {
             str += "],\n";
         }
         else {
             str += "]";
         }
     }
-    str += "(nablaW)]\n";
-    return str;
-}
-
-std::string Model::layersToString() {
-    std::string str;
-    str += "[";
-
-    for (int x = 0; x < layers.size(); ++x) {
-        if (x == 0)
-            str += "[";
-        else
-            str += " [";
-        
-        for (int y = 0; y < layers[x]->size(); ++y) {
-            if (y < layers[x]->size() - 1) {
-                str += toStr((*layers[x])[y]);
-                str += ", ";
-            }
-            else
-                str += toStr((*layers[x])[y]);
-        }
-        if (x < layers.size() - 1)
-            str += "],\n";
-        else
-            str += "]";
-    }
-    str += "(layers)]\n";
-
+    str += "(nablaWeights)]\n";
     return str;
 }
 
@@ -438,30 +392,30 @@ std::string Model::nablaCacheToString() {
 
 std::string Model::nablaBToString() {
     std::string str = "[";
-    for (int x = 0; x < nablaB.size(); ++x) {
+    for (int x = 0; x < nablaBiases.size(); ++x) {
         if (x > 0) {
             str += " [";
         }
         else {
             str += "[";
         }
-        for (int y = 0; y < nablaB[x]->size(); ++y) {
-            if (y < nablaB[x]->size() - 1) {
-                str += toStr((*nablaB[x])[y]);
+        for (int y = 0; y < nablaBiases[x]->size(); ++y) {
+            if (y < nablaBiases[x]->size() - 1) {
+                str += toStr((*nablaBiases[x])[y]);
                 str += ", ";
             }
             else {
-                str += toStr((*nablaB[x])[y]);
+                str += toStr((*nablaBiases[x])[y]);
             }
         }
-        if (x < nablaB.size() - 1) {
+        if (x < nablaBiases.size() - 1) {
             str += "],\n";
         }
         else {
             str += "]";
         }
     }
-    str += "(nablaB)]\n";
+    str += "(nablaBiases)]\n";
 
     return str;
 }
