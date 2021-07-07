@@ -127,18 +127,19 @@ void Model::backward(int currentLabel) {
     
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
+        
+        if (x == weights.size() - 1) {
+            // assign gradient of cache to partial derivative of activated value from output nodes
+            (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 0), true);
+            (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 1), true);
+            // assign output node bias gradients to cache gradient of same nodes
+            (*nablaBiases[x])[0] = (*nablaCache[x])[0];
+            (*nablaBiases[x])[1] = (*nablaCache[x])[1];
+        }
         // iterate through each weight vector in weight layer         
         for (int y = 0; y < weights[x]->size(); ++y) {
             float summationActivation; // holds summation of partial deriv of loss with respect to activated node values
-
-            // assign gradient to unactivated value of output nodes
-            if (x == weights.size() - 1) {
-                (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 0), true);
-                (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 1), true);
-            }
-
-            (*nablaBiases[x])[y] = (*nablaCache[x])[y]; // bias gradient = cache of same node
-
+            
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 // hidden weight layers
                 if (x > 0) {
@@ -153,9 +154,11 @@ void Model::backward(int currentLabel) {
                     (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * CsvToVector::features[currentLabel][y];
                 }
             }
-            // set gradients of cache from activation for all layers spare input
             if (x > 0) {
+                // set gradients of cache from activation for hidden layer nodes
                 (*nablaCache[x - 1])[y] = sigmoid(summationActivation, true);
+                // set gradients of biases from hidden layer nodes
+                (*nablaBiases[x - 1])[y] = (*nablaCache[x - 1])[y];
             }
         }
     }
