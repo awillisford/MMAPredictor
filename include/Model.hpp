@@ -15,7 +15,7 @@ class Model {
     std::vector<std::vector<float>*> nablaCache; // holds gradient for each activated value
     std::vector<std::vector<std::vector<float>*>*> nablaWeights; // holds gradient for each weight
     std::vector<std::vector<std::vector<float>*>*> weights;
-    uint learningRate;
+    float learningRate;
 
     // initialize model members
     void init_members(const uint hiddenLayers, const uint neuronsPerLayer);
@@ -31,7 +31,7 @@ class Model {
  
     public:
     // constructor
-    Model(uint numLayers, uint neuronsPerLayer, float learningRate = 0.05);
+    Model(uint numLayers, uint neuronsPerLayer, float lr = 0.05);
 
     // feed input forward and get output
     void forward(const std::vector<float>& feature);
