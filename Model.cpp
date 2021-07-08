@@ -138,7 +138,7 @@ void Model::backward(int currentLabel) {
         }
         // iterate through each weight vector in weight layer         
         for (int y = 0; y < weights[x]->size(); ++y) {
-            float summationActivation; // holds summation of partial deriv of loss with respect to activated node values
+            float summationActivation = 0; // holds summation of partial deriv of loss with respect to activated node values
             
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 // hidden weight layers
