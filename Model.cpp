@@ -197,236 +197,76 @@ float Model::MSE(std::vector<float> output, std::vector<float> label, bool deriv
     return (sum / size);
 }
 
-template <typename T> std::string Model::toStr(const T& t) { 
-   std::ostringstream os; 
-   os << t; 
-   return os.str(); 
-} 
+std::ostream& operator<<(std::ostream& out, Model& mod) {
+    out << mod.str2(mod.nablaBiases, "nablaBiases")
+    << mod.str2(mod.nablaCache, "nablaCache")
+    << mod.str3(mod.nablaWeights, "nablaWeights")
+    << mod.str2(mod.biases, "biases")
+    << mod.str2(mod.cache, "cache")
+    << mod.str3(mod.weights, "weights")
+    << mod.str2(mod.activated, "activated");
+    return out;
+}
 
-std::string Model::weightsToString() {
-    std::string str;
-    str += "["; // show beginning of weight vector
+template <typename T> std::string Model::toStr(const T& t) {
+    std::ostringstream os;
+    os << t;
+    return os.str();
+}
 
-    for (int x = 0; x < weights.size(); ++x) {
+std::string Model::str2(const std::vector<std::vector<float>*>& vec, const std::string name) {
+    std::string str = "[";
+    for (int x = 0; x < vec.size(); ++x) {
         if (x > 0)
             str += " [";
         else
             str += "[";
-        int nodeLayerSize = weights[x]->size();
-        for (int y = 0; y < nodeLayerSize; ++y) {
-            str += "[";
-            int nodeSize = (*weights[x])[y]->size();
-            for (int z = 0; z < nodeSize; ++z) {
-                if (z < nodeSize - 1) {
-                    str += toStr((*(*weights[x])[y])[z]);
-                    str += ", ";
-                }
-                else {
-                    str += toStr((*(*weights[x])[y])[z]);
-                }
-            }
-            if (y < nodeLayerSize - 1) {
-                str += "], ";
-            }
-            else {
-                str += "]";
-            }
-        }
-        if (x < weights.size() - 1) {
-            str += "],\n";
-        }
-        else {
-            str += "]";
-        }
-    }
-    str += "(weights)]\n";
-    return str;
-}
-
-std::string Model::nablaWToString() {
-    std::string str;
-    str += "["; // show beginning of weight vector
-
-    for (int x = 0; x < nablaWeights.size(); ++x) {
-        if (x > 0)
-            str += " [";
-        else
-            str += "[";
-        int nodeLayerSize = nablaWeights[x]->size();
-        for (int y = 0; y < nodeLayerSize; ++y) {
-            str += "[";
-            int nodeSize = (*nablaWeights[x])[y]->size();
-            for (int z = 0; z < nodeSize; ++z) {
-                if (z < nodeSize - 1) {
-                    str += toStr((*(*nablaWeights[x])[y])[z]);
-                    str += ", ";
-                }
-                else {
-                    str += toStr((*(*nablaWeights[x])[y])[z]);
-                }
-            }
-            if (y < nodeLayerSize - 1) {
-                str += "], ";
-            }
-            else {
-                str += "]";
-            }
-        }
-        if (x < nablaWeights.size() - 1) {
-            str += "],\n";
-        }
-        else {
-            str += "]";
-        }
-    }
-    str += "(nablaWeights)]\n";
-    return str;
-}
-
-std::string Model::biasesToString() {
-    std::string str;
-    str += "[";
-
-    for (int x = 0; x < biases.size(); ++x) {
-        if (x == 0)
-            str += "[";
-        else
-            str += " [";
-        
-        for (int y = 0; y < biases[x]->size(); ++y) {
-            if (y < biases[x]->size() - 1) {
-                str += toStr((*biases[x])[y]);
+        for (int y = 0; y < vec[x]->size(); ++y) {
+            if (y < vec[x]->size() - 1) {
+                str += toStr((*vec[x])[y]);
                 str += ", ";
             }
             else
-                str += toStr((*biases[x])[y]);
+                str += toStr((*vec[x])[y]);
         }
-        if (x < biases.size() - 1)
+        if (x < vec.size() - 1)
             str += "],\n";
         else
             str += "]";
     }
-    str += "(biases)]\n";
-
+    str += "(" + name + ")]\n\n";
     return str;
 }
 
-std::string Model::activatedToString() {
+std::string Model::str3(const std::vector<std::vector<std::vector<float>*>*>& vec, const std::string name) {
     std::string str = "[";
-    for (int x = 0; x < activated.size(); ++x) {
-        if (x > 0) {
+    for (int x = 0; x < vec.size(); ++x) {
+        if (x > 0)
             str += " [";
-        }
-        else {
+        else
             str += "[";
-        }
-        for (int y = 0; y < activated[x]->size(); ++y) {
-            if (y < activated[x]->size() - 1) {
-                str += toStr((*activated[x])[y]);
-                str += ", ";
-            }
-            else {
-                str += toStr((*activated[x])[y]);
-            }
-        }
-        if (x < activated.size() - 1) {
-            str += "],\n";
-        }
-        else {
-            str += "]";
-        }
-    }
-    str += "(activated)]\n";
-
-    return str;
-}
-
-std::string Model::cacheToString() {
-    std::string str = "[";
-    for (int x = 0; x < cache.size(); ++x) {
-        if (x > 0) {
-            str += " [";
-        }
-        else {
+        int nodeLayerSize = vec[x]->size();
+        for (int y = 0; y < nodeLayerSize; ++y) {
             str += "[";
-        }
-        for (int y = 0; y < cache[x]->size(); ++y) {
-            if (y < cache[x]->size() - 1) {
-                str += toStr((*cache[x])[y]);
-                str += ", ";
+            int nodeSize = (*vec[x])[y]->size();
+            for (int z = 0; z < nodeSize; ++z) {
+                if (z < nodeSize - 1) {
+                    str += toStr((*(*vec[x])[y])[z]);
+                    str += ", ";
+                }
+                else
+                    str += toStr((*(*vec[x])[y])[z]);
             }
-            else {
-                str += toStr((*cache[x])[y]);
-            }
+            if (y < nodeLayerSize - 1)
+                str += "], ";
+            else
+                str += "]";
         }
-        if (x < cache.size() - 1) {
+        if (x < vec.size() - 1)
             str += "],\n";
-        }
-        else {
+        else
             str += "]";
-        }
     }
-    str += "(cache)]\n";
-
-    return str;
-}
-
-std::string Model::nablaCacheToString() {
-    std::string str = "[";
-    for (int x = 0; x < nablaCache.size(); ++x) {
-        if (x > 0) {
-            str += " [";
-        }
-        else {
-            str += "[";
-        }
-        for (int y = 0; y < nablaCache[x]->size(); ++y) {
-            if (y < nablaCache[x]->size() - 1) {
-                str += toStr((*nablaCache[x])[y]);
-                str += ", ";
-            }
-            else {
-                str += toStr((*nablaCache[x])[y]);
-            }
-        }
-        if (x < nablaCache.size() - 1) {
-            str += "],\n";
-        }
-        else {
-            str += "]";
-        }
-    }
-    str += "(nablaCache)]\n";
-
-    return str;
-}
-
-std::string Model::nablaBToString() {
-    std::string str = "[";
-    for (int x = 0; x < nablaBiases.size(); ++x) {
-        if (x > 0) {
-            str += " [";
-        }
-        else {
-            str += "[";
-        }
-        for (int y = 0; y < nablaBiases[x]->size(); ++y) {
-            if (y < nablaBiases[x]->size() - 1) {
-                str += toStr((*nablaBiases[x])[y]);
-                str += ", ";
-            }
-            else {
-                str += toStr((*nablaBiases[x])[y]);
-            }
-        }
-        if (x < nablaBiases.size() - 1) {
-            str += "],\n";
-        }
-        else {
-            str += "]";
-        }
-    }
-    str += "(nablaBiases)]\n";
-
+    str += "(" + name + ")]\n\n";
     return str;
 }

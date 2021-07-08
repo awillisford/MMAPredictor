@@ -20,14 +20,20 @@ class Model {
     // initialize model members
     void init_members(const uint hiddenLayers, const uint neuronsPerLayer);
 
-    // used for changing float to string
-    template <typename T> std::string toStr(const T& t);
-
     // sigmoid activation function
     float sigmoid(const float& in, bool derivative=false);
     
     // mean squared error function for calculating loss
     float MSE(std::vector<float> output, std::vector<float> label, bool derivative=false, int element=0);
+
+    // takes input, usually dereferenced float, and returns string
+    template <typename T> std::string toStr(const T& t);
+
+    // returns string of double nested vector with name
+    std::string str2(const std::vector<std::vector<float>*>& vec, const std::string name);
+
+    // returns string of triple nested vector with name
+    std::string str3(const std::vector<std::vector<std::vector<float>*>*>& vec, const std::string name);
  
     public:
     // constructor
@@ -38,21 +44,7 @@ class Model {
 
     // backpropagate to compute gradients for each weight and bias
     void backward(int currentLabel);
-    
-    // weight vector to string for printing to console
-    std::string weightsToString();
 
-    // biases vector to string for printing to console
-    std::string biasesToString();
-
-    // activated vector to string for printing to console
-    std::string activatedToString();
-
-    std::string nablaWToString();
-
-    std::string nablaCacheToString();
-
-    std::string cacheToString();
-
-    std::string nablaBToString();
+    // prints vector members of model
+    friend std::ostream& operator<<(std::ostream& out, Model& mod);
 };
