@@ -9,7 +9,7 @@ typedef unsigned int uint;
 Model::Model(uint hiddenLayers, uint neuronsPerLayer, float lr) {
     // assign learning rate member to constructor parameter
     this->learningRate = lr;
-    std::cout << "this->learningRate="<< this->learningRate << '\n';
+    long double summationLoss = 0;
     
     // create weight layer and gradient for input
     weights.push_back(new std::vector<std::vector<float>*>);
@@ -115,12 +115,8 @@ void Model::forward(const std::vector<float>& feature) {
 }
 
 void Model::backward(int currentLabel) {
-    // print label to user
-    std::cout << "- [" << CsvToVector::labels[currentLabel][0] << ", "
-                       << CsvToVector::labels[currentLabel][1] << "] label\n";
-    // print loss to user
-    std::cout << "- " << MSE(*activated.back(), CsvToVector::labels[currentLabel])
-              << " loss\n";
+    float loss = MSE(*activated.back(), CsvToVector::labels[currentLabel]);
+    summationLoss += loss;
     
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
@@ -191,12 +187,12 @@ float Model::MSE(std::vector<float> output, std::vector<float> label, bool deriv
 
 std::ostream& operator<<(std::ostream& out, Model& mod) {
     out << mod.str2(mod.nablaBiases, "nablaBiases")
-    << mod.str2(mod.nablaCache, "nablaCache")
-    << mod.str3(mod.nablaWeights, "nablaWeights")
-    << mod.str2(mod.biases, "biases")
-    << mod.str2(mod.cache, "cache")
-    << mod.str3(mod.weights, "weights")
-    << mod.str2(mod.activated, "activated");
+        << mod.str2(mod.nablaCache, "nablaCache")
+        << mod.str3(mod.nablaWeights, "nablaWeights")
+        << mod.str2(mod.biases, "biases")
+        << mod.str2(mod.cache, "cache")
+        << mod.str3(mod.weights, "weights")
+        << mod.str2(mod.activated, "activated");
     return out;
 }
 
@@ -261,4 +257,9 @@ std::string Model::str3(const std::vector<std::vector<std::vector<float>*>*>& ve
     }
     str += "(" + name + ")]\n\n";
     return str;
+}
+
+void Model::printLoss() {
+    std::cout << "AvgLoss=" << (summationLoss / CsvToVector::features.size()) << '\n';
+    summationLoss = 0;
 }

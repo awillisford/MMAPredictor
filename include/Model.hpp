@@ -15,6 +15,7 @@ class Model {
     std::vector<std::vector<float>*> nablaCache; // holds gradient for each activated value
     std::vector<std::vector<std::vector<float>*>*> nablaWeights; // holds gradient for each weight
     std::vector<std::vector<std::vector<float>*>*> weights;
+    long double summationLoss;
     float learningRate;
 
     // initialize model members
@@ -45,6 +46,10 @@ class Model {
     // backpropagate to compute gradients for each weight and bias
     void backward(int currentLabel);
 
+    void printLoss();
+
     // prints vector members of model
     friend std::ostream& operator<<(std::ostream& out, Model& mod);
+
+    
 };
