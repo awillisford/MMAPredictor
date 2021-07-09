@@ -7,7 +7,7 @@ typedef unsigned int uint;
 
 class Model {
     private:
-    // attributes 
+    // members 
     std::vector<std::vector<float>*> cache; // holds unactivated values of node
     std::vector<std::vector<float>*> activated; // holds activated values of nodes
     std::vector<std::vector<float>*> biases; // holds biases for nodes, except input
@@ -46,10 +46,12 @@ class Model {
     // backpropagate to compute gradients for each weight and bias
     void backward(int currentLabel);
 
+    // prints average loss over a single epoch
     void printLoss();
+
+    // randomize weights and biases on domain [0, 1]
+    void randomize();
 
     // prints vector members of model
     friend std::ostream& operator<<(std::ostream& out, Model& mod);
-
-    
 };

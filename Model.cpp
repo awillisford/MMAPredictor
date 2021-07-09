@@ -3,6 +3,8 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
+#include <time.h>
+#include <stdlib.h> // RANDOMIZE
 
 typedef unsigned int uint;
 
@@ -39,8 +41,8 @@ Model::Model(uint hiddenLayers, uint neuronsPerLayer, float lr) {
             nablaWeights[x + 1]->push_back(new std::vector<float>);
             cache[x]->push_back(0.5);
             nablaCache[x]->push_back(0.5);
-            biases[x]->push_back(0.4);
-            nablaBiases[x]->push_back(0.4);
+            biases[x]->push_back(0.5);
+            nablaBiases[x]->push_back(0.5);
             activated[x]->push_back(0.5);
 
             if (x < hiddenLayers - 1) {
@@ -67,8 +69,8 @@ Model::Model(uint hiddenLayers, uint neuronsPerLayer, float lr) {
             for (int y = 0; y < 2; ++y) {
                 cache[x + 1]->push_back(0.5);
                 nablaCache[x + 1]->push_back(0.5);
-                biases[x + 1]->push_back(0.4);
-                nablaBiases[x + 1]->push_back(0.4);
+                biases[x + 1]->push_back(0.5);
+                nablaBiases[x + 1]->push_back(0.5);
                 activated[x + 1]->push_back(0.5);
             }
         }
@@ -260,6 +262,18 @@ std::string Model::str3(const std::vector<std::vector<std::vector<float>*>*>& ve
 }
 
 void Model::printLoss() {
-    std::cout << "AvgLoss=" << (summationLoss / CsvToVector::features.size()) << '\n';
+    std::cout << "avg loss=" << (summationLoss / CsvToVector::features.size()) << '\n';
     summationLoss = 0;
+}
+
+void Model::randomize() {
+    srand(time(NULL));
+    for (int x = 0; x < weights.size(); ++x) {
+        for (int y = 0; y < weights[x]->size(); ++y) {
+            (*biases[x])[y] = (float) rand() / (float) RAND_MAX;
+            for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
+                (*(*weights[x])[y])[z] = (float) rand() / (float) RAND_MAX;
+            }
+        }
+    }
 }
