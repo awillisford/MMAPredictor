@@ -6,14 +6,11 @@
 
 typedef unsigned int uint;
 
-Model::Model(uint numHiddenLayers, uint neuronsPerLayer, float lr) {
+Model::Model(uint hiddenLayers, uint neuronsPerLayer, float lr) {
     // assign learning rate member to constructor parameter
     this->learningRate = lr;
     std::cout << "this->learningRate="<< this->learningRate << '\n';
-    init_members(numHiddenLayers, neuronsPerLayer);
-}
-
-void Model::init_members(const uint hiddenLayers, const uint neuronsPerLayer) {
+    
     // create weight layer and gradient for input
     weights.push_back(new std::vector<std::vector<float>*>);
     nablaWeights.push_back(new std::vector<std::vector<float>*>);
@@ -168,9 +165,6 @@ void Model::backward(int currentLabel) {
         for (int y = 0; y < weights[x]->size(); ++y) {
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 (*(*weights[x])[y])[z] -= (*(*nablaWeights[x])[y])[z] * learningRate;
-                // std::cout << "(*(*weights["<<x<<"])["<<y<<"])["<<z<<"] -= "<<"(*(*nablaWeights["<<x<<"])["<<y<<"])["<<z
-                //           <<"] * learningRate, (*(*weights["<<x<<"])["<<y<<"])["<<z<<"] -= "<<(*(*nablaWeights[x])[y])[z]
-                //           <<" * "<<this->learningRate<<'\n';
             }
         }
     }
@@ -178,8 +172,6 @@ void Model::backward(int currentLabel) {
     for (int x = 0; x < biases.size(); ++x) {
         for (int y = 0; y < biases[x]->size(); ++y) {
             (*biases[x])[y] -= (*nablaBiases[x])[y] * learningRate;
-            // std::cout << "(*biases["<<x<<"])["<<y<<"] -= (*nablaBiases["<<x<<"])["<<y<<"] * learningrate; "
-            //           << "(*biases["<<x<<"])["<<y<<"] -= "<<(*nablaBiases[x])[y]<<" * "<<this->learningRate<<'\n';
         }
     }
 }
