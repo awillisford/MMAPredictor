@@ -27,16 +27,16 @@ float CsvToVector::contains_text(const std::string& str) {
     }
     // fighter stance
     else if (str == "Orthodox") {
-        return 0;
+        return 0.25;
     }
     else if (str == "Southpaw") {
-        return 1;
+        return 0.5;
     }
     else if (str == "Switch") {
-        return 2;
+        return 0.75;
     }
     else if (str == "Open Stance") {
-        return 3;
+        return 1;
     }
     // title fight
     else if (str == "FALSE") {
@@ -47,43 +47,43 @@ float CsvToVector::contains_text(const std::string& str) {
     }
     // weight divisions
     else if (str == "Flyweight") {
-        return 0;
+        return 0.076923;
     }
     else if (str == "Bantamweight") {
-        return 1;
+        return 0.153846;
     }
     else if (str == "Featherweight") {
-        return 2;
+        return 0.230769;
     }
     else if (str == "Lightweight") {
-        return 3;
+        return 0.307692;
     }
     else if (str == "Welterweight") {
-        return 4;
+        return 0.384615;
     }
     else if (str == "Middleweight") {
-        return 5;
+        return 0.461538;
     }
     else if (str == "LightHeavyweight") {
-        return 6;
+        return 0.538462;
     }
     else if (str == "Heavyweight") {
-        return 7;
+        return 0.615385;
     }
     else if (str == "CatchWeight") {
-        return 8;
+        return 0.692308;
     }
     else if (str == "WomenStrawweight") {
-        return 9;
+        return 0.769231;
     }
     else if (str == "WomenFlyweight") {
-        return 10;
+        return 0.846154;
     }
     else if (str == "WomenBantamweight") {
-        return 11;
+        return 0.923077;
     }
     else if (str == "WomenFeatherweight") {
-        return 12;
+        return 1;
     }
 
     // throw exception if text is not any of the above
@@ -92,8 +92,8 @@ float CsvToVector::contains_text(const std::string& str) {
             throw 999;
         }
         catch(int e) {
-            // std::cout << "An exception occured in function \"contains_text()\", exception no. "
-            //           << e << '\n';
+            std::cout << "An exception occured in function \"contains_text()\", exception no. "
+                      << e << '\n';
         }
         return 999;
     }
