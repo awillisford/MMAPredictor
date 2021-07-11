@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
-#include <time.h>
+#include <time.h> // randomize seed
 #include <stdlib.h> // RANDOMIZE
 
 typedef unsigned int uint;
@@ -118,42 +118,51 @@ void Model::forward(const std::vector<float>& feature) {
 
 void Model::backward(int currentLabel) {
     float loss = MSE(*activated.back(), CsvToVector::labels[currentLabel]);
+    // std::cout << "loss=" << loss << '\n';
     summationLoss += loss;
-    
+    // std::cout << "summationLoss=" << summationLoss << '\n';
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
-        
         if (x == weights.size() - 1) {
             // assign gradient of cache to partial derivative of activated value from output nodes
             (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 0), true);
+            // std::cout << "(*nablaCache[" << x << "])[0]= " << (*nablaCache[x])[0] << '\n';
             (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 1), true);
+            // std::cout << "(*nablaCache[" << x << "])[1]= " << (*nablaCache[x])[1] << '\n';
             // assign output node bias gradients to cache gradient of same nodes
             (*nablaBiases[x])[0] = (*nablaCache[x])[0];
+            // std::cout << "(*nablaBiases[" << x << "])[0]= " << (*nablaBiases[x])[0] << '\n';
             (*nablaBiases[x])[1] = (*nablaCache[x])[1];
+            // std::cout << "(*nablaBiases[" << x << "])[1]= " << (*nablaBiases[x])[1] << '\n';
         }
         // iterate through each weight vector in weight layer         
         for (int y = 0; y < weights[x]->size(); ++y) {
             float summationActivation = 0; // holds summation of partial deriv of loss with respect to activated node values
-            
+            // std::cout << "summationActivation= 0\n";
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 // hidden weight layers
                 if (x > 0) {
                     // set weight gradients from hidden layer output
                     (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * (*activated[x - 1])[y];
+                    // std::cout << "(*(*nablaWeights["<<x<<"])["<<y<<"])["<<z<<"]= " << (*(*nablaWeights[x])[y])[z] << '\n';
                     // summation of weight * cache gradient
                     summationActivation += (*(*weights[x])[y])[z] * (*nablaCache[x])[z];
+                    // std::cout << "summationActivation= " << summationActivation << '\n';
                 }
                 // input weight layer
                 else {
                     // set weight gradients from input
                     (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * CsvToVector::features[currentLabel][y];
+                    // std::cout << "(*(*nablaWeights["<<x<<"])["<<y<<"])["<<z<<"]= " << (*(*nablaWeights[x])[y])[z] << '\n';
                 }
             }
             if (x > 0) {
                 // set gradients of cache from activation for hidden layer nodes
                 (*nablaCache[x - 1])[y] = sigmoid(summationActivation, true);
+                // std::cout << "(*nablaCache["<<x - 1<<"])["<<y<<"]= " << (*nablaCache[x - 1])[y] << '\n';
                 // set gradients of biases from hidden layer nodes
                 (*nablaBiases[x - 1])[y] = (*nablaCache[x - 1])[y];
+                // std::cout << "(*nablaBiases["<<x - 1<<"])["<<y<<"]= " << (*nablaBiases[x - 1])[y] << '\n';
             }
         }
     }
@@ -163,6 +172,7 @@ void Model::backward(int currentLabel) {
         for (int y = 0; y < weights[x]->size(); ++y) {
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 (*(*weights[x])[y])[z] -= (*(*nablaWeights[x])[y])[z] * learningRate;
+                // std::cout << "(*(*weights["<<x<<"])["<<y<<"])["<<z<<"]= " << (*(*weights[x])[y])[z] << '\n';
             }
         }
     }
@@ -170,6 +180,7 @@ void Model::backward(int currentLabel) {
     for (int x = 0; x < biases.size(); ++x) {
         for (int y = 0; y < biases[x]->size(); ++y) {
             (*biases[x])[y] -= (*nablaBiases[x])[y] * learningRate;
+            // std::cout << "(*biases["<<x<<"])["<<y<<"]= " << (*biases[x])[y] << '\n';
         }
     }
 }
