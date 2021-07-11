@@ -23,6 +23,9 @@ class Model {
 
     // sigmoid activation function
     float sigmoid(const float& in, bool derivative=false);
+
+    // rectified linear unit activation function
+    float ReLU(const float& in);
     
     // mean squared error function for calculating loss
     float MSE(std::vector<float> output, std::vector<float> label, bool derivative=false, int element=0);

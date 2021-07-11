@@ -79,11 +79,16 @@ Model::Model(uint hiddenLayers, uint neuronsPerLayer, float lr) {
 
 float Model::sigmoid(const float& in, bool derivative) {
     // using derivative when already passed through sigmoid function
-    if (derivative == true) {
+    if (derivative == true) 
         return in * (1 - in);
-    }
 
     return 1/(1 + std::exp(-in));
+}
+
+float Model::ReLU(const float& in) {
+    /* Doesnt need a derivative parameter since any value greater than zero 
+     * has a derivative of one, values zero or less have a derivative of zero */
+    return (in > 0) ? in : 0;
 }
 
 void Model::forward(const std::vector<float>& feature) {
@@ -108,8 +113,13 @@ void Model::forward(const std::vector<float>& feature) {
                 }
                 // last group of weights in layer
                 if (y == weights[x]->size() - 1) {
-                    (*cache[x])[z] += (*biases[x])[z]; // add biases
-                    (*activated[x])[z] = sigmoid((*cache[x])[z]); // activated equal to cache through activation function
+                    // (*cache[x])[z] += (*biases[x])[z]; // add biases
+                    // not last weight layer
+                    if (x != weights.size() - 1)
+                        (*activated[x])[z] = ReLU((*cache[x])[z]); // activated equal to cache through activation function
+                    // last weight layer
+                    else
+                        (*activated[x])[z] = sigmoid((*cache[x])[z]); // activated equal to cache through activation function   
                 }
             }
         }
@@ -126,43 +136,34 @@ void Model::backward(int currentLabel) {
         if (x == weights.size() - 1) {
             // assign gradient of cache to partial derivative of activated value from output nodes
             (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 0), true);
-            // std::cout << "(*nablaCache[" << x << "])[0]= " << (*nablaCache[x])[0] << '\n';
             (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 1), true);
-            // std::cout << "(*nablaCache[" << x << "])[1]= " << (*nablaCache[x])[1] << '\n';
             // assign output node bias gradients to cache gradient of same nodes
-            (*nablaBiases[x])[0] = (*nablaCache[x])[0];
-            // std::cout << "(*nablaBiases[" << x << "])[0]= " << (*nablaBiases[x])[0] << '\n';
-            (*nablaBiases[x])[1] = (*nablaCache[x])[1];
-            // std::cout << "(*nablaBiases[" << x << "])[1]= " << (*nablaBiases[x])[1] << '\n';
+            // (*nablaBiases[x])[0] = (*nablaCache[x])[0];
+            // (*nablaBiases[x])[1] = (*nablaCache[x])[1];
+
         }
         // iterate through each weight vector in weight layer         
         for (int y = 0; y < weights[x]->size(); ++y) {
             float summationActivation = 0; // holds summation of partial deriv of loss with respect to activated node values
-            // std::cout << "summationActivation= 0\n";
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 // hidden weight layers
                 if (x > 0) {
                     // set weight gradients from hidden layer output
                     (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * (*activated[x - 1])[y];
-                    // std::cout << "(*(*nablaWeights["<<x<<"])["<<y<<"])["<<z<<"]= " << (*(*nablaWeights[x])[y])[z] << '\n';
                     // summation of weight * cache gradient
                     summationActivation += (*(*weights[x])[y])[z] * (*nablaCache[x])[z];
-                    // std::cout << "summationActivation= " << summationActivation << '\n';
                 }
                 // input weight layer
                 else {
                     // set weight gradients from input
                     (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * CsvToVector::features[currentLabel][y];
-                    // std::cout << "(*(*nablaWeights["<<x<<"])["<<y<<"])["<<z<<"]= " << (*(*nablaWeights[x])[y])[z] << '\n';
                 }
             }
-            if (x > 0) {
+            if (x > 0 && x != weights.size() - 1) {
                 // set gradients of cache from activation for hidden layer nodes
-                (*nablaCache[x - 1])[y] = sigmoid(summationActivation, true);
-                // std::cout << "(*nablaCache["<<x - 1<<"])["<<y<<"]= " << (*nablaCache[x - 1])[y] << '\n';
+                (*nablaCache[x - 1])[y] = ReLU(summationActivation);
                 // set gradients of biases from hidden layer nodes
                 (*nablaBiases[x - 1])[y] = (*nablaCache[x - 1])[y];
-                // std::cout << "(*nablaBiases["<<x - 1<<"])["<<y<<"]= " << (*nablaBiases[x - 1])[y] << '\n';
             }
         }
     }
@@ -172,15 +173,13 @@ void Model::backward(int currentLabel) {
         for (int y = 0; y < weights[x]->size(); ++y) {
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 (*(*weights[x])[y])[z] -= (*(*nablaWeights[x])[y])[z] * learningRate;
-                // std::cout << "(*(*weights["<<x<<"])["<<y<<"])["<<z<<"]= " << (*(*weights[x])[y])[z] << '\n';
             }
         }
     }
     // update biases by gradients
     for (int x = 0; x < biases.size(); ++x) {
         for (int y = 0; y < biases[x]->size(); ++y) {
-            (*biases[x])[y] -= (*nablaBiases[x])[y] * learningRate;
-            // std::cout << "(*biases["<<x<<"])["<<y<<"]= " << (*biases[x])[y] << '\n';
+            // (*biases[x])[y] -= (*nablaBiases[x])[y] * learningRate;
         }
     }
 }
