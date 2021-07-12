@@ -4,10 +4,6 @@
 #include <cmath>
 #include "../include/CsvToVector.hpp"
 
-// declare class members
-std::vector<std::vector<float>> CsvToVector::features;
-std::vector<std::vector<float>> CsvToVector::labels;
-
 bool CsvToVector::contains_number(const std::string& str) {
     /* string::npos is returned by method find when the digit/digits
      * were not found; therefore, if any of the digits are found, 
@@ -117,10 +113,18 @@ bool CsvToVector::compare_floats(float& a, float b, float epsilon) {
     return fabs(a - b) < epsilon;
 }
 
-void CsvToVector::extract_data(const std::string& csvFile) {
+std::vector<std::vector<std::vector<float>>> CsvToVector::extract_data(const std::string& csvFile) {
+    std::vector<std::vector<std::vector<float>>> data; // holds data
+    std::vector<std::vector<float>> temp;
+    // push vectors to hold features [0] and labels [1]
+    for (int x : {0, 1})
+        data.push_back(temp);
+
+    std::vector<float> blue = {1, 0}; // blue winner
+    std::vector<float> red = {0, 1}; // red winner
     std::ifstream fin(csvFile); // input stream
     std::string line; // declare string to hold each line
-    bool header = true;
+    bool header = true; // to skip header
 
     // loop through csv line by line
     while(std::getline(fin, line)) {
@@ -129,67 +133,26 @@ void CsvToVector::extract_data(const std::string& csvFile) {
             header = false;
             continue;
         }
-        std::vector<float> temp_vector; // create vector to push back in features
+        std::vector<float> row; // create vector to hold data from row
         std::stringstream ss(line);
         std::string cell; // holds data in cell
 
         // iterate through cells in line
         while(std::getline(ss, cell, ',')) {
             float cell_checked = check_cell_type(cell);
-            // std::cout << "cell_checked: " << cell_checked << ", ";
-
             if (compare_floats(cell_checked, -1)) {
-                std::vector<float> blue = {1, 0};
-                labels.push_back(blue);
-                // std::cout << "Labels push_back: blue - {1, 0} " << '\n';
+                data[1].push_back(blue);
                 continue;
             }
             else if (compare_floats(cell_checked, -2)) {
-                std::vector<float> red = {0, 1};
-                labels.push_back(red);
-                // std::cout << "Labels push_back: red - {0, 1} " << '\n';
+                data[1].push_back(red);
                 continue;
             }
             else {
-                temp_vector.push_back(cell_checked);
-                // std::cout << "temp_vector push_back: " << cell_checked << '\n';
-
+                row.push_back(cell_checked);
             }
         }
-        features.push_back(temp_vector); // push vector containing row into features
-        // std::cout << "Features: push_back(temp_vector)" << '\n';
+        data[0].push_back(row); // push vector containing row into features
     }
-}
-
-void CsvToVector::print_features() {
-    std::cout << "["; // show beginning of vector
-    // iterate through vector
-    for (int x = 0; x < features.size(); ++x) {
-        // add spacing to align brackets 
-        if (x > 0) {
-            std::cout << " ["; // show beginning of new vector
-        }
-        else {
-            std::cout << "["; // show beginning of new vector
-        }
-        // iterate through subvectors
-        for (int y = 0; y < features[x].size(); ++y) {
-            // if not last element
-            if (y < features[x].size() - 1) {
-                std::cout << features[x][y] << ", ";
-            }
-            // last element
-            else {
-                std::cout << features[x][y];
-            }
-        }
-        // if not last row
-        if (x < features.size() - 1) {
-            std::cout << "],\n"; // end vector and print newline
-        }
-        else {
-            std::cout << "]"; // end of last vector
-        }
-    }
-    std::cout << "]"; // show end of vector
+    return data;
 }

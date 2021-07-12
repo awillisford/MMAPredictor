@@ -41,16 +41,16 @@ class Model {
  
     public:
     // constructor
-    Model(uint numLayers, uint neuronsPerLayer, float lr = 0.05);
+    Model(std::vector<std::vector<float>>& features, uint numLayers, uint neuronsPerLayer, float lr = 0.05);
 
     // feed input forward and get output
     void forward(const std::vector<float>& feature);
 
     // backpropagate to compute gradients for each weight and bias
-    void backward(int currentLabel);
+    void backward(const std::vector<float>& feature, const std::vector<float>& label);
 
     // prints average loss over a single epoch
-    void printLoss();
+    void printLoss(std::vector<std::vector<float>>& features);
 
     // randomize weights and biases on domain [0, 1]
     void randomize();

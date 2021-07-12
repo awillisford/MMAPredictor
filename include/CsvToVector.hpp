@@ -18,13 +18,6 @@ class CsvToVector {
     static bool compare_floats(float& a, float b, float epsilon = 0.01f);
 
     public:
-    // takes data from csv and puts data into matrix of float values
-    static void extract_data(const std::string& csvFile);
-
-    // prints out features
-    static void print_features();
-
-    // class members
-    static std::vector<std::vector<float>> features;
-    static std::vector<std::vector<float>> labels;
+    // takes data from csv and puts data into a vector of float values
+    static std::vector<std::vector<std::vector<float>>> extract_data(const std::string& csvFile);
 };

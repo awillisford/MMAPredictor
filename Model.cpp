@@ -8,9 +8,13 @@
 
 typedef unsigned int uint;
 
-Model::Model(uint hiddenLayers, uint neuronsPerLayer, float lr) {
+Model::Model(std::vector<std::vector<float>>& features, uint hiddenLayers, uint neuronsPerLayer, float lr) {
     // assign learning rate member to constructor parameter
     this->learningRate = lr;
+    std::cout << "learningRate=" << learningRate << '\n';
+
+    std::cout << "individual feature size=" << features[0].size() << '\n';
+
     long double summationLoss = 0;
     
     // create weight layer and gradient for input
@@ -18,7 +22,7 @@ Model::Model(uint hiddenLayers, uint neuronsPerLayer, float lr) {
     nablaWeights.push_back(new std::vector<std::vector<float>*>);
 
     // create input weights 
-    for (int x = 0; x < CsvToVector::features[0].size(); ++x) {
+    for (int x = 0; x < features[0].size(); ++x) {
         weights[0]->push_back(new std::vector<float>);
         nablaWeights[0]->push_back(new std::vector<float>);
         for (int y = 0; y < neuronsPerLayer; ++y) {
@@ -126,17 +130,17 @@ void Model::forward(const std::vector<float>& feature) {
     }
 }
 
-void Model::backward(int currentLabel) {
-    float loss = MSE(*activated.back(), CsvToVector::labels[currentLabel]);
-    // std::cout << "loss=" << loss << '\n';
+void Model::backward(const std::vector<float>& feature, const std::vector<float>& label) {
+    float loss = MSE(*activated.back(), label);
+    std::cout << "loss=" << loss << '\n';
     summationLoss += loss;
     // std::cout << "summationLoss=" << summationLoss << '\n';
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
         if (x == weights.size() - 1) {
             // assign gradient of cache to partial derivative of activated value from output nodes
-            (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 0), true);
-            (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), CsvToVector::labels[currentLabel], true, 1), true);
+            (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), label, true, 0), true);
+            (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), label, true, 1), true);
             // assign output node bias gradients to cache gradient of same nodes
             // (*nablaBiases[x])[0] = (*nablaCache[x])[0];
             // (*nablaBiases[x])[1] = (*nablaCache[x])[1];
@@ -156,7 +160,7 @@ void Model::backward(int currentLabel) {
                 // input weight layer
                 else {
                     // set weight gradients from input
-                    (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * CsvToVector::features[currentLabel][y];
+                    (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * label[y];
                 }
             }
             if (x > 0 && x != weights.size() - 1) {
@@ -271,8 +275,8 @@ std::string Model::str3(const std::vector<std::vector<std::vector<float>*>*>& ve
     return str;
 }
 
-void Model::printLoss() {
-    std::cout << "avg loss=" << (summationLoss / CsvToVector::features.size()) << '\n';
+void Model::printLoss(std::vector<std::vector<float>>& features) {
+    std::cout << "avg loss=" << (summationLoss / features.size()) << '\n';
     summationLoss = 0;
 }
 
