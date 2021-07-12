@@ -15,7 +15,7 @@ Model::Model(std::vector<std::vector<float>>& features, uint hiddenLayers, uint 
 
     std::cout << "individual feature size=" << features[0].size() << '\n';
 
-    long double summationLoss = 0;
+    float summationLoss = 0;
     
     // create weight layer and gradient for input
     weights.push_back(new std::vector<std::vector<float>*>);
@@ -113,11 +113,12 @@ void Model::forward(const std::vector<float>& feature) {
                 }
                 // weights from hidden nodes
                 else {
+                    std::cout << "(*cache["<<x<<"])["<<z<<"] += (*(*weights["<<x<<"])["<<y<<"])["<<z<<"] * (*activated["<<x - 1<<"])["<<y<<"];\n";
+                    std::cout << (*cache[x])[z] << " += " << (*(*weights[x])[y])[z] << " * " << (*activated[x - 1])[y] << ";\n";
                     (*cache[x])[z] += (*(*weights[x])[y])[z] * (*activated[x - 1])[y]; // add weight * value to cache value
                 }
                 // last group of weights in layer
                 if (y == weights[x]->size() - 1) {
-                    // (*cache[x])[z] += (*biases[x])[z]; // add biases
                     // not last weight layer
                     if (x != weights.size() - 1)
                         (*activated[x])[z] = ReLU((*cache[x])[z]); // activated equal to cache through activation function
@@ -131,20 +132,21 @@ void Model::forward(const std::vector<float>& feature) {
 }
 
 void Model::backward(const std::vector<float>& feature, const std::vector<float>& label) {
+    std::cout << "activated=["<<(*activated.back())[0]<<", "<<(*activated.back())[1]<<"]label=["<<label[0]<<", "<<label[1]<<"]\n";
+
     float loss = MSE(*activated.back(), label);
     std::cout << "loss=" << loss << '\n';
+
     summationLoss += loss;
-    // std::cout << "summationLoss=" << summationLoss << '\n';
+
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
         if (x == weights.size() - 1) {
             // assign gradient of cache to partial derivative of activated value from output nodes
             (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), label, true, 0), true);
             (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), label, true, 1), true);
-            // assign output node bias gradients to cache gradient of same nodes
-            // (*nablaBiases[x])[0] = (*nablaCache[x])[0];
-            // (*nablaBiases[x])[1] = (*nablaCache[x])[1];
-
+            (*nablaBiases[x])[0] = (*nablaCache[x])[0];
+            (*nablaBiases[x])[1] = (*nablaCache[x])[1];
         }
         // iterate through each weight vector in weight layer         
         for (int y = 0; y < weights[x]->size(); ++y) {
@@ -152,21 +154,16 @@ void Model::backward(const std::vector<float>& feature, const std::vector<float>
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 // hidden weight layers
                 if (x > 0) {
-                    // set weight gradients from hidden layer output
                     (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * (*activated[x - 1])[y];
-                    // summation of weight * cache gradient
                     summationActivation += (*(*weights[x])[y])[z] * (*nablaCache[x])[z];
                 }
                 // input weight layer
                 else {
-                    // set weight gradients from input
-                    (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * label[y];
+                    (*(*nablaWeights[x])[y])[z] = (*nablaCache[x])[z] * feature[y];
                 }
             }
-            if (x > 0 && x != weights.size() - 1) {
-                // set gradients of cache from activation for hidden layer nodes
+            if (x > 0) {
                 (*nablaCache[x - 1])[y] = ReLU(summationActivation);
-                // set gradients of biases from hidden layer nodes
                 (*nablaBiases[x - 1])[y] = (*nablaCache[x - 1])[y];
             }
         }
@@ -183,7 +180,7 @@ void Model::backward(const std::vector<float>& feature, const std::vector<float>
     // update biases by gradients
     for (int x = 0; x < biases.size(); ++x) {
         for (int y = 0; y < biases[x]->size(); ++y) {
-            // (*biases[x])[y] -= (*nablaBiases[x])[y] * learningRate;
+            (*biases[x])[y] -= (*nablaBiases[x])[y] * learningRate;
         }
     }
 }

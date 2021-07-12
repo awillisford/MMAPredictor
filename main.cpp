@@ -8,9 +8,11 @@ int main() {
     std::vector<std::vector<float>> features = data[0];
     std::vector<std::vector<float>> labels = data[1];
 
-    Model m1(features, 3, 30, .01);
+    Model m1(features, 4, 40, .01);
 
     m1.randomize(); // randomize weights and biases
+
+    std::cout << m1 << '\n';
 
     int EPOCHS = 1;
 
@@ -22,7 +24,6 @@ int main() {
         }
         std::cout << "epoch(" << epoch << ") : ";
         m1.printLoss(features);
-        if (epoch == EPOCHS - 1)
-            std::cout << m1;
+        std::cout << m1;
     }
 } 
