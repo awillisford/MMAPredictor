@@ -113,8 +113,6 @@ void Model::forward(const std::vector<float>& feature) {
                 }
                 // weights from hidden nodes
                 else {
-                    std::cout << "(*cache["<<x<<"])["<<z<<"] += (*(*weights["<<x<<"])["<<y<<"])["<<z<<"] * (*activated["<<x - 1<<"])["<<y<<"];\n";
-                    std::cout << (*cache[x])[z] << " += " << (*(*weights[x])[y])[z] << " * " << (*activated[x - 1])[y] << ";\n";
                     (*cache[x])[z] += (*(*weights[x])[y])[z] * (*activated[x - 1])[y]; // add weight * value to cache value
                 }
                 // last group of weights in layer
@@ -132,8 +130,6 @@ void Model::forward(const std::vector<float>& feature) {
 }
 
 void Model::backward(const std::vector<float>& feature, const std::vector<float>& label) {
-    std::cout << "activated=["<<(*activated.back())[0]<<", "<<(*activated.back())[1]<<"]label=["<<label[0]<<", "<<label[1]<<"]\n";
-
     float loss = MSE(*activated.back(), label);
     std::cout << "loss=" << loss << '\n';
 
@@ -202,9 +198,9 @@ std::ostream& operator<<(std::ostream& out, Model& mod) {
     out << mod.str2(mod.nablaBiases, "nablaBiases")
         << mod.str2(mod.nablaCache, "nablaCache")
         << mod.str3(mod.nablaWeights, "nablaWeights")
+        << mod.str3(mod.weights, "weights")
         << mod.str2(mod.biases, "biases")
         << mod.str2(mod.cache, "cache")
-        << mod.str3(mod.weights, "weights")
         << mod.str2(mod.activated, "activated");
     return out;
 }
@@ -279,12 +275,18 @@ void Model::printLoss(std::vector<std::vector<float>>& features) {
 
 void Model::randomize() {
     srand(time(NULL));
+    // randomize weights
     for (int x = 0; x < weights.size(); ++x) {
         for (int y = 0; y < weights[x]->size(); ++y) {
-            (*biases[x])[y] = (float) rand() / (float) RAND_MAX;
             for (int z = 0; z < (*weights[x])[y]->size(); ++z) {
                 (*(*weights[x])[y])[z] = (float) rand() / (float) RAND_MAX;
             }
+        }
+    }
+    // randomize biases
+    for (int x = 0; x < biases.size(); ++x) {
+        for (int y = 0; y < biases[x]->size(); ++y) {
+            (*biases[x])[y] = (float) rand() / (float) RAND_MAX;
         }
     }
 }
