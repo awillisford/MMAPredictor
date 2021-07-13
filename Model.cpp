@@ -83,9 +83,10 @@ Model::Model(std::vector<std::vector<float>>& features, uint hiddenLayers, uint 
 
 float Model::sigmoid(const float& in, bool derivative) {
     // using derivative when already passed through sigmoid function
-    if (derivative == true) 
+    if (derivative == true)  {
+        std::cout << "in * (1 - in) = " << in <<" * ("<< 1 <<" - "<< in << ")\n";
         return in * (1 - in);
-
+    }
     return 1/(1 + std::exp(-in));
 }
 
@@ -117,12 +118,15 @@ void Model::forward(const std::vector<float>& feature) {
                 }
                 // last group of weights in layer
                 if (y == weights[x]->size() - 1) {
+                    (*cache[x])[z] += (*biases[x])[z]; // add biases to cache
                     // not last weight layer
-                    if (x != weights.size() - 1)
+                    if (x != weights.size() - 1) {
                         (*activated[x])[z] = ReLU((*cache[x])[z]); // activated equal to cache through activation function
+                    }
                     // last weight layer
-                    else
-                        (*activated[x])[z] = sigmoid((*cache[x])[z]); // activated equal to cache through activation function   
+                    else {
+                        (*activated[x])[z] = sigmoid((*cache[x])[z]); // activated equal to cache through activation function
+                    }
                 }
             }
         }
@@ -140,7 +144,9 @@ void Model::backward(const std::vector<float>& feature, const std::vector<float>
         if (x == weights.size() - 1) {
             // assign gradient of cache to partial derivative of activated value from output nodes
             (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), label, true, 0), true);
+            std::cout << "(*nablaCache[x])[0]="<<(*nablaCache[x])[0]<<'\n';
             (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), label, true, 1), true);
+            std::cout << "(*nablaCache[x])[1]="<<(*nablaCache[x])[1]<<'\n';
             (*nablaBiases[x])[0] = (*nablaCache[x])[0];
             (*nablaBiases[x])[1] = (*nablaCache[x])[1];
         }
@@ -183,6 +189,7 @@ void Model::backward(const std::vector<float>& feature, const std::vector<float>
 
 float Model::MSE(std::vector<float> output, std::vector<float> label, bool derivative, int element) {
     if (derivative == true) {
+        std::cout << "output[element] - label[element] = "<< output[element] << " - " << label[element] << '\n';
         return output[element] - label[element];
     }
     float sum = 0;
