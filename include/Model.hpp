@@ -31,6 +31,9 @@ class Model {
     // mean squared error function for calculating loss
     float MSE(std::vector<float> output, std::vector<float> label, bool derivative=false, int element=0);
 
+    // returns vector with only maximum element as non-zero from output, AKA one-hot
+    std::vector<float> max(std::vector<float> output);
+
     // takes input, usually dereferenced float, and returns string
     template <typename T> std::string toStr(const T& t);
 

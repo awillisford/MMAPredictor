@@ -84,7 +84,7 @@ Model::Model(std::vector<std::vector<float>>& features, uint hiddenLayers, uint 
 float Model::sigmoid(const float& in, bool derivative) {
     // using derivative when already passed through sigmoid function
     if (derivative == true)  {
-        std::cout << "in * (1 - in) = " << in <<" * ("<< 1 <<" - "<< in << ")\n";
+        // std::cout << "in * (1 - in) = " << in <<" * ("<< 1 <<" - "<< in << ")\n";
         return in * (1 - in);
     }
     return 1/(1 + std::exp(-in));
@@ -131,6 +131,7 @@ void Model::forward(const std::vector<float>& feature) {
             }
         }
     }
+    *activated.back() = max(*activated.back()); // one hot on output
 }
 
 void Model::backward(const std::vector<float>& feature, const std::vector<float>& label) {
@@ -144,9 +145,9 @@ void Model::backward(const std::vector<float>& feature, const std::vector<float>
         if (x == weights.size() - 1) {
             // assign gradient of cache to partial derivative of activated value from output nodes
             (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), label, true, 0), true);
-            std::cout << "(*nablaCache[x])[0]="<<(*nablaCache[x])[0]<<'\n';
+            // std::cout << "(*nablaCache[x])[0]="<<(*nablaCache[x])[0]<<'\n';
             (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), label, true, 1), true);
-            std::cout << "(*nablaCache[x])[1]="<<(*nablaCache[x])[1]<<'\n';
+            // std::cout << "(*nablaCache[x])[1]="<<(*nablaCache[x])[1]<<'\n';
             (*nablaBiases[x])[0] = (*nablaCache[x])[0];
             (*nablaBiases[x])[1] = (*nablaCache[x])[1];
         }
@@ -189,7 +190,7 @@ void Model::backward(const std::vector<float>& feature, const std::vector<float>
 
 float Model::MSE(std::vector<float> output, std::vector<float> label, bool derivative, int element) {
     if (derivative == true) {
-        std::cout << "output[element] - label[element] = "<< output[element] << " - " << label[element] << '\n';
+        // std::cout << "output[element] - label[element] = "<< output[element] << " - " << label[element] << '\n';
         return output[element] - label[element];
     }
     float sum = 0;
@@ -199,6 +200,18 @@ float Model::MSE(std::vector<float> output, std::vector<float> label, bool deriv
         sum += squared;
     }
     return (sum / size);
+}
+
+std::vector<float> Model::max(std::vector<float> output) {
+    if (output[0] > output[1]) {
+        output[0] = 1;
+        output[1] = 0;
+    }
+    else {
+        output[0] = 0;
+        output[1] = 1;
+    }
+    return output;
 }
 
 std::ostream& operator<<(std::ostream& out, Model& mod) {
