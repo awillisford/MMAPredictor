@@ -23,15 +23,18 @@ float CsvToVector::contains_text(const std::string& str) {
     }
     // fighter stance
     else if (str == "Orthodox") {
-        return 0.25;
+        return 0.2;
     }
     else if (str == "Southpaw") {
-        return 0.5;
+        return 0.4;
     }
     else if (str == "Switch") {
-        return 0.75;
+        return 0.6;
     }
     else if (str == "Open Stance") {
+        return .8;
+    }
+    else if (str == "Sideways") {
         return 1;
     }
     // title fight
@@ -43,43 +46,46 @@ float CsvToVector::contains_text(const std::string& str) {
     }
     // weight divisions
     else if (str == "Flyweight") {
-        return 0.076923;
+        return 0.066667;
     }
     else if (str == "Bantamweight") {
-        return 0.153846;
+        return 0.133333;
     }
     else if (str == "Featherweight") {
-        return 0.230769;
+        return 0.2;
     }
     else if (str == "Lightweight") {
-        return 0.307692;
+        return 0.266667;
     }
     else if (str == "Welterweight") {
-        return 0.384615;
+        return 0.333333;
     }
     else if (str == "Middleweight") {
-        return 0.461538;
+        return 0.4;
     }
     else if (str == "LightHeavyweight") {
-        return 0.538462;
+        return 0.466667;
     }
     else if (str == "Heavyweight") {
-        return 0.615385;
+        return 0.533333;
     }
     else if (str == "CatchWeight") {
-        return 0.692308;
+        return 0.6;
     }
     else if (str == "WomenStrawweight") {
-        return 0.769231;
+        return 0.666667;
     }
     else if (str == "WomenFlyweight") {
-        return 0.846154;
+        return 0.733333;
     }
     else if (str == "WomenBantamweight") {
-        return 0.923077;
+        return 0.8;
     }
     else if (str == "WomenFeatherweight") {
-        return 1;
+        return 0.866667;
+    }
+    else if (str == "OpenWeight") {
+        return 0.933333;
     }
 
     // throw exception if text is not any of the above
@@ -89,7 +95,7 @@ float CsvToVector::contains_text(const std::string& str) {
         }
         catch(int e) {
             std::cout << "An exception occured in function \"contains_text()\", exception no. "
-                      << e << '\n';
+                      << e << " - str="<< str << '\n';
         }
         return 999;
     }
@@ -99,6 +105,7 @@ float CsvToVector::check_cell_type(const std::string& cell) {
     // if cell contains a number return type float of string
     if (contains_number(cell)) {
         // std::cout << "cell value: " << std::stof(cell) << ": ";
+        // std::cout << "num=" << cell << "\n";
         return std::stof(cell);
     }
     // return float value assigned to cell given by contains_text()
