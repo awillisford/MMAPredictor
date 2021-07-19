@@ -124,20 +124,23 @@ void Model::forward(const std::vector<float>& feature) {
                         (*activated[x])[z] = sigmoid((*cache[x])[z]); // activated equal to cache through activation function
                     }
                     // last weight layer
-                    else {
-                        (*activated[x])[z] = sigmoid((*cache[x])[z]); // activated equal to cache through activation function
-                    }
+                    // else {
+                    //     (*activated[x])[z] = sigmoid((*cache[x])[z]); // activated equal to cache through activation function
+                    // }
                 }
             }
         }
     }
-    // *activated.back() = max(*activated.back());
+    *activated.back() = softmax(*cache.back());
 }
 
 void Model::backward(const std::vector<float>& feature, const std::vector<float>& label) {
-    float loss = MSE(*activated.back(), label);
-    std::cout <<"activated=["<<(*activated.back())[0]<<", "<<(*activated.back())[1]<<"] - label=["<<label[0]<<", "<<label[1]<<"]\n";
-    std::cout << "loss=" << loss << '\n';
+    float loss = crossEntropy(*activated.back(), label);
+    // std::cout <<"activated=["<<(*activated.back())[0]<<", "<<(*activated.back())[1]<<"] - label=["<<label[0]<<", "<<label[1]<<"]\n";
+    // std::cout << "loss=" << loss << '\n';
+
+    if (argmax(*activated.back()) == label)
+        correct++;
 
     summationLoss += loss;
 
@@ -145,9 +148,9 @@ void Model::backward(const std::vector<float>& feature, const std::vector<float>
     for (int x = weights.size() - 1; x >= 0; x--) {
         if (x == weights.size() - 1) {
             // assign gradient of cache to partial derivative of activated value from output nodes
-            (*nablaCache[x])[0] = sigmoid(MSE(*activated.back(), label, true, 0), true);
+            (*nablaCache[x])[0] = crossEntropy(*activated.back(), label, true, 0);
             // std::cout << "(*nablaCache[x])[0]="<<(*nablaCache[x])[0]<<'\n';
-            (*nablaCache[x])[1] = sigmoid(MSE(*activated.back(), label, true, 1), true);
+            (*nablaCache[x])[1] = crossEntropy(*activated.back(), label, true, 1);
             // std::cout << "(*nablaCache[x])[1]="<<(*nablaCache[x])[1]<<'\n';
             (*nablaBiases[x])[0] = (*nablaCache[x])[0];
             (*nablaBiases[x])[1] = (*nablaCache[x])[1];
@@ -216,7 +219,8 @@ std::vector<float> Model::argmax(std::vector<float> output) {
 }
 
 float Model::crossEntropy(std::vector<float> output, std::vector<float> label, bool derivative, int element) {
-    // only used with softmax
+    // only use with softmax! //
+
     if (derivative == true) {
         if (label[element] == 1) {
             return output[element] - 1;
@@ -309,7 +313,8 @@ std::string Model::str3(const std::vector<std::vector<std::vector<float>*>*>& ve
 }
 
 void Model::printLoss(std::vector<std::vector<float>>& features) {
-    std::cout << "avg loss=" << (summationLoss / features.size()) << '\n';
+    std::cout << "avg loss=" << (summationLoss / features.size()) << " : " << (float) correct * 100 / features.size() << "%\n";
+    correct = 0;
     summationLoss = 0;
 }
 

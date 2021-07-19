@@ -67,4 +67,5 @@ class Model {
     // prints vector members of model
     friend std::ostream& operator<<(std::ostream& out, Model& mod);
 
+    int correct = 0;
 };
