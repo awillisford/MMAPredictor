@@ -121,7 +121,7 @@ void Model::forward(const std::vector<float>& feature) {
                     (*cache[x])[z] += (*biases[x])[z]; // add biases to cache
                     // not last weight layer
                     if (x != weights.size() - 1) {
-                        (*activated[x])[z] = ReLU((*cache[x])[z]); // activated equal to cache through activation function
+                        (*activated[x])[z] = sigmoid((*cache[x])[z]); // activated equal to cache through activation function
                     }
                     // last weight layer
                     else {
@@ -131,11 +131,12 @@ void Model::forward(const std::vector<float>& feature) {
             }
         }
     }
-    *activated.back() = max(*activated.back()); // one hot on output
+    // *activated.back() = max(*activated.back());
 }
 
 void Model::backward(const std::vector<float>& feature, const std::vector<float>& label) {
     float loss = MSE(*activated.back(), label);
+    std::cout <<"activated=["<<(*activated.back())[0]<<", "<<(*activated.back())[1]<<"] - label=["<<label[0]<<", "<<label[1]<<"]\n";
     std::cout << "loss=" << loss << '\n';
 
     summationLoss += loss;
@@ -166,7 +167,7 @@ void Model::backward(const std::vector<float>& feature, const std::vector<float>
                 }
             }
             if (x > 0) {
-                (*nablaCache[x - 1])[y] = ReLU(summationActivation);
+                (*nablaCache[x - 1])[y] = sigmoid(summationActivation, true);
                 (*nablaBiases[x - 1])[y] = (*nablaCache[x - 1])[y];
             }
         }
@@ -202,7 +203,7 @@ float Model::MSE(std::vector<float> output, std::vector<float> label, bool deriv
     return (sum / size);
 }
 
-std::vector<float> Model::max(std::vector<float> output) {
+std::vector<float> Model::argmax(std::vector<float> output) {
     if (output[0] > output[1]) {
         output[0] = 1;
         output[1] = 0;
@@ -211,6 +212,25 @@ std::vector<float> Model::max(std::vector<float> output) {
         output[0] = 0;
         output[1] = 1;
     }
+    return output;
+}
+
+float Model::crossEntropy(std::vector<float> output, std::vector<float> label, bool derivative, int element) {
+    // only used with softmax
+    if (derivative == true) {
+        if (label[element] == 1) {
+            return output[element] - 1;
+        }
+        else {
+            return output[element];
+        }
+    }
+    return label[0] == 1 ? -log(output[0]) : -log(output[1]);
+}
+
+std::vector<float> Model::softmax(std::vector<float> output) {
+    output[0] = exp(output[0])/(exp(output[0]) + exp(output[1]));
+    output[1] = exp(output[1])/(exp(output[0]) + exp(output[1]));
     return output;
 }
 
