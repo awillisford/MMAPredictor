@@ -121,7 +121,7 @@ void Model::forward(const std::vector<float>& feature) {
                     (*cache[x])[z] += (*biases[x])[z]; // add biases to cache
                     // not last weight layer
                     if (x != weights.size() - 1) {
-                        (*activated[x])[z] = sigmoid((*cache[x])[z]); // activated equal to cache through activation function
+                        (*activated[x])[z] = ReLU((*cache[x])[z]); // activated equal to cache through activation function
                     }
                     // last weight layer
                     // else {
@@ -136,8 +136,8 @@ void Model::forward(const std::vector<float>& feature) {
 
 void Model::backward(const std::vector<float>& feature, const std::vector<float>& label) {
     float loss = crossEntropy(*activated.back(), label);
-    // std::cout <<"activated=["<<(*activated.back())[0]<<", "<<(*activated.back())[1]<<"] - label=["<<label[0]<<", "<<label[1]<<"]\n";
-    // std::cout << "loss=" << loss << '\n';
+    std::cout <<"activated=["<<(*activated.back())[0]<<", "<<(*activated.back())[1]<<"] - label=["<<label[0]<<", "<<label[1]<<"]\n";
+    std::cout << "loss=" << loss << '\n';
 
     if (argmax(*activated.back()) == label)
         correct++;
@@ -170,7 +170,7 @@ void Model::backward(const std::vector<float>& feature, const std::vector<float>
                 }
             }
             if (x > 0) {
-                (*nablaCache[x - 1])[y] = sigmoid(summationActivation, true);
+                (*nablaCache[x - 1])[y] = ReLU(summationActivation);
                 (*nablaBiases[x - 1])[y] = (*nablaCache[x - 1])[y];
             }
         }
@@ -220,16 +220,10 @@ std::vector<float> Model::argmax(std::vector<float> output) {
 
 float Model::crossEntropy(std::vector<float> output, std::vector<float> label, bool derivative, int element) {
     // only use with softmax! //
-
     if (derivative == true) {
-        if (label[element] == 1) {
-            return output[element] - 1;
-        }
-        else {
-            return output[element];
-        }
+        return output[element] - label[element];
     }
-    return label[0] == 1 ? -log(output[0]) : -log(output[1]);
+    return label[0] == 1 ? -log(output[0]) : -log(output[1]); // log is natural log
 }
 
 std::vector<float> Model::softmax(std::vector<float> output) {
@@ -315,6 +309,7 @@ std::string Model::str3(const std::vector<std::vector<std::vector<float>*>*>& ve
 
 void Model::printLoss(std::vector<std::vector<float>>& features) {
     std::cout << "avg loss=" << (summationLoss / features.size()) << " : " << (float) correct * 100 / features.size() << "%\n";
+    std::cout << "correct="<<correct<<", total="<<features.size()<<'\n';
     correct = 0;
     summationLoss = 0;
 }
