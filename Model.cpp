@@ -233,8 +233,9 @@ float Model::crossEntropy(std::vector<float> output, std::vector<float> label, b
 }
 
 std::vector<float> Model::softmax(std::vector<float> output) {
-    output[0] = exp(output[0])/(exp(output[0]) + exp(output[1]));
-    output[1] = exp(output[1])/(exp(output[0]) + exp(output[1]));
+    std::vector<float> temp = output;
+    output[0] = exp(temp[0])/(exp(temp[0]) + exp(temp[1]));
+    output[1] = exp(temp[1])/(exp(temp[0]) + exp(temp[1]));
     return output;
 }
 
