@@ -121,7 +121,7 @@ void Model::forward(const std::vector<float>& feature) {
                     (*cache[x])[z] += (*biases[x])[z]; // add biases to cache
                     // not last weight layer
                     if (x != weights.size() - 1) {
-                        (*activated[x])[z] = ReLU((*cache[x])[z]); // activated equal to cache through activation function
+                        (*activated[x])[z] = (*cache[x])[z]; // activated equal to cache through activation function
                     }
                     // last weight layer
                     // else {
@@ -131,12 +131,14 @@ void Model::forward(const std::vector<float>& feature) {
             }
         }
     }
+    // std::cout << "cache.back()=" << (*cache.back())[0] << ", " << (*cache.back())[1] << '\n';
     *activated.back() = softmax(*cache.back());
+    // std::cout << "activated.back()=" << (*activated.back())[0] << ", " << (*activated.back())[1] << '\n';
 }
 
 void Model::backward(const std::vector<float>& feature, const std::vector<float>& label) {
     float loss = crossEntropy(*activated.back(), label);
-    std::cout <<"activated=["<<(*activated.back())[0]<<", "<<(*activated.back())[1]<<"] - label=["<<label[0]<<", "<<label[1]<<"]\n";
+    // std::cout <<"activated=["<<(*activated.back())[0]<<", "<<(*activated.back())[1]<<"] - label=["<<label[0]<<", "<<label[1]<<"]\n";
     std::cout << "loss=" << loss << '\n';
 
     if (argmax(*activated.back()) == label)
@@ -170,7 +172,7 @@ void Model::backward(const std::vector<float>& feature, const std::vector<float>
                 }
             }
             if (x > 0) {
-                (*nablaCache[x - 1])[y] = ReLU(summationActivation);
+                (*nablaCache[x - 1])[y] = summationActivation;
                 (*nablaBiases[x - 1])[y] = (*nablaCache[x - 1])[y];
             }
         }
@@ -223,13 +225,24 @@ float Model::crossEntropy(std::vector<float> output, std::vector<float> label, b
     if (derivative == true) {
         return output[element] - label[element];
     }
-    return label[0] == 1 ? -log(output[0]) : -log(output[1]); // log is natural log
+    float epsilon = 0.000001;
+    return label[0] == 1 ? -log(output[0] + epsilon): -log(output[1] + epsilon); // log is natural log
 }
 
 std::vector<float> Model::softmax(std::vector<float> output) {
     std::vector<float> temp = output;
-    output[0] = exp(temp[0])/(exp(temp[0]) + exp(temp[1]));
-    output[1] = exp(temp[1])/(exp(temp[0]) + exp(temp[1]));
+    float sub;
+    if (temp[0] > temp[1])
+        sub = temp[0];
+    else
+        sub = temp[1];
+
+    temp[0] -= sub;
+    temp[1] -= sub;
+
+    float sum = exp(temp[0]) + exp(temp[1]);
+    output[0] = exp(temp[0])/sum;
+    output[1] = exp(temp[1])/sum;
     return output;
 }
 
