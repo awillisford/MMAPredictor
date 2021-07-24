@@ -53,7 +53,7 @@ class Model {
     Model(std::vector<std::vector<float>>& features, uint numLayers, uint neuronsPerLayer, float lr = 0.05);
 
     // feed input forward and get output
-    void forward(const std::vector<float>& feature);
+    void forward(const std::vector<float>& feature, const std::vector<float>& label);
 
     // backpropagate to compute gradients for each weight and bias
     void backward(const std::vector<float>& feature, const std::vector<float>& label);
@@ -62,7 +62,7 @@ class Model {
     void printLoss(std::vector<std::vector<float>>& features);
 
     // randomize weights and biases on domain [0, 1]
-    void randomize();
+    void randomize(int seed=0);
 
     // prints vector members of model
     friend std::ostream& operator<<(std::ostream& out, Model& mod);

@@ -11,9 +11,9 @@ typedef unsigned int uint;
 Model::Model(std::vector<std::vector<float>>& features, uint hiddenLayers, uint neuronsPerLayer, float lr) {
     // assign learning rate member to constructor parameter
     this->learningRate = lr;
-    std::cout << "learningRate=" << learningRate << '\n';
+    std::cout << "Learning Rate=" << learningRate << '\n';
 
-    std::cout << "individual feature size=" << features[0].size() << '\n';
+    std::cout << "Single Feature Size=" << features[0].size() << '\n';
 
     float summationLoss = 0;
     
@@ -84,8 +84,7 @@ Model::Model(std::vector<std::vector<float>>& features, uint hiddenLayers, uint 
 float Model::sigmoid(const float& in, bool derivative) {
     // using derivative when already passed through sigmoid function
     if (derivative == true)  {
-        // std::cout << "in * (1 - in) = " << in <<" * ("<< 1 <<" - "<< in << ")\n";
-        return in * (1 - in);
+        return sigmoid(in) * (1 - sigmoid(in));
     }
     return 1/(1 + std::exp(-in));
 }
@@ -96,7 +95,7 @@ float Model::ReLU(const float& in) {
     return (in > 0) ? in : 0;
 }
 
-void Model::forward(const std::vector<float>& feature) {
+void Model::forward(const std::vector<float>& feature, const std::vector<float>& label) {
     // zero values of each cache
     for (int x = 0; x < cache.size(); ++x) {
         for (int y = 0; y < cache[x]->size(); ++y) {
@@ -131,21 +130,17 @@ void Model::forward(const std::vector<float>& feature) {
             }
         }
     }
-    // std::cout << "cache.back()=" << (*cache.back())[0] << ", " << (*cache.back())[1] << '\n';
     *activated.back() = softmax(*cache.back());
-    // std::cout << "activated.back()=" << (*activated.back())[0] << ", " << (*activated.back())[1] << '\n';
+
+    float loss = crossEntropy(*activated.back(), label); // calc loss
+    // determine if prediction was correct
+    if (argmax(*activated.back()) == label)
+        correct++;
+    
+    summationLoss += loss;
 }
 
 void Model::backward(const std::vector<float>& feature, const std::vector<float>& label) {
-    float loss = crossEntropy(*activated.back(), label);
-    // std::cout <<"activated=["<<(*activated.back())[0]<<", "<<(*activated.back())[1]<<"] - label=["<<label[0]<<", "<<label[1]<<"]\n";
-    std::cout << "loss=" << loss << '\n';
-
-    if (argmax(*activated.back()) == label)
-        correct++;
-
-    summationLoss += loss;
-
     // start from end, weight layers
     for (int x = weights.size() - 1; x >= 0; x--) {
         if (x == weights.size() - 1) {
@@ -321,14 +316,15 @@ std::string Model::str3(const std::vector<std::vector<std::vector<float>*>*>& ve
 }
 
 void Model::printLoss(std::vector<std::vector<float>>& features) {
-    std::cout << "avg loss=" << (summationLoss / features.size()) << " : " << (float) correct * 100 / features.size() << "%\n";
-    std::cout << "correct="<<correct<<", total="<<features.size()<<'\n';
+    std::cout << "avg loss=" << (summationLoss / features.size()) << " : " << correct << "/" 
+              << features.size() << " " << (float) correct * 100 / features.size() << "%\n";
     correct = 0;
     summationLoss = 0;
 }
 
-void Model::randomize() {
-    srand(time(NULL));
+void Model::randomize(int seed) {
+    seed != 0 ? srand(seed) : srand(time(NULL));
+
     // randomize weights
     for (int x = 0; x < weights.size(); ++x) {
         for (int y = 0; y < weights[x]->size(); ++y) {
