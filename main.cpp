@@ -4,7 +4,7 @@
 #include "include/Model.hpp"
 
 int main() {
-    std::vector<std::vector<std::vector<float>>> data = CsvToVector::extract_data("data/test.csv");
+    std::vector<std::vector<std::vector<float>>> data = CsvToVector::extract_data("data/data_filtered.csv");
     std::vector<std::vector<float>> features = data[0];
     std::vector<std::vector<float>> labels = data[1];
 
